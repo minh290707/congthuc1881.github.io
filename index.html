@@ -53,17 +53,17 @@
 
     <!-- Thanh tìm kiếm -->
     <div class="relative">
-      <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Tìm tên món, gin, rum, chanh, dứa..." class="w-full bg-train-card border border-train-border rounded-xl px-10 py-2.5 text-sm text-train-cream placeholder-train-cream/40 focus:outline-none focus:border-train-red">
+      <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Tìm tên món" class="w-full bg-train-card border border-train-border rounded-xl px-10 py-2.5 text-sm text-train-cream placeholder-train-cream/40 focus:outline-none focus:border-train-red">
       <svg class="w-4 h-4 text-train-cream/40 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 0114 0z"/></svg>
     </div>
 
     <!-- Bộ lọc -->
     <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 text-xs font-medium">
       <button onclick="setTab('All', this)" class="cat-pill active-tab px-3.5 py-1.5 rounded-full border border-train-border whitespace-nowrap">Tất cả</button>
-      <button onclick="setTab('Alcoholic', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">Alcoholic</button>
-      <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">Cocktail</button>
-      <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">Mocktail</button>
-      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">Shots & Beer</button>
+      <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🍸Cocktail</button>
+      <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🍹Mocktail</button>
+      <button onclick="setTab('Alcoholic', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🥃Alcoholic</button>
+      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🍷Shots & 🍻Beer</button>
     </div>
   </header>
 
