@@ -1,597 +1,73 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>The Train 1881 - Mobile Bar Handbook</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        trainRed: {
-                            500: '#D3232B',
-                            600: '#C41E24',
-                            700: '#A0151A',
-                            800: '#7A0C10',
-                            900: '#4F0508'
-                        },
-                        cream: {
-                            100: '#FFF8DC',
-                            200: '#F5E6CA',
-                            300: '#E6CFA0',
-                            400: '#D8B876'
-                        },
-                        darkSlate: '#121212',
-                        darkCard: '#1E1B1B',
-                        darkSurface: '#262222'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'Georgia', 'serif']
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>The Train 1881 - Bar Staff Handbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            train: {
+              red: '#C41E24',
+              darkred: '#8B1115',
+              cream: '#F5E6CA',
+              gold: '#D4AF37',
+              dark: '#121212',
+              card: '#1C1C1E',
+              border: '#2C2C2E'
             }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif']
+          }
         }
-    </script>
-    <!-- Fonts & FontAwesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* Mobile Specific Overrides & Touch Physics */
-        * {
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #121212;
-            color: #F5E6CA;
-            padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
-            padding-top: env(safe-area-inset-top);
-        }
-
-        /* Glassmorphism Dark Theme */
-        .glass-header {
-            background: rgba(26, 18, 19, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(245, 230, 202, 0.12);
-        }
-
-        .glass-card {
-            background: linear-gradient(145deg, rgba(38, 27, 28, 0.9), rgba(26, 18, 19, 0.95));
-            border: 1px solid rgba(245, 230, 202, 0.12);
-            backdrop-filter: blur(8px);
-        }
-
-        .glass-card:active {
-            transform: scale(0.98);
-            border-color: rgba(245, 230, 202, 0.4);
-        }
-
-        .glass-bottom-nav {
-            background: rgba(20, 14, 15, 0.94);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(245, 230, 202, 0.15);
-            padding-bottom: env(safe-area-inset-bottom);
-        }
-
-        /* Slide-up Bottom Sheet */
-        .bottom-sheet {
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            transform: translateY(100%);
-            max-height: 92vh;
-        }
-
-        .bottom-sheet.open {
-            transform: translateY(0);
-        }
-
-        /* Hide Scrollbar for Horizontal Carousel */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Custom Input styling */
-        input[type="text"] {
-            user-select: text;
-        }
-
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #FFF8DC 0%, #F5E6CA 50%, #D8B876 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #121212;
+      color: #F5E6CA;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .glass-card {
+      background: rgba(28, 28, 30, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 230, 202, 0.12);
+    }
+    .active-tab {
+      background-color: #C41E24 !important;
+      color: #F5E6CA !important;
+      border-color: #C41E24 !important;
+    }
+    .sheet-open { transform: translateY(0%); }
+    .sheet-closed { transform: translateY(100%); }
+  </style>
 </head>
-<body class="min-h-screen text-cream-200 antialiased selection:bg-trainRed-600 selection:text-white">
+<body class="font-sans antialiased pb-24 min-h-screen flex flex-col justify-between">
 
-    <!-- Sticky Top App Header -->
-    <header class="sticky top-0 z-30 glass-header px-4 py-3 shadow-xl">
-        <div class="flex items-center justify-between">
-            <!-- Logo & Brand Name -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="resetFilters()">
-                <!-- Circular Train Logo SVG -->
-                <div class="w-10 h-10 flex-shrink-0 bg-trainRed-600 rounded-full border border-cream-200 p-0.5 shadow-md flex items-center justify-center">
-                    <svg viewBox="0 0 120 120" class="w-full h-full">
-                        <circle cx="60" cy="60" r="58" fill="#C41E24" />
-                        <path id="hdrArc" d="M 20,60 A 40,40 0 0,1 100,60" fill="none" />
-                        <text font-family="'Playfair Display', serif" font-weight="800" font-size="11.5" fill="#FFF8DC" text-anchor="middle">
-                            <textPath href="#hdrArc" startOffset="50%">THE TRAIN 1881</textPath>
-                        </text>
-                        <g transform="translate(36, 34) scale(0.8)">
-                            <path d="M 10 20 L 50 20 L 52 50 L 8 50 Z" fill="#2d3748" stroke="#FFF8DC" stroke-width="1.5"/>
-                            <rect x="25" y="14" width="10" height="6" fill="#f4a261" rx="1"/>
-                            <circle cx="30" cy="17" r="2" fill="#FFF8DC"/>
-                            <rect x="13" y="24" width="15" height="12" fill="#1d4e89" rx="2" stroke="#FFF8DC" stroke-width="1"/>
-                            <rect x="32" y="24" width="15" height="12" fill="#1d4e89" rx="2" stroke="#FFF8DC" stroke-width="1"/>
-                            <path d="M 8 38 L 52 38 L 54 50 L 6 50 Z" fill="#C41E24"/>
-                            <rect x="20" y="42" width="20" height="6" fill="#f4a261" rx="1"/>
-                            <text x="30" y="46.5" font-size="4" font-weight="bold" fill="#121212" text-anchor="middle">1881</text>
-                        </g>
-                    </svg>
-                </div>
-                <div>
-                    <h1 class="text-base font-bold font-vintage tracking-wider text-gold-gradient uppercase leading-tight">THE TRAIN 1881</h1>
-                    <p class="text-[10px] text-cream-300/70 tracking-widest font-medium uppercase">Mobile Bar Handbook</p>
-                </div>
-            </div>
-
-            <!-- Total Drink Count Badge -->
-            <div class="flex items-center space-x-2">
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-trainRed-700/50 border border-trainRed-500/40 text-cream-100 flex items-center gap-1">
-                    <i class="fa-solid fa-martini-glass-citrus text-[10px] text-cream-300"></i>
-                    <span id="totalBadge">44</span> món
-                </span>
-            </div>
+  <!-- Header Section -->
+  <header class="sticky top-0 z-30 bg-[#121212]/95 backdrop-blur-md border-b border-train-border/50 px-4 pt-3 pb-3">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-train-red flex items-center justify-center border border-train-gold/40 shadow-lg shadow-train-red/20 shrink-0">
+          <svg class="w-6 h-6 text-train-cream" viewBox="0 0 100 100" fill="currentColor">
+            <rect x="25" y="20" width="50" height="50" rx="10" fill="#C41E24" stroke="#F5E6CA" stroke-width="4"/>
+            <rect x="32" y="28" width="15" height="15" rx="2" fill="#64B5F6"/>
+            <rect x="53" y="28" width="15" height="15" rx="2" fill="#64B5F6"/>
+            <circle cx="35" cy="58" r="5" fill="#D4AF37"/>
+            <circle cx="65" cy="58" r="5" fill="#D4AF37"/>
+            <rect x="42" y="55" width="16" height="8" fill="#D4AF37"/>
+          </svg>
         </div>
-
-        <!-- Search Input Bar -->
-        <div class="mt-3 relative">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-cream-300/50">
-                <i class="fa-solid fa-magnifying-glass text-xs"></i>
-            </div>
-            <input type="text" id="mobileSearch" oninput="handleSearch()" placeholder="Tìm tên món, Gin, Rum, Dứa, Chanh..." 
-                class="w-full pl-9 pr-8 py-2 bg-darkSurface border border-cream-200/20 rounded-xl text-cream-100 placeholder-cream-300/40 text-xs focus:outline-none focus:border-cream-200/60 shadow-inner">
-            <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-cream-300/60">
-                <i class="fa-solid fa-xmark text-sm"></i>
-            </button>
-        </div>
-
-        <!-- Horizontal Pill Carousel -->
-        <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar pt-2.5 text-xs">
-            <button onclick="setCategory('all')" class="cat-pill active flex-shrink-0 px-3 py-1.5 rounded-lg font-medium text-[11px] transition-all bg-trainRed-600 text-cream-100 border border-trainRed-500 shadow-sm">
-                Tất cả (<span id="countAll">44</span>)
-            </button>
-            <button onclick="setCategory('Signature')" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg font-medium text-[11px] transition-all bg-darkSurface text-cream-300/80 border border-cream-200/10">
-                <i class="fa-solid fa-wand-magic-sparkles mr-1 text-cream-400"></i>Signature
-            </button>
-            <button onclick="setCategory('Classic')" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg font-medium text-[11px] transition-all bg-darkSurface text-cream-300/80 border border-cream-200/10">
-                <i class="fa-solid fa-glass-whiskey mr-1 text-amber-400"></i>Classic
-            </button>
-            <button onclick="setCategory('Mocktail')" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg font-medium text-[11px] transition-all bg-darkSurface text-cream-300/80 border border-cream-200/10">
-                <i class="fa-solid fa-seedling mr-1 text-emerald-400"></i>Mocktail
-            </button>
-            <button onclick="setCategory('ShotsBeer')" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg font-medium text-[11px] transition-all bg-darkSurface text-cream-300/80 border border-cream-200/10">
-                <i class="fa-solid fa-beer-mug-empty mr-1 text-orange-400"></i>Shots & Beer
-            </button>
-        </div>
-    </header>
-
-    <!-- Main Drink List Container -->
-    <main class="px-3.5 pt-3">
-        <div id="drinkGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <!-- Dynamic Cards Populated via JS -->
-        </div>
-
-        <!-- Empty State -->
-        <div id="emptyState" class="hidden text-center py-12 px-4 glass-card rounded-2xl border border-dashed border-cream-200/20 my-6">
-            <i class="fa-solid fa-wine-glass-empty text-4xl text-cream-300/30 mb-2"></i>
-            <h3 class="text-sm font-bold text-cream-200">Không tìm thấy món</h3>
-            <p class="text-xs text-cream-300/50 mt-1">Vui lòng thử gõ từ khóa nguyên liệu khác.</p>
-            <button onclick="resetFilters()" class="mt-3 px-3.5 py-1.5 bg-trainRed-600 text-cream-100 rounded-lg text-xs font-semibold">
-                Xem tất cả món
-            </button>
-        </div>
-    </main>
-
-    <!-- Mobile Full-Screen Bottom Sheet Modal -->
-    <div id="bottomSheetOverlay" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0" onclick="closeBottomSheet()">
-        <div class="bottom-sheet fixed bottom-0 left-0 right-0 z-50 glass-header rounded-t-3xl border-t border-cream-200/30 overflow-hidden flex flex-col" onclick="event.stopPropagation()">
-            <!-- Handle Indicator for Mobile Touch -->
-            <div class="pt-2.5 pb-1 flex justify-center cursor-pointer" onclick="closeBottomSheet()">
-                <div class="w-12 h-1.5 bg-cream-200/30 rounded-full"></div>
-            </div>
-
-            <!-- Sheet Header -->
-            <div class="px-5 pb-3 border-b border-cream-200/15 flex items-start justify-between">
-                <div>
-                    <span id="sheetCategoryBadge" class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-trainRed-700/50 text-cream-200 border border-cream-200/20 mb-1">
-                        Category
-                    </span>
-                    <h2 id="sheetTitle" class="text-xl font-bold font-vintage text-gold-gradient">Drink Name</h2>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <button id="sheetFavBtn" onclick="toggleFavoriteCurrent()" class="w-9 h-9 rounded-full bg-darkSurface border border-cream-200/20 text-cream-300/60 flex items-center justify-center active:scale-95">
-                        <i class="fa-regular fa-heart text-base"></i>
-                    </button>
-                    <button onclick="closeBottomSheet()" class="w-9 h-9 rounded-full bg-darkSurface border border-cream-200/20 text-cream-300/80 flex items-center justify-center active:scale-95">
-                        <i class="fa-solid fa-xmark text-base"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Sheet Body -->
-            <div class="p-5 overflow-y-auto space-y-4 text-xs leading-relaxed max-h-[75vh]">
-                <!-- Ingredients -->
-                <div class="bg-darkSurface/90 p-3.5 rounded-xl border border-cream-200/15">
-                    <h3 class="text-[11px] uppercase font-bold tracking-wider text-cream-400 mb-2.5 flex items-center gap-1.5">
-                        <i class="fa-solid fa-list-check text-trainRed-500"></i> Thành Phần & Định Lượng
-                    </h3>
-                    <ul id="sheetIngredients" class="space-y-2 text-cream-100 font-medium">
-                        <!-- Populated via JS -->
-                    </ul>
-                </div>
-
-                <!-- Preparation Method -->
-                <div class="bg-darkSurface/90 p-3.5 rounded-xl border border-cream-200/15">
-                    <h3 class="text-[11px] uppercase font-bold tracking-wider text-cream-400 mb-2 flex items-center gap-1.5">
-                        <i class="fa-solid fa-whiskey-glass text-trainRed-500"></i> Kỹ Thuật Pha Chế (Method)
-                    </h3>
-                    <p id="sheetInstructions" class="text-cream-200/90 text-xs leading-relaxed">
-                        <!-- Populated via JS -->
-                    </p>
-                </div>
-
-                <!-- Decoration & Garnish -->
-                <div id="sheetGarnishBox" class="bg-trainRed-900/40 p-3.5 rounded-xl border border-trainRed-600/30">
-                    <h3 class="text-[11px] uppercase font-bold tracking-wider text-cream-300 mb-1 flex items-center gap-1.5">
-                        <i class="fa-solid fa-lemon text-amber-400"></i> Trang Trí (Garnish & Glass)
-                    </h3>
-                    <p id="sheetGarnish" class="text-cream-100 font-semibold text-xs">
-                        <!-- Populated via JS -->
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Fixed Bottom Navigation Bar (1-Hand Operation) -->
-    <nav class="fixed bottom-0 left-0 right-0 z-40 glass-bottom-nav">
-        <div class="grid grid-cols-5 h-14">
-            <button onclick="switchTab('all')" id="nav-all" class="nav-tab active flex flex-col items-center justify-center text-trainRed-500">
-                <i class="fa-solid fa-border-all text-base mb-0.5"></i>
-                <span class="text-[10px] font-bold">Tất cả</span>
-            </button>
-            <button onclick="switchTab('Cocktail')" id="nav-Cocktail" class="nav-tab flex flex-col items-center justify-center text-cream-300/50">
-                <i class="fa-solid fa-martini-glass-citrus text-base mb-0.5"></i>
-                <span class="text-[10px] font-bold">Cocktail</span>
-            </button>
-            <button onclick="switchTab('Mocktail')" id="nav-Mocktail" class="nav-tab flex flex-col items-center justify-center text-cream-300/50">
-                <i class="fa-solid fa-seedling text-base mb-0.5"></i>
-                <span class="text-[10px] font-bold">Mocktail</span>
-            </button>
-            <button onclick="switchTab('ShotsBeer')" id="nav-ShotsBeer" class="nav-tab flex flex-col items-center justify-center text-cream-300/50">
-                <i class="fa-solid fa-beer-mug-empty text-base mb-0.5"></i>
-                <span class="text-[10px] font-bold">Shots/Beer</span>
-            </button>
-            <button onclick="switchTab('fav')" id="nav-fav" class="nav-tab flex flex-col items-center justify-center text-cream-300/50">
-                <i class="fa-solid fa-heart text-base mb-0.5"></i>
-                <span class="text-[10px] font-bold">Yêu thích</span>
-            </button>
-        </div>
-    </nav>
-
-    <script>
-        // Full Complete 44 Recipes Dataset for The Train 1881
-        const allDrinks = [
-            { id: 1, title: 'Thanh Long Rose Spritz', category: 'Signature', ingredients: ['50-60ml nước ép thanh long đỏ', '15ml siro đường hoặc siro hoa hồng', '15ml nước cốt chanh tươi', 'Top up vang nổ'], instructions: 'Cho đầy đá vào ly. Đổ 50-60ml nước ép thanh long đỏ, 15ml siro hoa hồng, 15ml nước cốt chanh tươi. Top up với vang nổ.', garnish: '1/2 lát thanh long bóp cánh hoa hồng' },
-            { id: 2, title: 'Singapore Sling', category: 'Classic', ingredients: ['50ml Gin', '15ml rượu cherry', '15ml Cointreau', '60ml nước ép dứa', '15ml nước cốt chanh tươi', '10ml Grenadine', '1 dash Angostura bitters', 'Đá viên'], instructions: 'Shake kĩ tất cả nguyên liệu với đá viên. Rót ra ly cao.', garnish: 'Lát chanh tươi, quả cherry' },
-            { id: 3, title: 'Jungle Bird', category: 'Classic', ingredients: ['45ml Dark Rum', '15ml Campari', '45ml nước ép dứa tươi', '15ml nước cốt chanh tươi', '15ml syrup đường', 'Đá viên'], instructions: 'Shake tất cả thành phần với đá viên mạnh tay.', garnish: 'Lát dứa hoặc vỏ cam' },
-            { id: 4, title: 'God Father', category: 'Classic', ingredients: ['50ml Scotch Whisky (hoặc Whisky tùy chọn)', '25ml Amaretto (rượu hạnh nhân)', 'Đá viên'], instructions: 'Rót trực tiếp vào ly rocks chứa đá viên lớn. Khuấy nhẹ.', garnish: 'Vỏ cam tươi (tùy chọn)' },
-            { id: 5, title: 'Hurricane', category: 'Classic', ingredients: ['40ml Dark Rum', '40ml Rum trắng', '20ml nước ép chanh tươi', '60ml nước ép cam', '20ml Grenadine', '10ml syrup đường', 'Đá viên'], instructions: 'Shake đều các nguyên liệu với đá viên và rót ra ly Hurricane.', garnish: 'Lát cam, quả cherry' },
-            { id: 6, title: 'Blood and Sand', category: 'Classic', ingredients: ['40ml Scotch Whisky', '30ml nước cam tươi', '30ml Cherry Heering', '30ml Vermouth đỏ ngọt', 'Đá viên'], instructions: 'Shake đều các nguyên liệu với đá. Lọc rót ra ly cocktail lạnh.', garnish: 'Vỏ cam xoắn hoặc cherry' },
-            { id: 7, title: 'Tequila Sunrise', category: 'Classic', ingredients: ['45ml Tequila', '90ml nước cam tươi', '15ml Grenadine (syrup lựu) hoặc siro dâu', 'Đá viên'], instructions: 'Cho Tequila và nước cam vào ly có đá. Rót nhẹ 15ml Grenadine xuống đáy ly để tạo hiệu ứng tầng.', garnish: 'Lát cam tươi, quả cherry' },
-            { id: 8, title: 'Cốm Cocktail', category: 'Signature', ingredients: ['50ml nước dứa', '30ml siro pandan', '40ml Bacardi Rum', '15ml Cointreau', '15ml Malibu'], instructions: 'Shake kĩ tất cả nguyên liệu với đá viên. Đổ đầy cốc đá.', garnish: 'Lá dứa & lát dứa decor' },
-            { id: 9, title: 'Mango Lắc', category: 'Signature', ingredients: ['30-50ml sinh tố xoài dầm', '15ml siro xoài', '1 quả chanh vắt', '50ml Vodka', 'Soda top up'], instructions: 'Lăn viền cốc qua lớp muối ớt. Shake sinh tố xoài, siro, chanh và Vodka với đá. Đổ ra ly và top up Soda.', garnish: 'Viền muối ớt, xiên xoài' },
-            { id: 10, title: 'Penicillin', category: 'Classic', ingredients: ['4-5 lát gừng tươi', '50ml Bourbon Jim Beam', '20ml chanh tươi', '15ml mật ong'], instructions: 'Cắt 4-5 lát gừng vào shaker dầm nát. Thêm Bourbon, chanh, mật ong và đá. Shake kỹ, lọc 2 lần (double strain).', garnish: 'Twist vỏ chanh vàng' },
-            { id: 11, title: 'Watermelon Cucumber', category: 'Classic', ingredients: ['4-5 lát dưa chuột', '50ml Gin', '50ml nước dưa hấu', '20ml chanh', '15ml đường'], instructions: 'Cho 4-5 lát dưa chuột vào shaker dầm nát. Thêm Gin, dưa hấu, chanh, đường và đá. Shake kĩ, lọc 2 lần.', garnish: '2 lát dưa chuột mỏng ngâm decor' },
-            { id: 12, title: 'Mojito', category: 'Classic', ingredients: ['1 quả chanh cắt 8', '2 thìa đường', '50ml Bacardi Rum', 'Soda top up', 'Vài nhánh bạc hà'], instructions: 'Dầm nhẹ chanh và đường trong ly. Thêm lá bạc hà bóp nhẹ, đá dăm, Bacardi và top up Soda.', garnish: 'Ngọn bạc hà tươi, lát chanh' },
-            { id: 13, title: 'Margarita', category: 'Classic', ingredients: ['50ml Tequila', '30ml Cointreau', '30ml nước chanh', '5-10ml đường'], instructions: 'Viền muối miệng cốc. Shake Tequila, Cointreau, chanh, đường với đá. Shake lọc đá rót ra ly.', garnish: 'Muối viền cốc, cài lát chanh' },
-            { id: 14, title: 'Coffee Martini', category: 'Classic', ingredients: ['30ml Vodka', '30ml Kahlua', '30ml Cafe Espresso', '7-8ml đường (nửa ấn)'], instructions: 'Shake cực mạnh với đá viên để tạo bọt mịn. Lọc bỏ đá rót ra ly.', garnish: 'Hạt cà phê hoặc bột cacao' },
-            { id: 15, title: 'Gimlet', category: 'Classic', ingredients: ['50ml Gin hoặc Vodka', '2-2.5 quả chanh vắt', '22.5ml syrup đường'], instructions: 'Shake kĩ với đá viên. Lọc bỏ đá rót ra ly cocktail.', garnish: 'Lát chanh vàng' },
-            { id: 16, title: 'Mai Tai', category: 'Classic', ingredients: ['35ml Rum vàng / Dark Rum', '15ml Rum trắng', '15ml Cointreau', '15ml syrup đường hoặc orgeat', '20ml nước chanh'], instructions: 'Shake tất cả thành phần với đá viên. Rót ra ly chứa đá dăm.', garnish: 'Cam khô / Vỏ chanh' },
-            { id: 17, title: 'Tropical Dusk', category: 'Signature', ingredients: ['20ml Rum', '30ml Tequila', '10ml siro dâu', '50-80ml cam vắt'], instructions: 'Shake Rum, Tequila và siro dâu 15 giây với đá. Rót ra cốc, sau đó phân tầng nhẹ nhàng với nước cam vắt.', garnish: 'Lát cam tươi' },
-            { id: 18, title: 'Sex on the Beach', category: 'Signature', ingredients: ['50ml Vodka', '50ml nước dứa', '30ml cam ép', '15ml siro dứa', '15ml sinh tố dâu'], instructions: 'Shake riêng Vodka, nước dứa, nước cam và siro dứa. Đổ vào đáy cốc 15ml sinh tố dâu rồi rót hỗn hợp lên.', garnish: 'Lát cam, quả cherry' },
-            { id: 19, title: 'Long Island', category: 'Classic', ingredients: ['15ml Rum', '15ml Tequila', '15ml Vodka', '15ml Gin', '10ml Cointreau', 'Nửa quả chanh vắt', 'Top up Coca-Cola'], instructions: 'Rót các loại rượu và chanh vào ly cao chứa đầy đá. Top up Coca-Cola lên trên và khuấy nhẹ.', garnish: 'Nửa quả chanh cài thành ly' },
-            { id: 20, title: 'Sangria', category: 'Classic', ingredients: ['50ml Vang đỏ', '15ml Cointreau', '40ml Coke', '5-10ml syrup', 'Lát cam vàng cắt 4', 'Vài miếng táo cắt 2'], instructions: 'Cho hoa quả vào shaker cùng vang, Cointreau, syrup và đá. Shake nhẹ rồi top up Coke.', garnish: 'Miếng cam vàng & táo' },
-            { id: 21, title: 'Ramos Gin Fizz', category: 'Classic', ingredients: ['40ml Gin', '1 quả chanh', '20ml đường', '1 lòng trắng trứng', '20ml kem Rich'], instructions: 'Shake lần 1 không đá (44s). Shake lần 2 có đá (44s). Rót ra cốc lọc đá, để ngăn đá 2 phút rồi từ từ top up Soda.', garnish: 'Lớp bọt nhô cao khỏi thành ly' },
-            { id: 22, title: 'Pink Lady', category: 'Classic', ingredients: ['50ml Gin', '20ml siro dâu', '15ml sinh tố dâu', '1 lòng trắng trứng', '1 ấn đường', '1 quả chanh'], instructions: 'Shake lần 1 không đá với lò xo. Shake lần 2 có đá. Lọc bỏ đá đổ ra cốc.', garnish: 'Bọt dâu mịn' },
-            { id: 23, title: 'Piña Colada', category: 'Classic', ingredients: ['50ml nước dứa', '25ml cốt dừa', '30ml Malibu', '50ml Bacardi Rum', '1 ấn đường'], instructions: 'Shake kĩ với đá viên đến khi mịn béo.', garnish: 'Lát dứa tươi' },
-            { id: 24, title: 'Pornstar Martini', category: 'Classic', ingredients: ['50ml nước dứa', '20ml siro chanh leo', '50ml Vodka', 'Nửa quả chanh vắt', '2/3 quả chanh leo'], instructions: 'Shake đóng đá mạnh tay. Lọc 2 lần.', garnish: '1/3 quả chanh leo tươi nổi trên mặt' },
-            { id: 25, title: 'Paloma', category: 'Classic', ingredients: ['50ml nước cam', '50ml Tequila', '25ml Blueberry', 'Nửa quả chanh vắt', '15ml đường'], instructions: 'Shake kĩ các nguyên liệu với đá. Rót ra ly.', garnish: 'Lát cam tươi' },
-            { id: 26, title: 'Old Fashioned', category: 'Classic', ingredients: ['60ml Whisky', '1 thìa đường cát', '6 dash Angostura bitters'], instructions: 'Khuấy đường & bitters không đá 15s. Thêm đá viên lớn và Whisky khuấy lần 2.', garnish: 'Yểm vỏ cam tinh dầu' },
-            { id: 27, title: 'Negroni', category: 'Classic', ingredients: ['30ml Campari', '30ml Red Vermouth', '30ml Gin'], instructions: 'Cho đá làm lạnh cốc. Khuấy đều Campari, Vermouth và Gin với đá.', garnish: 'Yểm vỏ cam' },
-            { id: 28, title: 'Martini', category: 'Classic', ingredients: ['60ml Gin', '15ml Extra Dry Vermouth'], instructions: 'Khuấy đều với đá cho thật lạnh. Lọc rót ra ly Martini.', garnish: 'Vỏ chanh xoắn hoặc ô-liu' },
-            { id: 29, title: 'Vodka Sour', category: 'Classic', ingredients: ['60ml Vodka', '7-8 dash Angostura bitters', '1.5 quả chanh vắt', '15ml đường', '1 lòng trắng trứng'], instructions: 'Shake với lò xo (không đá) 15s. Shake với đá 10s. Lọc ra ly.', garnish: 'Dash Angostura bitters lên bọt' },
-            { id: 30, title: 'Whiskey Sour', category: 'Classic', ingredients: ['60ml Jack Daniel\'s', '6-8 dash Angostura bitters', '1.5 quả chanh vắt', '15ml đường', '1 lòng trắng trứng'], instructions: 'Shake lò xo không đá 15s. Shake với đá 10s.', garnish: 'Vỏ chanh, bitters' },
-            { id: 31, title: 'Mocktail Cốm Hà Nội', category: 'Mocktail', ingredients: ['75ml nước dứa', '30ml siro pandan', '25ml sữa tươi không đường', '25ml cốt dừa'], instructions: 'Shake kĩ tất cả nguyên liệu với đá viên.', garnish: 'Lá dứa & dứa decor' },
-            { id: 32, title: 'Mango Shake Mule', category: 'Mocktail', ingredients: ['40ml sinh tố xoài', '15ml siro xoài', '1 quả chanh vắt'], instructions: 'Lăn viền cốc qua muối ớt. Shake xoài và chanh với đá, đổ ra ly full đá và top up Soda.', garnish: 'Viền muối ớt, lát chanh' },
-            { id: 33, title: 'Frozen Citrus', category: 'Mocktail', ingredients: ['20ml chanh xanh', '20ml chanh vàng', '20ml mật ong', '10ml đường', '2 miếng vỏ chanh'], instructions: 'Up đá xong xay nhuyễn mịn dạng đá tuyết.', garnish: 'Vỏ chanh bào' },
-            { id: 34, title: 'Pine Berryll', category: 'Mocktail', ingredients: ['30ml siro dâu', '5ml sốt dâu', '100ml nước dứa', 'Soda top up'], instructions: 'Rót siro & sốt dâu đáy cốc. Phân tầng với 100ml nước dứa và Soda.', garnish: 'Lát dứa / Dâu' },
-            { id: 35, title: 'Sun Kisses', category: 'Mocktail', ingredients: ['1 quả cam vắt', '2 bông đường', '20ml mứt vỏ cam khuấy', 'Top up Soda / Sprite'], instructions: 'Khuấy đều cam và mứt vỏ cam. Thêm đá và top up Soda hoặc Sprite.', garnish: 'Lát cam vắt' },
-            { id: 36, title: 'Watermelon Spritz', category: 'Mocktail', ingredients: ['100ml nước dưa hấu', '30ml siro cam', 'Top up Soda'], instructions: 'Shake dưa hấu và siro cam với đá. Top up Soda.', garnish: 'Miếng dưa hấu tươi' },
-            { id: 37, title: 'Blue Lagoon', category: 'Mocktail', ingredients: ['75ml nước dứa', '20ml siro vỏ cam (Blue)', '1/2 quả chanh vắt'], instructions: 'Shake với đá 20s. Rót ra cốc lọc đá, cho đá mới và top up 7Up hoặc Soda.', garnish: 'Lát chanh tươi' },
-            { id: 38, title: 'Jack Frost', category: 'Mocktail', ingredients: ['50ml nước dứa', '50ml cam (hoặc 25ml siro cam)', '25ml cốt dừa', '20ml siro vỏ cam', 'Kem muối top up (20ml Rich + 10ml cốt dừa + 5ml đường)'], instructions: 'Xay nhuyễn hỗn hợp dứa, cam, cốt dừa, siro vỏ cam với đá. Top up kem muối dừa đánh bông.', garnish: 'Dừa nạo khô' },
-            { id: 39, title: 'Monkey Brain', category: 'ShotsBeer', ingredients: ['5ml chanh tươi', '35ml Smirnoff Vodka', '10ml Baileys', 'Siro dâu', 'Siro vỏ cam'], instructions: 'Rót Vodka và chanh vào ly shot. Dùng ống hút rải 10ml Baileys tạo hình não. Nhỏ giọt siro dâu & vỏ cam.', garnish: 'Tạo hình nổi độc đáo' },
-            { id: 40, title: 'B52', category: 'ShotsBeer', ingredients: ['Rượu Kahlua (Cà phê)', 'Rượu Baileys (Sữa)', 'Rượu Cointreau (Cam)'], instructions: 'Rót phân tầng 3 lớp bằng thìa: Đáy Kahlua, giữa Baileys, trên Cointreau.', garnish: 'Đốt lửa mặt trên (tùy chọn)' },
-            { id: 41, title: 'Local Hanoi', category: 'ShotsBeer', ingredients: ['3-4 quả quất + 1/2 chanh', '20ml mật ong', 'Bia Trúc Bạch / Hà Nội'], instructions: 'Lăn cốc qua muối ớt. Dầm quất, chanh với mật ong trong cốc, nhét chanh decor. Úp ngược chai bia.', garnish: 'Viền muối ớt, lát chanh quất' },
-            { id: 42, title: 'Green Mountain', category: 'ShotsBeer', ingredients: ['30ml siro táo xanh', '1/2 quả chanh vắt', 'Lát chanh xanh, táo mỏng, lá bạc hà', 'Bia Trúc Bạch'], instructions: 'Pha siro táo xanh và chanh vào ly có đá. Úp ngược chai bia Trúc Bạch.', garnish: 'Lát táo mỏng, bạc hà' },
-            { id: 43, title: 'Yellowred', category: 'ShotsBeer', ingredients: ['25ml sinh tố dâu', '10ml siro dâu', 'Chanh vàng, cam cắt lát', 'Bia Corona'], instructions: 'Cho sinh tố dâu và siro dâu vào ly đá dăm. Úp ngược chai bia Corona.', garnish: 'Chanh vàng, cam' },
-            { id: 44, title: 'Oceania', category: 'ShotsBeer', ingredients: ['20ml siro vỏ cam', '1 quả chanh vắt', '40ml Tequila', 'Bia Strongbow Cider'], instructions: 'Lăn cốc qua muối trắng. Cho siro vỏ cam, chanh, Tequila vào cốc có đá. Úp ngược chai Strongbow.', garnish: 'Viền muối trắng' }
-        ];
-
-        // State variables
-        let currentTab = 'all'; // 'all', 'Cocktail', 'Mocktail', 'ShotsBeer', 'fav'
-        let currentSearchQuery = '';
-        let favorites = [];
-        let activeDrinkId = null;
-
-        // Initialize App
-        document.addEventListener('DOMContentLoaded', () => {
-            loadFavorites();
-            renderDrinks();
-            updateCounts();
-        });
-
-        // Load & Save Favorites from localStorage
-        function loadFavorites() {
-            try {
-                const stored = localStorage.getItem('train1881_favs');
-                favorites = stored ? JSON.parse(stored) : [];
-            } catch(e) {
-                favorites = [];
-            }
-        }
-
-        function saveFavorites() {
-            localStorage.setItem('train1881_favs', JSON.stringify(favorites));
-        }
-
-        function toggleFavorite(id, e) {
-            if (e) e.stopPropagation();
-            const index = favorites.indexOf(id);
-            if (index > -1) {
-                favorites.splice(index, 1);
-            } else {
-                favorites.push(id);
-            }
-            saveFavorites();
-            renderDrinks();
-
-            if (activeDrinkId === id) {
-                updateSheetFavButton(id);
-            }
-        }
-
-        function toggleFavoriteCurrent() {
-            if (activeDrinkId) {
-                toggleFavorite(activeDrinkId, null);
-            }
-        }
-
-        // Render Drink Cards Grid
-        function renderDrinks() {
-            const grid = document.getElementById('drinkGrid');
-            const emptyState = document.getElementById('emptyState');
-            grid.innerHTML = '';
-
-            const filtered = allDrinks.filter(drink => {
-                // Category/Tab match
-                let matchesCategory = false;
-                if (currentTab === 'all') matchesCategory = true;
-                else if (currentTab === 'Cocktail') matchesCategory = (drink.category === 'Signature' || drink.category === 'Classic');
-                else if (currentTab === 'Mocktail') matchesCategory = (drink.category === 'Mocktail');
-                else if (currentTab === 'ShotsBeer') matchesCategory = (drink.category === 'ShotsBeer');
-                else if (currentTab === 'fav') matchesCategory = favorites.includes(drink.id);
-                else matchesCategory = (drink.category === currentTab);
-
-                // Search query match
-                const q = currentSearchQuery.toLowerCase();
-                const ingredientsStr = drink.ingredients.join(' ').toLowerCase();
-                const matchesSearch = !q || drink.title.toLowerCase().includes(q) || ingredientsStr.includes(q);
-
-                return matchesCategory && matchesSearch;
-            });
-
-            if (filtered.length === 0) {
-                emptyState.classList.remove('hidden');
-            } else {
-                emptyState.classList.add('hidden');
-                filtered.forEach(drink => {
-                    grid.appendChild(createDrinkCard(drink));
-                });
-            }
-
-            document.getElementById('totalBadge').innerText = filtered.length;
-        }
-
-        function createDrinkCard(drink) {
-            const isFav = favorites.includes(drink.id);
-            const card = document.createElement('div');
-            card.className = 'glass-card rounded-2xl p-3.5 flex items-center justify-between cursor-pointer relative overflow-hidden transition-all';
-            card.onclick = () => openBottomSheet(drink.id);
-
-            let catColor = 'text-trainRed-500 border-trainRed-600/30 bg-trainRed-900/30';
-            if (drink.category === 'Classic') catColor = 'text-amber-400 border-amber-500/30 bg-amber-900/30';
-            if (drink.category === 'Mocktail') catColor = 'text-emerald-400 border-emerald-500/30 bg-emerald-900/30';
-            if (drink.category === 'ShotsBeer') catColor = 'text-orange-400 border-orange-500/30 bg-orange-900/30';
-
-            const previewIng = drink.ingredients.slice(0, 2).join(', ');
-
-            card.innerHTML = `
-                <div class="pr-3 flex-1 min-w-0">
-                    <div class="flex items-center gap-2 mb-1">
-                        <span class="px-2 py-0.5 rounded-md text-[9px] font-bold border ${catColor} uppercase tracking-wider">
-                            ${drink.category}
-                        </span>
-                    </div>
-                    <h3 class="text-sm font-bold text-cream-100 truncate group-active:text-trainRed-500 font-vintage">
-                        ${drink.title}
-                    </h3>
-                    <p class="text-[11px] text-cream-300/60 truncate mt-0.5 font-normal">
-                        ${previewIng}...
-                    </p>
-                </div>
-                <button onclick="toggleFavorite(${drink.id}, event)" class="p-2.5 text-cream-300/40 hover:text-trainRed-500 active:scale-125 transition-transform">
-                    <i class="${isFav ? 'fa-solid fa-heart text-trainRed-500' : 'fa-regular fa-heart'} text-base"></i>
-                </button>
-            `;
-
-            return card;
-        }
-
-        // Bottom Sheet Logic
-        function openBottomSheet(id) {
-            const drink = allDrinks.find(d => d.id === id);
-            if (!drink) return;
-
-            activeDrinkId = id;
-            document.getElementById('sheetTitle').innerText = drink.title;
-            document.getElementById('sheetCategoryBadge').innerText = drink.category;
-            
-            // Ingredients List
-            const ingUl = document.getElementById('sheetIngredients');
-            ingUl.innerHTML = '';
-            drink.ingredients.forEach(ing => {
-                const li = document.createElement('li');
-                li.className = 'flex items-center gap-2 text-xs text-cream-100';
-                li.innerHTML = `<i class="fa-solid fa-circle-dot text-[8px] text-trainRed-500"></i> <span>${ing}</span>`;
-                ingUl.appendChild(li);
-            });
-
-            document.getElementById('sheetInstructions').innerText = drink.instructions;
-
-            const garnishBox = document.getElementById('sheetGarnishBox');
-            if (drink.garnish) {
-                document.getElementById('sheetGarnish').innerText = drink.garnish;
-                garnishBox.classList.remove('hidden');
-            } else {
-                garnishBox.classList.add('hidden');
-            }
-
-            updateSheetFavButton(id);
-
-            // Animate Sheet Display
-            const overlay = document.getElementById('bottomSheetOverlay');
-            const sheet = overlay.querySelector('.bottom-sheet');
-            
-            overlay.classList.remove('hidden');
-            setTimeout(() => {
-                overlay.classList.remove('opacity-0');
-                sheet.classList.add('open');
-            }, 10);
-        }
-
-        function closeBottomSheet() {
-            const overlay = document.getElementById('bottomSheetOverlay');
-            const sheet = overlay.querySelector('.bottom-sheet');
-
-            sheet.classList.remove('open');
-            overlay.classList.add('opacity-0');
-
-            setTimeout(() => {
-                overlay.classList.add('hidden');
-                activeDrinkId = null;
-            }, 300);
-        }
-
-        function updateSheetFavButton(id) {
-            const favBtn = document.getElementById('sheetFavBtn');
-            const isFav = favorites.includes(id);
-            if (isFav) {
-                favBtn.innerHTML = `<i class="fa-solid fa-heart text-base text-trainRed-500"></i>`;
-                favBtn.classList.add('border-trainRed-500/50', 'bg-trainRed-900/30');
-            } else {
-                favBtn.innerHTML = `<i class="fa-regular fa-heart text-base"></i>`;
-                favBtn.classList.remove('border-trainRed-500/50', 'bg-trainRed-900/30');
-            }
-        }
-
-        // Search & Filter Helpers
-        function handleSearch() {
-            currentSearchQuery = document.getElementById('mobileSearch').value.trim();
-            const clearBtn = document.getElementById('clearSearchBtn');
-            if (currentSearchQuery) {
-                clearBtn.classList.remove('hidden');
-            } else {
-                clearBtn.classList.add('hidden');
-            }
-            renderDrinks();
-        }
-
-        function clearSearch() {
-            document.getElementById('mobileSearch').value = '';
-            currentSearchQuery = '';
-            document.getElementById('clearSearchBtn').classList.add('hidden');
-            renderDrinks();
-        }
-
-        function setCategory(cat) {
-            currentTab = cat;
-            updatePillsUI();
-            updateBottomNavUI();
-            renderDrinks();
-        }
-
-        function switchTab(tab) {
-            currentTab = tab;
-            updatePillsUI();
-            updateBottomNavUI();
-            renderDrinks();
-        }
-
-        function updatePillsUI() {
-            document.querySelectorAll('.cat-pill').forEach(btn => {
-                btn.classList.remove('bg-trainRed-600', 'text-cream-100', 'border-trainRed-500');
-                btn.classList.add('bg-darkSurface', 'text-cream-300/80', 'border-cream-200/10');
-            });
-        }
-
-        function updateBottomNavUI() {
-            document.querySelectorAll('.nav-tab').forEach(tab => {
-                tab.classList.remove('text-trainRed-500');
-                tab.classList.add('text-cream-300/50');
-            });
-
-            const activeNav = document.getElementById(`nav-${currentTab}`);
-            if (activeNav) {
-                activeNav.classList.remove('text-cream-300/50');
-                activeNav.classList.add('text-trainRed-500');
-            }
-        }
-
-        function resetFilters() {
-            clearSearch();
-            switchTab('all');
-        }
-
-        function updateCounts() {
-            document.getElementById('countAll').innerText = allDrinks.length;
-        }
-    </script>
-</body>
-</html>
+        <div>
+          <h1 class="font-serif font-bold text-lg text-train-cream leading-tight tracking-wide">THE TRAIN 1881</h1>
+          <p class="
