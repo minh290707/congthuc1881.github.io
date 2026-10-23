@@ -71,42 +71,7 @@
   <main class="p-4">
     <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
-      <!-- 5 MÓN MỚI THÊM (ALCOHOLIC) -->
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="whiskey coke cola alcoholic" onclick="showDetail('Whiskey Coke', 'Alcoholic', 'Build', ['50ml Whisky', 'Top up Coca-Cola'], 'Cho đá đầy ly Highball, rót 50ml Whiskey, top up Coca-Cola. Khuấy nhẹ 2-3 vòng.', 'Lát chanh vàng hoặc chanh xanh')">
-        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
-        <h3 class="font-serif font-bold text-lg text-train-cream">Whiskey Coke</h3>
-        <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Whisky • Coca-Cola • Chanh</p>
-      </div>
-
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="rum coke cuba libre alcoholic" onclick="showDetail('Rum Coke (Cuba Libre)', 'Alcoholic', 'Build', ['50ml Dark/Light Rum', '15ml Nước chanh tươi', 'Top up Coca-Cola'], 'Cho đá đầy ly, vắt 15ml chanh tươi thả vỏ vào, rót 50ml Rum, top up Coca-Cola và khuấy nhẹ.', 'Lát chanh tươi')">
-        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
-        <h3 class="font-serif font-bold text-lg text-train-cream">Rum Coke (Cuba Libre)</h3>
-        <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Rum • Chanh tươi • Coca-Cola</p>
-      </div>
-
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="jager bomb redbull alcoholic" onclick="showDetail('Jäger Bomb', 'Alcoholic', 'Drop Shot', ['40ml Jagermeister (ướp lạnh)', '1/2 lon Red Bull'], 'Rót Red Bull vào nửa ly cao. Rót 40ml Jäger vào ly shot riêng. Thả ly shot vào ly Red Bull để uống ngay.', 'Không')">
-        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
-        <h3 class="font-serif font-bold text-lg text-train-cream">Jäger Bomb</h3>
-        <p class="text-xs text-train-gold mb-2">Drop Shot</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">40ml Jägermeister • 1/2 lon Red Bull</p>
-      </div>
-
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="gin tonic alcoholic" onclick="showDetail('Gin & Tonic', 'Alcoholic', 'Build', ['50ml Gin', 'Top up Nước Tonic', '1-2 wedge chanh tươi'], 'Cho đá đầy ly, rót 50ml Gin, vắt nhẹ chanh. Rót Tonic nghiêng thành ly để giữ sủi bọt, khuấy nhẹ.', 'Lát chanh tươi / Hương thảo')">
-        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
-        <h3 class="font-serif font-bold text-lg text-train-cream">Gin & Tonic</h3>
-        <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Gin • Nước Tonic • Chanh</p>
-      </div>
-
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="vodka redbull alcoholic" onclick="showDetail('Vodka Redbull', 'Alcoholic', 'Build', ['50ml Vodka', 'Top up Red Bull', '10ml Nước chanh'], 'Cho đá đầy ly Highball, rót 50ml Vodka, top up Red Bull đến gần miệng ly. Khuấy nhẹ.', 'Lát chanh tươi')">
-        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
-        <h3 class="font-serif font-bold text-lg text-train-cream">Vodka Redbull</h3>
-        <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Vodka • Red Bull • Chanh</p>
-      </div>
-
+  
       <!-- COCKTAIL CLASSIC & SIGNATURE -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="thanh long rose spritz vang no" onclick="showDetail('Thanh Long Rose Spritz', 'Cocktail', 'Build / Top up', ['50-60ml Nước ép thanh long đỏ', '15ml Siro đường/hoa hồng', '15ml Nước chanh tươi', 'Top up Vang nổ'], 'Cho đá vào ly. Rót nước ép thanh long, siro và chanh khuấy nhẹ. Top up vang nổ.', 'Lát thanh long đỏ hoặc cánh hoa hồng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
@@ -418,6 +383,42 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Siro vỏ cam • Tequila • Bia Strongbow</p>
       </div>
 
+<!-- 5 MÓN MỚI THÊM (ALCOHOLIC) -->
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="whiskey coke cola alcoholic" onclick="showDetail('Whiskey Coke', 'Alcoholic', 'Build', ['50ml Whisky', 'Top up Coca-Cola'], 'Cho đá đầy ly Highball, rót 50ml Whiskey, top up Coca-Cola. Khuấy nhẹ 2-3 vòng.', 'Lát chanh vàng hoặc chanh xanh')">
+        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
+        <h3 class="font-serif font-bold text-lg text-train-cream">Whiskey Coke</h3>
+        <p class="text-xs text-train-gold mb-2">Build</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Whisky • Coca-Cola • Chanh</p>
+      </div>
+
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="rum coke cuba libre alcoholic" onclick="showDetail('Rum Coke (Cuba Libre)', 'Alcoholic', 'Build', ['50ml Dark/Light Rum', '15ml Nước chanh tươi', 'Top up Coca-Cola'], 'Cho đá đầy ly, vắt 15ml chanh tươi thả vỏ vào, rót 50ml Rum, top up Coca-Cola và khuấy nhẹ.', 'Lát chanh tươi')">
+        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
+        <h3 class="font-serif font-bold text-lg text-train-cream">Rum Coke (Cuba Libre)</h3>
+        <p class="text-xs text-train-gold mb-2">Build</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Rum • Chanh tươi • Coca-Cola</p>
+      </div>
+
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="jager bomb redbull alcoholic" onclick="showDetail('Jäger Bomb', 'Alcoholic', 'Drop Shot', ['40ml Jagermeister (ướp lạnh)', '1/2 lon Red Bull'], 'Rót Red Bull vào nửa ly cao. Rót 40ml Jäger vào ly shot riêng. Thả ly shot vào ly Red Bull để uống ngay.', 'Không')">
+        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
+        <h3 class="font-serif font-bold text-lg text-train-cream">Jäger Bomb</h3>
+        <p class="text-xs text-train-gold mb-2">Drop Shot</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">40ml Jägermeister • 1/2 lon Red Bull</p>
+      </div>
+
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="gin tonic alcoholic" onclick="showDetail('Gin & Tonic', 'Alcoholic', 'Build', ['50ml Gin', 'Top up Nước Tonic', '1-2 wedge chanh tươi'], 'Cho đá đầy ly, rót 50ml Gin, vắt nhẹ chanh. Rót Tonic nghiêng thành ly để giữ sủi bọt, khuấy nhẹ.', 'Lát chanh tươi / Hương thảo')">
+        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
+        <h3 class="font-serif font-bold text-lg text-train-cream">Gin & Tonic</h3>
+        <p class="text-xs text-train-gold mb-2">Build</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Gin • Nước Tonic • Chanh</p>
+      </div>
+
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="vodka redbull alcoholic" onclick="showDetail('Vodka Redbull', 'Alcoholic', 'Build', ['50ml Vodka', 'Top up Red Bull', '10ml Nước chanh'], 'Cho đá đầy ly Highball, rót 50ml Vodka, top up Red Bull đến gần miệng ly. Khuấy nhẹ.', 'Lát chanh tươi')">
+        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
+        <h3 class="font-serif font-bold text-lg text-train-cream">Vodka Redbull</h3>
+        <p class="text-xs text-train-gold mb-2">Build</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Vodka • Red Bull • Chanh</p>
+      </div>
+      
     </div>
   </main>
 
