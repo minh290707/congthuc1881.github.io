@@ -25,41 +25,46 @@
     .active-tab { background-color: #C41E24 !important; color: #F5E6CA !important; border-color: #C41E24 !important; }
     .sheet-open { transform: translateY(0%); }
     .sheet-closed { transform: translateY(100%); }
+    
+    .clickable-ingredient {
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .clickable-ingredient:active {
+      transform: scale(0.98);
+      background-color: rgba(196, 30, 36, 0.25);
+      border-color: #C41E24;
+    }
   </style>
 </head>
 <body class="font-sans antialiased pb-20 min-h-screen">
 
   <!-- Header -->
+  <header class="p-4 border-b border-train-border/50 sticky top-0 bg-[#121212]/95 backdrop-blur-md z-30">
+    <div class="flex items-center justify-between mb-3">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="The Train 1881" class="rounded-full object-cover border border-train-gold/40 shadow-lg shrink-0" style="width: 50px; height: 50px;">
+        <div class="flex flex-col justify-center">
+          <h1 class="font-bold text-xl text-[#FF2A30] leading-none" style="letter-spacing: 2px; font-family: 'Plus Jakarta Sans', sans-serif; text-shadow: 0 0 4px #FF2A30, 0 0 10px #C41E24;">
+            THE TRAIN <span style="letter-spacing: 3px;">1881</span>
+          </h1>
+          <p class="text-[10px] text-train-gold font-semibold uppercase tracking-widest mt-0.5">COCKTAILS • BAR</p>
+        </div>
+      </div>
 
-  <div class="flex items-center gap-3">
-  <!-- Logo dạng ảnh -->
-  <img src="logo.png" alt="The Train 1881" class="rounded-full object-cover border border-train-gold/40 shadow-lg shrink-0" style="width: 84px; height: 84px;">
+      <span id="recipe-count" class="inline-block text-xs bg-train-card px-3 py-1.5 rounded-full border border-train-border text-train-cream/80 font-mono shadow-md whitespace-nowrap shrink-0">
+        49 món
+      </span>
+    </div>
 
-  
-  <!-- Tên quán -->
-  <div class="flex flex-col justify-center">
-    <h1 class="font-bold text-2xl text-[#FF2A30] leading-none" style="letter-spacing: 4px; font-family: 'Plus Jakarta Sans', sans-serif; font-variant-numeric: lining-nums; text-shadow: 0 0 4px #FF2A30, 0 0 10px #C41E24, 0 0 18px rgba(196, 30, 36, 0.8);">
-  THE TRAIN <span style="letter-spacing: 5px; font-feature-settings: 'lnum' 1;">1881</span>
-</h1>
-    <p class="text-[12px] text-train-gold font-semibold uppercase tracking-widest mt-1">COCKTAILS • Bar</p>
-  </div>
-</div>
-
-<!-- Thẻ 49 món vào đây -->
-  <span id="recipe-count" class="inline-block text-xs bg-train-card px-3 py-1.5 rounded-full border border-train-border text-train-cream/80 font-mono shadow-md whitespace-nowrap shrink-0 ml-auto">
-    50 món
-  </span>
-</div>
-  
-
-<!-- Thanh tìm kiếm -->
-<div class="relative w-1/2 ml-auto">
-  <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Tìm món, gin, rum..." class="w-full bg-train-card border border-train-border rounded-xl pl-9 pr-3 py-1.5 text-xs text-train-cream placeholder-train-cream/40 focus:outline-none focus:border-train-red">
-  <svg class="w-3.5 h-3.5 text-train-cream/40 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 0114 0z"/>
-  </svg>
-</div>
-  
+    <!-- Thanh tìm kiếm -->
+    <div class="relative w-full">
+      <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Tìm món, gin, rum, vodka..." class="w-full bg-train-card border border-train-border rounded-xl pl-9 pr-3 py-2 text-xs text-train-cream placeholder-train-cream/40 focus:outline-none focus:border-train-red">
+      <svg class="w-4 h-4 text-train-cream/40 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 0114 0z"/>
+      </svg>
+    </div>
+    
     <!-- Bộ lọc -->
     <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 text-xs font-medium">
       <button onclick="setTab('All', this)" class="cat-pill active-tab px-3.5 py-1.5 rounded-full border border-train-border whitespace-nowrap">Tất cả</button>
@@ -74,7 +79,6 @@
   <main class="p-4">
     <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
-  
       <!-- COCKTAIL CLASSIC & SIGNATURE -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="thanh long rose spritz vang no" onclick="showDetail('Thanh Long Rose Spritz', 'Cocktail', 'Build / Top up', ['50-60ml Nước ép thanh long đỏ', '15ml Siro đường/hoa hồng', '15ml Nước chanh tươi', 'Top up Vang nổ'], 'Cho đá vào ly. Rót nước ép thanh long, siro và chanh khuấy nhẹ. Top up vang nổ.', 'Lát thanh long đỏ hoặc cánh hoa hồng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
@@ -90,7 +94,7 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Gin • Rượu cherry • Cointreau • Nước dứa • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="Aperol Spritz" onclick="showDetail('Aperol', 'Cocktail', 'Top up', ['50ml Vang nổ', '50ml Aperol', '15-20ml soda'], ' Rót theo thứ tự vào cốc vang size vừa cho nửa cốc đá. ', 'Nửa lát cam vàng cho vào cốc')">
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="aperol spritz vang no" onclick="showDetail('Aperol Spritz', 'Cocktail', 'Top up', ['50ml Vang nổ', '50ml Aperol', '15-20ml soda'], ' Rót theo thứ tự vào cốc vang size vừa cho nửa cốc đá. ', 'Nửa lát cam vàng cho vào cốc')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Aperol Spritz</h3>
         <p class="text-xs text-train-gold mb-2">Top up</p>
@@ -351,7 +355,7 @@
       </div>
 
       <!-- SHOTS & BEER -->
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="monkey brain chanh vodka baileys dau" onclick="showDetail('Monkey Brain', 'Shots & Beer', 'Layer', ['5ml Nước chanh', '35ml Smirnoff Vodka', '10ml Baileys', 'Siro dâu', 'Siro vỏ cam'], 'Rót chanh và Vodka vào ly shot. Rót từ từ Baileys vào để kết tủa thành hình脑. Nhỏ thêm siro dâu.', 'Tạo hình vệt máu')">
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="monkey brain chanh vodka baileys dau" onclick="showDetail('Monkey Brain', 'Shots & Beer', 'Layer', ['5ml Nước chanh', '35ml Smirnoff Vodka', '10ml Baileys', 'Siro dâu', 'Siro vỏ cam'], 'Rót chanh và Vodka vào ly shot. Rót từ từ Baileys vào để kết tủa thành hình não. Nhỏ thêm siro dâu.', 'Tạo hình vệt máu')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Monkey Brain</h3>
         <p class="text-xs text-train-gold mb-2">Layer</p>
@@ -393,19 +397,19 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Siro vỏ cam • Tequila • Bia Strongbow</p>
       </div>
 
-<!-- 5 MÓN MỚI THÊM (ALCOHOLIC) -->
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="whiskey coke cola alcoholic" onclick="showDetail('Whiskey Coke', 'Alcoholic', 'Build', ['50ml Whisky', 'Top up Coca-Cola'], 'Cho đá đầy ly Highball, rót 50ml Whiskey, top up Coca-Cola. Khuấy nhẹ 2-3 vòng.', 'Lát chanh vàng hoặc chanh xanh')">
+      <!-- ALCOHOLIC -->
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="whiskey coke cola alcoholic" onclick="showDetail('Whiskey Coke', 'Alcoholic', 'Build', ['50ml Whiskey', 'Top up Coca-Cola'], 'Cho đá đầy ly Highball, rót 50ml Whiskey, top up Coca-Cola. Khuấy nhẹ 2-3 vòng bằng thìa bar.', 'Lát chanh vàng hoặc chanh xanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Whiskey Coke</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Whisky • Coca-Cola </p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Whiskey • Coca-Cola </p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="rum coke cuba libre alcoholic" onclick="showDetail('Rum Coke', 'Alcoholic', 'Build', ['50ml Rum Bacadi', 'Top up Coca-Cola'], 'Cho đá đầy ly, vắt 15ml chanh tươi thả vỏ vào, rót 50ml Rum, top up Coca-Cola và khuấy nhẹ.', 'Lát chanh tươi')">
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="rum coke cuba libre alcoholic" onclick="showDetail('Rum Coke', 'Alcoholic', 'Build', ['50ml Rum Bacadi', 'Top up Coca-Cola', '15ml Nước chanh'], 'Cho đá đầy ly, vắt 15ml chanh tươi thả vỏ vào, rót 50ml Rum, top up Coca-Cola và khuấy nhẹ.', 'Lát chanh tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Rum Coke</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Rum • Coca-Cola</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Rum • Coca-Cola • Chanh</p>
       </div>
 
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="jager bomb redbull alcoholic" onclick="showDetail('Jäger Bomb', 'Alcoholic', 'Drop Shot', ['40ml Jagermeister (ướp lạnh)', '1/2 lon Red Bull'], 'Rót Red Bull vào nửa ly cao. Rót 40ml Jäger vào ly shot riêng. Thả ly shot vào ly Red Bull để uống ngay.', 'Không')">
@@ -439,14 +443,144 @@
     <span id="sheet-category" class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span>
     <h2 id="sheet-title" class="text-2xl font-serif font-bold text-train-cream mt-1 mb-2">--</h2>
     <div class="mb-4 text-xs text-train-gold bg-train-gold/10 px-3 py-1.5 rounded-lg border border-train-gold/20"><b>Phương pháp:</b> <span id="sheet-method">Shake</span></div>
-    <div class="mb-4"><h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Thành phần & Định lượng</h3><div id="sheet-ingredients" class="space-y-1.5"></div></div>
+    
+    <div class="mb-4">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-xs font-bold uppercase text-train-cream/50">Thành phần & Định lượng</h3>
+        <span class="text-[10px] text-train-gold/80 italic">Chạm vào chai rượu để xem ảnh 🔍</span>
+      </div>
+      <div id="sheet-ingredients" class="space-y-1.5"></div>
+    </div>
+
     <div class="mb-4"><h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hướng dẫn thao tác</h3><div id="sheet-instructions" class="text-sm text-train-cream/90 bg-train-card p-3 rounded-xl border border-train-border leading-relaxed"></div></div>
-    <div id="sheet-garnish-box" class="mb-5"><h3 class="text-xs font-bold uppercase text-train-cream/50 mb-1">Trang trí (Garnish)</h3><p id="sheet-garnish" class="text-sm text-train-gold italic"></p></div>
+    
+    <div id="sheet-garnish-box" class="mb-4"><h3 class="text-xs font-bold uppercase text-train-cream/50 mb-1">Trang trí (Garnish)</h3><p id="sheet-garnish" class="text-sm text-train-gold italic"></p></div>
+
+    <!-- KHUNG ẢNH THÀNH PHẨM CỐC RƯỢU DÁNG DỌC -->
+    <div id="sheet-cocktail-image-box" class="mb-5">
+      <h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hình ảnh cốc rượu</h3>
+      <div class="w-full max-w-[280px] mx-auto aspect-[4/5] bg-black/60 rounded-2xl overflow-hidden border border-train-border/60 flex items-center justify-center p-2 shadow-inner">
+        <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" class="w-full h-full object-contain rounded-xl drop-shadow-md">
+      </div>
+    </div>
+
     <button onclick="closeSheet()" class="w-full py-3 bg-train-red text-train-cream font-semibold rounded-xl">Đóng</button>
+  </div>
+
+  <!-- POPUP XEM ẢNH CHAI RƯỢU/NGUYÊN LIỆU KHI CLICK (DÁNG ĐỨNG) -->
+  <div id="ingredient-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden" onclick="closeIngredientModal()">
+    <div class="bg-[#1C1C1E] border border-train-gold/30 rounded-2xl p-4 w-full max-w-xs shadow-2xl relative text-center" onclick="event.stopPropagation()">
+      <button onclick="closeIngredientModal()" class="absolute top-2 right-3 text-train-cream/50 hover:text-train-cream text-2xl font-bold leading-none">&times;</button>
+      <h4 id="ing-modal-title" class="text-sm font-bold text-train-gold mb-3 pr-4 truncate">Tên nguyên liệu</h4>
+      <div class="w-full h-80 bg-black/50 rounded-xl overflow-hidden flex items-center justify-center border border-train-border/50 p-2">
+        <img id="ing-modal-img" src="" alt="Ảnh chai rượu" class="w-full h-full object-contain drop-shadow-lg">
+      </div>
+      <p class="text-[11px] text-train-cream/50 mt-2">Chạm ra ngoài để đóng</p>
+    </div>
   </div>
 
   <script>
     let activeCategory = 'All';
+
+    // 1. LINK ẢNH CHAI RƯỢU & NGUYÊN LIỆU PHA CHẾ CHUẨN
+    const ingredientImages = {
+      'campari': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Bouteille_de_Campari.JPG/651px-Bouteille_de_Campari.JPG',
+      'capari': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Bouteille_de_Campari.JPG/651px-Bouteille_de_Campari.JPG',
+      'pandan': 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600&auto=format&fit=crop&q=80',
+      'cốm': 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600&auto=format&fit=crop&q=80',
+      'vodka': 'https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=600&auto=format&fit=crop&q=80',
+      'smirnoff': 'https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=600&auto=format&fit=crop&q=80',
+      'gin': 'https://images.unsplash.com/photo-1608885823707-35368a04473e?w=600&auto=format&fit=crop&q=80',
+      'rum': 'https://images.unsplash.com/photo-1614313511387-1436a4480ebb?w=600&auto=format&fit=crop&q=80',
+      'bacardi': 'https://images.unsplash.com/photo-1614313511387-1436a4480ebb?w=600&auto=format&fit=crop&q=80',
+      'whisky': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80',
+      'whiskey': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80',
+      'bourbon': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80',
+      'jack daniels': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80',
+      'tequila': 'https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=600&auto=format&fit=crop&q=80',
+      'cointreau': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80',
+      'aperol': 'https://images.unsplash.com/photo-1560512823-829485b8bf24?w=600&auto=format&fit=crop&q=80',
+      'amaretto': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80',
+      'kahlua': 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80',
+      'baileys': 'https://images.unsplash.com/photo-1584225064785-c62a8b43d148?w=600&auto=format&fit=crop&q=80',
+      'malibu': 'https://images.unsplash.com/photo-1614313511387-1436a4480ebb?w=600&auto=format&fit=crop&q=80',
+      'cherry': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80',
+      'vermouth': 'https://images.unsplash.com/photo-1575023782549-62ca0d244b39?w=600&auto=format&fit=crop&q=80',
+      'vang nổ': 'https://images.unsplash.com/photo-1560512823-829485b8bf24?w=600&auto=format&fit=crop&q=80',
+      'vang đỏ': 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop&q=80',
+      'jager': 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop&q=80',
+      'jagermeister': 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop&q=80',
+      'red bull': 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=80',
+      'tonic': 'https://images.unsplash.com/photo-1598614187854-26a60e98294b?w=600&auto=format&fit=crop&q=80',
+      'coca': 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&auto=format&fit=crop&q=80',
+      'soda': 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=600&auto=format&fit=crop&q=80',
+      'bia': 'https://images.unsplash.com/photo-1608270104677-7be60c915f03?w=600&auto=format&fit=crop&q=80',
+      'corona': 'https://images.unsplash.com/photo-1608270104677-7be60c915f03?w=600&auto=format&fit=crop&q=80',
+      'strongbow': 'https://images.unsplash.com/photo-1608270104677-7be60c915f03?w=600&auto=format&fit=crop&q=80',
+      'bitters': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&auto=format&fit=crop&q=80'
+    };
+
+    // 2. DANH SÁCH HOA QUẢ CẦN CHẶN (Không hiện ảnh)
+    const fruitBlacklist = [
+      'chanh', 'nước cam', 'lát cam', 'dứa', 'dua', 'xoài', 'xoai', 'dưa hấu', 'dua hau', 
+      'dưa chuột', 'dua chuot', 'gừng', 'gung', 'thanh long', 'táo', 'tao', 
+      'quất', 'quat', 'dâu', 'dau', 'bạc hà', 'bac ha', 'cà phê', 'espresso', 
+      'trứng', 'kem', 'sữa', 'đường', 'muối', 'olive'
+    ];
+
+    // 3. LINK ẢNH THÀNH PHẨM CỐC RƯỢU
+    const drinkImages = {
+      'Thanh Long Rose Spritz': 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=700&auto=format&fit=crop&q=60',
+      'Singapore Sling': 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=700&auto=format&fit=crop&q=60',
+      'Aperol Spritz': 'https://images.unsplash.com/photo-1560512823-829485b8bf24?w=700&auto=format&fit=crop&q=60',
+      'Jungle Bird': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&auto=format&fit=crop&q=60',
+      'God Father': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=700&auto=format&fit=crop&q=60',
+      'Hurricane': 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700&auto=format&fit=crop&q=60',
+      'Blood and Sand': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&auto=format&fit=crop&q=60',
+      'Tequila Sunrise': 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=700&auto=format&fit=crop&q=60',
+      'Cốm Cocktail': 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=700&auto=format&fit=crop&q=60',
+      'Mango Lắc': 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=700&auto=format&fit=crop&q=60',
+      'Penicillin': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=700&auto=format&fit=crop&q=60',
+      'Watermelon Cucumber': 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=700&auto=format&fit=crop&q=60',
+      'Mojito': 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=700&auto=format&fit=crop&q=60',
+      'Margarita': 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=700&auto=format&fit=crop&q=60',
+      'Coffee Martini': 'https://images.unsplash.com/photo-1545438102-799c3991ffb2?w=700&auto=format&fit=crop&q=60',
+      'Daiquiri': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&auto=format&fit=crop&q=60',
+      'Mai Tai': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&auto=format&fit=crop&q=60',
+      'Tropical Dusk': 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=700&auto=format&fit=crop&q=60',
+      'Sex on the Beach': 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=700&auto=format&fit=crop&q=60',
+      'Long Island Iced Tea': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&auto=format&fit=crop&q=60',
+      'Sangria': 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&auto=format&fit=crop&q=60',
+      'Ramos Gin Fizz': 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=700&auto=format&fit=crop&q=60',
+      'Pink Lady': 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=700&auto=format&fit=crop&q=60',
+      'Pina Colada': 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=700&auto=format&fit=crop&q=60',
+      'Pornstar Martini': 'https://images.unsplash.com/photo-1545438102-799c3991ffb2?w=700&auto=format&fit=crop&q=60',
+      'Paloma': 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=700&auto=format&fit=crop&q=60',
+      'Old Fashioned': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=700&auto=format&fit=crop&q=60',
+      'Negroni': 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=700&auto=format&fit=crop&q=60',
+      'Dry Martini': 'https://images.unsplash.com/photo-1575023782549-62ca0d244b39?w=700&auto=format&fit=crop&q=60',
+      'Vodka Sour': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&auto=format&fit=crop&q=60',
+      'Whiskey Sour': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=700&auto=format&fit=crop&q=60',
+      'Cốm Hà Nội': 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=700&auto=format&fit=crop&q=60',
+      'Mango Shake Mule': 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=700&auto=format&fit=crop&q=60',
+      'Frozen Citrus': 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=700&auto=format&fit=crop&q=60',
+      'Pine Berryll': 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=700&auto=format&fit=crop&q=60',
+      'Sun Kisses': 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=700&auto=format&fit=crop&q=60',
+      'Watermelon Spritz': 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=700&auto=format&fit=crop&q=60',
+      'Blue Lagoon': 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=700&auto=format&fit=crop&q=60',
+      'Jack Frost': 'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=700&auto=format&fit=crop&q=60',
+      'Monkey Brain': 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&auto=format&fit=crop&q=60',
+      'B52': 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&auto=format&fit=crop&q=60',
+      'Beer Local Hanoi': 'https://images.unsplash.com/photo-1608270104677-7be60c915f03?w=700&auto=format&fit=crop&q=60',
+      'Beer Green Mountain': 'https://images.unsplash.com/photo-1608270104677-7be60c915f03?w=700&auto=format&fit=crop&q=60',
+      'Beer YellowRed': 'https://images.unsplash.com/photo-1608270104677-7be60c915f03?w=700&auto=format&fit=crop&q=60',
+      'Beer Oceania': 'https://images.unsplash.com/photo-1608270104677-7be60c915f03?w=700&auto=format&fit=crop&q=60',
+      'Whiskey Coke': 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=700&auto=format&fit=crop&q=60',
+      'Rum Coke': 'https://images.unsplash.com/photo-1614313511387-1436a4480ebb?w=700&auto=format&fit=crop&q=60',
+      'Jäger Bomb': 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&auto=format&fit=crop&q=60',
+      'Gin & Tonic': 'https://images.unsplash.com/photo-1598614187854-26a60e98294b?w=700&auto=format&fit=crop&q=60',
+      'Vodka Redbull': 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=700&auto=format&fit=crop&q=60'
+    };
 
     function setTab(cat, btn) {
       activeCategory = cat;
@@ -481,6 +615,34 @@
       document.getElementById('recipe-count').innerText = visible + ' món';
     }
 
+    // Logic kiểm tra nguyên liệu: ĐẶT CÁC LOẠI RƯỢU CÓ CHỮ TRÙNG HOA QUẢ LÊN ĐẦU
+    function getIngredientImage(text) {
+      const lower = text.toLowerCase();
+      
+      // 1. ƯU TIÊN SỐ 1: Bắt các loại rượu/siro dễ bị lẫn từ hoa quả
+      if (lower.includes('campari') || lower.includes('capari')) {
+        return ingredientImages['campari'];
+      }
+      if (lower.includes('pandan') || lower.includes('cốm') || lower.includes('com')) {
+        return ingredientImages['pandan'];
+      }
+
+      // 2. Chặn các loại hoa quả / gia vị tươi
+      for (const fruit of fruitBlacklist) {
+        if (lower.includes(fruit)) {
+          return null;
+        }
+      }
+
+      // 3. Khớp các loại rượu & đồ đóng lon còn lại
+      for (const [key, url] of Object.entries(ingredientImages)) {
+        if (lower.includes(key)) {
+          return url;
+        }
+      }
+      return null;
+    }
+
     function showDetail(name, cat, method, ingredients, instructions, garnish) {
       document.getElementById('sheet-title').innerText = name;
       document.getElementById('sheet-category').innerText = cat;
@@ -488,15 +650,30 @@
       
       const box = document.getElementById('sheet-ingredients');
       box.innerHTML = '';
+      
       ingredients.forEach(i => {
         const d = document.createElement('div');
-        d.className = 'text-xs text-train-cream/90 bg-train-card px-3 py-2 rounded-lg border border-train-border/50';
-        d.innerText = i;
+        const imgUrl = getIngredientImage(i);
+
+        if (imgUrl) {
+          d.className = 'clickable-ingredient flex items-center justify-between text-xs text-train-cream/90 bg-train-card px-3 py-2.5 rounded-lg border border-train-border/50 hover:border-train-red/60';
+          d.innerHTML = `<span>${i}</span><span class="text-train-gold text-xs">📷 Xem chai</span>`;
+          d.onclick = () => openIngredientModal(i, imgUrl);
+        } else {
+          d.className = 'flex items-center justify-between text-xs text-train-cream/70 bg-train-card/60 px-3 py-2.5 rounded-lg border border-train-border/30';
+          d.innerHTML = `<span>${i}</span>`;
+        }
+        
         box.appendChild(d);
       });
 
       document.getElementById('sheet-instructions').innerText = instructions;
       document.getElementById('sheet-garnish').innerText = garnish;
+
+      // Hiển thị ảnh thành phẩm của cốc rượu (Dáng đứng)
+      const drinkImgTag = document.getElementById('sheet-cocktail-img');
+      const cocktailPhoto = drinkImages[name] || 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700';
+      drinkImgTag.src = cocktailPhoto;
 
       document.getElementById('sheet-overlay').classList.remove('hidden');
       setTimeout(() => {
@@ -511,6 +688,17 @@
       setTimeout(() => {
         document.getElementById('sheet-overlay').classList.add('hidden');
       }, 300);
+    }
+
+    function openIngredientModal(name, imgSrc) {
+      document.getElementById('ing-modal-title').innerText = name;
+      document.getElementById('ing-modal-img').src = imgSrc;
+      document.getElementById('ingredient-modal').classList.remove('hidden');
+    }
+
+    function closeIngredientModal() {
+      document.getElementById('ingredient-modal').classList.add('hidden');
+      document.getElementById('ing-modal-img').src = '';
     }
   </script>
 </body>
