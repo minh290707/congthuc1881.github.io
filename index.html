@@ -760,23 +760,15 @@
       filterItems();
     });
 
-    // Tự động nạp trước toàn bộ ảnh vào bộ nhớ đệm ngay khi mở web
-window.addEventListener('load', () => {
-  // 1. Nạp trước ảnh thành phẩm cốc
-  Object.values(drinkImages).forEach(src => {
-    if (src && src.trim() !== '') {
+    // Preload ngay khi người dùng chạm hoặc lướt qua thẻ món
+document.querySelectorAll('.drink-card').forEach(card => {
+  card.addEventListener('touchstart', function() {
+    const title = this.querySelector('h3') ? this.querySelector('h3').innerText.trim() : '';
+    if (title && drinkImages[title]) {
       const img = new Image();
-      img.src = src;
+      img.src = drinkImages[title];
     }
-  });
-
-  // 2. Nạp trước ảnh các chai rượu
-  Object.values(ingredientImages).forEach(src => {
-    if (src && src.trim() !== '') {
-      const img = new Image();
-      img.src = src;
-    }
-  });
+  }, { passive: true });
 });
     
   </script>
