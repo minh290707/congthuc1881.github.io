@@ -5,7 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>The Train 1881 - Bar Staff Handbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+ <!-- Dùng Tailwind CSS biên dịch sẵn, giải phóng hoàn toàn CPU -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    /* Bù lại các mã màu nhận diện của quán */
+    :root {
+      --train-red: #C41E24;
+      --train-darkred: #8B1115;
+      --train-cream: #F5E6CA;
+      --train-gold: #D4AF37;
+      --train-dark: #121212;
+      --train-card: #1C1C1E;
+      --train-border: #2C2C2E;
+    }
+    .bg-train-card { background-color: var(--train-card) !important; }
+    .bg-train-red { background-color: var(--train-red) !important; }
+    .text-train-cream { color: var(--train-cream) !important; }
+    .text-train-gold { color: var(--train-gold) !important; }
+    .text-train-red { color: var(--train-red) !important; }
+    .border-train-border { border-color: var(--train-border) !important; }
+    .border-train-red { border-color: var(--train-red) !important; }
+    .border-train-gold { border-color: var(--train-gold) !important; }
+  </style>
   <style>
     body { background-color: #121212; color: #F5E6CA; -webkit-tap-highlight-color: transparent; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
