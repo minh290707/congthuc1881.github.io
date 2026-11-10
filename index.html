@@ -43,7 +43,7 @@
   <header class="p-4 border-b border-train-border/50 sticky top-0 bg-[#121212]/95 backdrop-blur-md z-30">
     <div class="flex items-center justify-between mb-3">
       <div class="flex items-center gap-3">
-        <img src="logo.png" alt="The Train 1881" class="rounded-full object-cover border border-train-gold/40 shadow-lg shrink-0" style="width: 50px; height: 50px;">
+        <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="rounded-full object-cover border border-train-gold/40 shadow-lg shrink-0" style="width: 50px; height: 50px;">
         <div class="flex flex-col justify-center">
           <h1 class="font-bold text-xl text-[#FF2A30] leading-none" style="letter-spacing: 2px; font-family: 'Plus Jakarta Sans', sans-serif; text-shadow: 0 0 4px #FF2A30, 0 0 10px #C41E24;">
             THE TRAIN <span style="letter-spacing: 3px;">1881</span>
@@ -503,11 +503,11 @@
 
     <!-- KHUNG ẢNH THÀNH PHẨM CỐC RƯỢU DÁNG DỌC -->
     <div id="sheet-cocktail-image-box" class="mb-5">
-      <h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hình ảnh cốc rượu</h3>
-      <div class="w-full max-w-[280px] mx-auto aspect-[4/5] bg-black/60 rounded-2xl overflow-hidden border border-train-border/60 flex items-center justify-center p-2 shadow-inner">
-        <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" class="w-full h-full object-contain rounded-xl drop-shadow-md">
-      </div>
-    </div>
+  <h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hình ảnh cốc rượu</h3>
+  <div class="w-full max-w-[280px] mx-auto aspect-[4/5] bg-black/60 rounded-2xl overflow-hidden border border-train-border/60 flex items-center justify-center p-2 shadow-inner">
+    <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" loading="lazy" decoding="async" class="w-full h-full object-contain rounded-xl drop-shadow-md">
+  </div>
+</div>
 
     <button onclick="closeSheet()" class="w-full py-3 bg-train-red text-train-cream font-semibold rounded-xl">Đóng</button>
   </div>
@@ -518,8 +518,8 @@
       <button onclick="closeIngredientModal()" class="absolute top-2 right-3 text-train-cream/50 hover:text-train-cream text-2xl font-bold leading-none">&times;</button>
       <h4 id="ing-modal-title" class="text-sm font-bold text-train-gold mb-3 pr-4 truncate">Tên nguyên liệu</h4>
       <div class="w-full h-80 bg-black/50 rounded-xl overflow-hidden flex items-center justify-center border border-train-border/50 p-2">
-        <img id="ing-modal-img" src="" alt="Ảnh chai rượu" class="w-full h-full object-contain drop-shadow-lg">
-      </div>
+  <img id="ing-modal-img" src="" alt="Ảnh chai rượu" loading="lazy" decoding="async" class="w-full h-full object-contain drop-shadow-lg">
+</div>
       <p class="text-[11px] text-train-cream/50 mt-2">Chạm ra ngoài để đóng</p>
     </div>
   </div>
