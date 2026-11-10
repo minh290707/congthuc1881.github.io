@@ -1,0 +1,30 @@
+name: Tự động nén ảnh giữ nguyên tên file
+
+on:
+  push:
+    paths:
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.png'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: optimise-images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Compress Images
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+          jpegQuality: '75'
+          pngQuality: '75'
+
+      - name: Auto commit back to repo
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: nén ảnh nhẹ web"
