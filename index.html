@@ -5,11 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>The Train 1881 - Bar Staff Handbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
- <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            train: { red: '#C41E24', darkred: '#8B1115', cream: '#F5E6CA', gold: '#D4AF37', dark: '#121212', card: '#1C1C1E', border: '#2C2C2E' }
+          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+        }
+      }
+    }
+  </script>
   <style>
     body { background-color: #121212; color: #F5E6CA; -webkit-tap-highlight-color: transparent; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
-    .glass-card { background: rgba(28, 28, 30, 0.85); border: 1px solid rgba(245, 230, 202, 0.12); }
+    .glass-card { background: rgba(70, 70, 224, 0.85); border: 1px solid rgba(245, 230, 202, 0.12); }
     .active-tab { background-color: #C41E24 !important; color: #F5E6CA !important; border-color: #C41E24 !important; }
     .sheet-open { transform: translateY(0%); }
     .sheet-closed { transform: translateY(100%); }
@@ -445,7 +457,7 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Bacardi • Coca-Cola • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search=" bomb redbull alcoholic" onclick="showDetail('Jäger Bomb', 'Alcoholic', 'Drop Shot', ['40ml meister (ướp lạnh)', '1/2 lon Red Bull'], 'Rót Red Bull vào nửa ly cao. Rót 40ml Jäger vào ly shot riêng. Thả ly shot vào ly Red Bull để uống ngay.', 'Không')">
+      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="jager bomb redbull alcoholic" onclick="showDetail('Jäger Bomb', 'Alcoholic', 'Drop Shot', ['40ml Jagermeister (ướp lạnh)', '1/2 lon Red Bull'], 'Rót Red Bull vào nửa ly cao. Rót 40ml Jäger vào ly shot riêng. Thả ly shot vào ly Red Bull để uống ngay.', 'Không')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Jäger Bomb</h3>
         <p class="text-xs text-train-gold mb-2">Drop Shot</p>
@@ -714,12 +726,7 @@
       // Hiển thị ảnh thành phẩm của cốc rượu (Dáng đứng)
       const drinkImgTag = document.getElementById('sheet-cocktail-img');
       const cocktailPhoto = drinkImages[name] || 'bird.jpg';
-// Tự động tối ưu dung lượng và co ảnh về 400px nếu là link online hoặc link github
-if (cocktailPhoto.startsWith('http')) {
-  drinkImgTag.src = `https://wsrv.nl/?url=${encodeURIComponent(cocktailPhoto)}&w=400&output=webp&q=80`;
-} else {
-  drinkImgTag.src = cocktailPhoto;
-}
+      drinkImgTag.src = cocktailPhoto;
 
       document.getElementById('sheet-overlay').classList.remove('hidden');
       setTimeout(() => {
@@ -751,18 +758,6 @@ if (cocktailPhoto.startsWith('http')) {
     window.addEventListener('DOMContentLoaded', () => {
       filterItems();
     });
-
-    // Preload ngay khi người dùng chạm hoặc lướt qua thẻ món
-document.querySelectorAll('.drink-card').forEach(card => {
-  card.addEventListener('touchstart', function() {
-    const title = this.querySelector('h3') ? this.querySelector('h3').innerText.trim() : '';
-    if (title && drinkImages[title]) {
-      const img = new Image();
-      img.src = drinkImages[title];
-    }
-  }, { passive: true });
-});
-    
   </script>
 </body>
 </html>
