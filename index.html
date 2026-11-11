@@ -19,59 +19,176 @@
     }
   </script>
   <style>
-    body { background-color: #121212; color: #F5E6CA; -webkit-tap-highlight-color: transparent; }
+    /* 1. NỀN ĐỎ THẪM + HOA VĂN MÂY CUỘN Á ĐÔNG (SVG THUẦN) */
+    body {
+      color: #381a0e;
+      -webkit-tap-highlight-color: transparent;
+      background-color: #630c13;
+      background-image: 
+        radial-gradient(circle at 85% 15%, rgba(145, 18, 28, 0.6) 0%, transparent 55%),
+        radial-gradient(circle at 10% 90%, rgba(45, 4, 7, 0.8) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='%237D121B' opacity='0.55'%3E%3Cpath d='M45,70 C40,45 65,35 80,45 C95,30 125,40 120,65 C135,65 140,85 125,95 C115,105 50,105 45,90 C30,90 25,75 45,70 Z' /%3E%3Cpath d='M65,75 C60,65 75,55 85,65 C95,55 110,65 105,78' fill='none' stroke='%238F1722' stroke-width='2' stroke-linecap='round' /%3E%3Cpath d='M40,85 C48,82 55,86 52,94' fill='none' stroke='%238F1722' stroke-width='2' stroke-linecap='round' /%3E%3Cpath d='M155,170 C150,145 175,135 190,145 C205,130 235,140 230,165 C245,165 250,185 235,195 C225,205 160,205 155,190 C140,190 135,175 155,170 Z' /%3E%3Cpath d='M175,175 C170,165 185,155 195,165 C205,155 220,165 215,178' fill='none' stroke='%238F1722' stroke-width='2' stroke-linecap='round' /%3E%3Cpath d='M185,55 Q185,63 193,63 Q185,63 185,71 Q185,63 177,63 Q185,63 185,55 Z' fill='%23A31D2A' opacity='0.8' /%3E%3Cpath d='M35,165 Q35,171 41,171 Q35,171 35,177 Q35,171 29,171 Q35,171 35,165 Z' fill='%23A31D2A' opacity='0.8' /%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: cover, cover, 220px 220px;
+      background-attachment: fixed;
+    }
+
     .no-scrollbar::-webkit-scrollbar { display: none; }
-    .glass-card { background: rgba(41, 41, 46, 0.85); border: 1px solid rgba(245, 230, 202, 0.12); }
-    .active-tab { background-color: #C41E24 !important; color: #F5E6CA !important; border-color: #C41E24 !important; }
-    .sheet-open { transform: translateY(0%); }
-    .sheet-closed { transform: translateY(100%); }
-    
+
+    /* 2. THẺ MÓN: TẠO HIỆU ỨNG TỜ GIẤY CỔ */
+    .glass-card {
+      background-color: #f5ebd3 !important;
+      background-image: 
+        radial-gradient(circle at 75% 20%, rgba(210, 180, 140, 0.45) 0%, transparent 45%),
+        radial-gradient(circle at 20% 70%, rgba(198, 160, 115, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(240, 225, 195, 0.9) 0%, rgba(225, 205, 170, 0.8) 100%) !important;
+      border: 1.5px dashed rgba(160, 110, 60, 0.35) !important;
+      border-radius: 10px !important;
+      box-shadow: 
+        0 6px 16px rgba(0, 0, 0, 0.5), 
+        inset 0 0 18px rgba(180, 130, 80, 0.35) !important;
+      color: #381a0e !important;
+      position: relative;
+      transition: transform 0.15s ease;
+      cursor: pointer;
+      pointer-events: auto !important;
+    }
+
+    .glass-card:active {
+      transform: scale(0.985);
+    }
+
+    /* 3. TÊN CỐC RƯỢU & CÁC CHI TIẾT ĐỔI SANG MÀU ĐỎ THẪM */
+    .glass-card h3 {
+      color: #8B1115 !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.3px;
+    }
+
+    .glass-card p.text-xs {
+      color: #9e4b16 !important;
+      font-weight: 700 !important;
+    }
+
+    .glass-card p.text-\[11px\] {
+      color: #4a2812 !important;
+      border-top-color: rgba(139, 17, 21, 0.22) !important;
+      font-weight: 600 !important;
+    }
+
+    .glass-card span.uppercase {
+      background-color: rgba(139, 17, 21, 0.12) !important;
+      color: #8B1115 !important;
+      border-color: rgba(139, 17, 21, 0.3) !important;
+    }
+
+    /* 4. THANH ĐIỀU HƯỚNG TAB LỌC */
+    .active-tab { 
+      background-color: #8B1115 !important; 
+      color: #f5ebd3 !important; 
+      border-color: #e52932 !important; 
+      box-shadow: 0 2px 8px rgba(139, 17, 21, 0.6);
+    }
+
+    /* POPUP SHEET & OVERLAY CỐ ĐỊNH CHUẨN XÁC */
+    .sheet-open { 
+      transform: translateY(0%) !important; 
+      visibility: visible !important;
+    }
+    .sheet-closed { 
+      transform: translateY(100%) !important; 
+      visibility: hidden !important;
+    }
+
+    #recipe-sheet {
+      z-index: 50 !important;
+    }
+    #sheet-overlay {
+      z-index: 40 !important;
+    }
+
     .clickable-ingredient {
       transition: all 0.2s ease;
       cursor: pointer;
     }
     .clickable-ingredient:active {
       transform: scale(0.98);
-      background-color: rgba(196, 30, 36, 0.25);
-      border-color: #C41E24;
+      background-color: rgba(139, 17, 21, 0.15);
+      border-color: #8B1115;
+    }
+
+    /* Hiệu ứng đèn LED chữ đỏ neon */
+    .neon-led-red {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.5px !important;
+      color: #ff333a !important;
+      text-shadow: 
+        0 0 5px #ff1a24,
+        0 0 12px #ff0011,
+        0 0 25px rgba(255, 0, 17, 0.8) !important;
+    }
+
+    /* Header hiệu ứng viền LED trắng neon + Họa tiết mây cổ điển nền đỏ */
+    .header-led-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background-color: #50090e;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M10 25 C10 15, 25 15, 30 20 C35 12, 55 12, 60 22 C68 20, 75 28, 68 35 C55 35, 15 35, 10 25 Z' fill='none' stroke='rgba(255,220,180,0.06)' stroke-width='1.2'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: auto, auto, 80px 40px;
+      border-bottom: 2px solid #ffffff;
+      box-shadow: 
+        0 2px 8px rgba(255, 255, 255, 0.8),
+        0 4px 18px rgba(255, 255, 255, 0.45),
+        0 8px 30px rgba(255, 255, 255, 0.25),
+        inset 0 -1px 8px rgba(255, 255, 255, 0.35);
     }
   </style>
 </head>
 <body class="font-sans antialiased pb-20 min-h-screen">
 
-  <!-- Header -->
-  <header class="p-4 border-b border-train-border/50 sticky top-0 bg-[#121212]/95 backdrop-blur-md z-30">
+  <!-- Header duy nhất, đã loại bỏ thẻ header trùng lặp -->
+  <header class="header-led-wrap p-4 backdrop-blur-md">
     <div class="flex items-center justify-between mb-3">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="rounded-full object-cover border border-train-gold/40 shadow-lg shrink-0" style="width: 50px; height: 50px;">
+      <div class="flex items-center gap-3.5">
+        <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="w-14 h-14 rounded-full object-cover shadow-md">
         <div class="flex flex-col justify-center">
-          <h1 class="font-bold text-xl text-[#FF2A30] leading-none" style="letter-spacing: 2px; font-family: 'Plus Jakarta Sans', sans-serif; text-shadow: 0 0 4px #FF2A30, 0 0 10px #C41E24;">
-            THE TRAIN <span style="letter-spacing: 3px;">1881</span>
+          <h1 class="neon-led-red text-[22px] leading-none">
+            THE TRAIN 1881
           </h1>
-          <p class="text-[10px] text-train-gold font-semibold uppercase tracking-widest mt-0.5">COCKTAILS • BAR</p>
+          <p class="text-[12px] text-[#f3cb69] font-normal uppercase tracking-[0.28em] mt-1.5" style="text-shadow: 0 0 6px rgba(243, 203, 105, 0.45);">
+            COCKTAILS • BAR
+          </p>
         </div>
       </div>
 
-      <span id="recipe-count" class="inline-block text-xs bg-train-card px-3 py-1.5 rounded-full border border-train-border text-train-cream/80 font-mono shadow-md whitespace-nowrap shrink-0">
+      <!-- Số lượng món -->
+      <span id="recipe-count" class="shrink-0 z-10 text-xs bg-[#7D121B]/80 text-[#f5ebd3] px-3 py-1 rounded-full border border-[#8B1115] shadow-md ml-2">
         -- món
       </span>
     </div>
 
     <!-- Thanh tìm kiếm -->
     <div class="relative w-full">
-      <input type="text" id="search-input" onkeyup="filterItems()" placeholder="NHẬP TÊN CỐC RƯỢU " class="w-full bg-train-card border border-train-border rounded-xl pl-9 pr-3 py-2 text-xs text-train-cream placeholder-train-cream/40 focus:outline-none focus:border-train-red">
-      <svg class="w-4 h-4 text-train-cream/40 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 0114 0z"/>
+      <input type="text" id="search-input" onkeyup="filterItems()" placeholder="NHẬP TÊN CỐC RƯỢU " 
+        class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#330508]/85 border border-[#8B1115]/60 text-[#f5ebd3] placeholder-[#f5ebd3]/50 text-sm focus:outline-none focus:border-[#e52932]">
+      <svg class="w-4 h-4 text-[#f5ebd3]/50 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
       </svg>
     </div>
-    
-    <!-- Bộ lọc -->
+
+    <!-- Bộ lọc danh mục -->
     <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 text-xs font-medium">
-      <button onclick="setTab('All', this)" class="cat-pill active-tab px-3.5 py-1.5 rounded-full border border-train-border whitespace-nowrap">Tất cả</button>
-      <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🍸Cocktail</button>
-      <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🍹Mocktail</button>
-      <button onclick="setTab('Alcoholic', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🥃Alcoholic</button>
-      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-train-card text-train-cream/70 border border-train-border whitespace-nowrap">🍷Shots & 🍻Beer</button>
+      <button onclick="setTab('All', this)" class="cat-pill active-tab px-3.5 py-1.5 rounded-full border border-[#8B1115] whitespace-nowrap transition-all">Tất cả</button>
+      <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🍸 Cocktail</button>
+      <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🍹 Mocktail</button>
+      <button onclick="setTab('Alcoholic', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🥃 Alcoholic</button>
+      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🍷 Shots & 🍺 Beer</button>
     </div>
   </header>
 
@@ -272,7 +389,7 @@
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="dry martini gin vermouth" onclick="showDetail('Dry Martini', 'Cocktail', 'Stir', ['60ml Bombay (Gin)', '15ml Extra Dry '], 'Khuấy đều Gin và Vermouth với đá trong mixing glass. Lọc rót ra ly Martini.', 'Quả olive')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Dry Martini</h3>
-        <p class="text-xs text-train-gold mb-2">Stir ( Ngoáy )/p>
+        <p class="text-xs text-train-gold mb-2">Stir ( Ngoáy )</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">60ml Gin • 15ml Dry Vermouth</p>
       </div>
 
@@ -290,7 +407,6 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Jimbean • Chanh • Lòng trắng trứng • Bitters</p>
       </div>
 
-      <!-- 5 VỊ TRÍ COCKTAIL MỚI ĐÃ ĐƯỢC ĐIỀN ĐẦY ĐỦ -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="frozen citrus vodka" onclick="showDetail('Frozen Citrus Cocktail', 'Cocktail', 'Blend / Shake', ['50ml Vodka', '20ml Chanh xanh', '20ml Chanh vàng', '20ml Mật ong', '10ml Đường', '2 miếng Vỏ chanh'], 'Cho tất cả nguyên liệu cùng đá vào bình shake kỹ hoặc xay mịn (frozen), rót ra ly.', '2 miếng vỏ chanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Frozen Citrus Cocktail</h3>
@@ -369,7 +485,6 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa/cam • Cốt dừa • Kem muối dừa</p>
       </div>
 
-      <!-- 3 VỊ TRÍ MOCKTAIL MỚI ĐỂ BẠN TỰ ĐIỀN -->
       <!-- 1881 Sparkling -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="1881 spackling 1881 sparkling vitajus atiso soda" onclick="showDetail('1881 Sparkling', 'Mocktail', 'Build', ['50ml Nước ép Vitajus', '50ml Trà Atiso', '15ml Nước đường', '15ml Nước cốt chanh', 'Top up Soda'], 'Rót lần lượt Vitajus, atiso, nước đường và chanh vào ly có sẵn đá. Top up soda lên trên cùng. Không shake, không khuấy.', 'Lát chanh hoặc thảo mộc')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
@@ -393,7 +508,6 @@
         <p class="text-xs text-train-gold mb-2">Layering (Phân tầng)</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước cam • Nước táo • Syrup Monin</p>
       </div>
-
 
       <!-- SHOTS & BEER -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="monkey brain chanh vodka baileys dau" onclick="showDetail('Monkey Brain', 'Shots & Beer', 'Layer', ['5ml Nước chanh', '35ml Smirnoff Vodka', '10ml Baileys', 'Siro dâu', 'Siro vỏ cam'], 'Rót chanh và Vodka vào ly shot. Rót từ từ Baileys vào để kết tủa thành hình não. Nhỏ thêm siro dâu.', 'Tạo hình vệt máu')">
@@ -499,11 +613,11 @@
 
     <!-- KHUNG ẢNH THÀNH PHẨM CỐC RƯỢU DÁNG DỌC -->
     <div id="sheet-cocktail-image-box" class="mb-5">
-  <h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hình ảnh cốc rượu</h3>
-  <div class="w-full max-w-[280px] mx-auto aspect-[4/5] bg-black/60 rounded-2xl overflow-hidden border border-train-border/60 flex items-center justify-center p-2 shadow-inner">
-    <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" loading="lazy" decoding="async" class="w-full h-full object-contain rounded-xl drop-shadow-md">
-  </div>
-</div>
+      <h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hình ảnh cốc rượu</h3>
+      <div class="w-full max-w-[280px] mx-auto aspect-[4/5] bg-black/60 rounded-2xl overflow-hidden border border-train-border/60 flex items-center justify-center p-2 shadow-inner">
+        <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" loading="lazy" decoding="async" class="w-full h-full object-contain rounded-xl drop-shadow-md">
+      </div>
+    </div>
 
     <button onclick="closeSheet()" class="w-full py-3 bg-train-red text-train-cream font-semibold rounded-xl">Đóng</button>
   </div>
@@ -514,8 +628,8 @@
       <button onclick="closeIngredientModal()" class="absolute top-2 right-3 text-train-cream/50 hover:text-train-cream text-2xl font-bold leading-none">&times;</button>
       <h4 id="ing-modal-title" class="text-sm font-bold text-train-gold mb-3 pr-4 truncate">Tên nguyên liệu</h4>
       <div class="w-full h-80 bg-black/50 rounded-xl overflow-hidden flex items-center justify-center border border-train-border/50 p-2">
-  <img id="ing-modal-img" src="" alt="Ảnh chai rượu" loading="lazy" decoding="async" class="w-full h-full object-contain drop-shadow-lg">
-</div>
+        <img id="ing-modal-img" src="" alt="Ảnh chai rượu" loading="lazy" decoding="async" class="w-full h-full object-contain drop-shadow-lg">
+      </div>
       <p class="text-[11px] text-train-cream/50 mt-2">Chạm ra ngoài để đóng</p>
     </div>
   </div>
@@ -523,7 +637,7 @@
   <script>
     let activeCategory = 'All';
 
-    // 1. LINK ẢNH CHAI RƯỢU & NGUYÊN LIỆU ĐƯỢC CHỈ ĐỊNH (Bạn có thể đổi tên file ảnh lưu trong máy)
+    // 1. LINK ẢNH CHAI RƯỢU & NGUYÊN LIỆU ĐƯỢC CHỈ ĐỊNH
     const ingredientImages = {
       'vang nổ': 'vangno1881.jpg',
       'bombay': 'bombay1881.jpg',
@@ -553,7 +667,7 @@
       'gin pha hoa đậu biếc': 'daubiec1881.jpg',
     };
 
-    // 2. DANH SÁCH HOA QUẢ CẦN CHẶN (Không hiện ảnh)
+    // 2. DANH SÁCH HOA QUẢ CẦN CHẶN
     const fruitBlacklist = [
       'chanh', 'nước cam', 'lát cam', 'dứa', 'dua', 'xoài', 'xoai', 'dưa hấu', 'dua hau', 
       'dưa chuột', 'dua chuot', 'gừng', 'gung', 'thanh long', 'táo', 'tao', 
@@ -593,37 +707,26 @@
       'Dry Martini': 'drymatini.jpg',
       'Vodka Sour': 'vodkasour.jpg',
       'Whiskey Sour': 'vodkasour.jpg',
-
-      // 4 Cốc Cocktail mới
       'Seoul Peach Cloud': 'cloud.jpg',
       'Blooming Kiss': 'kiss.jpg',
       'Redrum Margarita': 'redrum.jpg',
       'Cry On Sofa': 'sofa.jpg',
       'Frozen Citrus Cocktail': 'frozenci.jpg',
-
-      // Mocktail
       'Cốm Hà Nội': 'comcocktail.jpg',
       'Mango Shake Mule': 'mangoshake.jpg',
       'Frozen Citrus': 'frozenci.jpg',
       'Watermelon Spritz': 'watermelonspritz.jpg',
       'Blue Lagoon': 'bluelagoon.jpg',
       'Jack Frost': 'jackfrost.jpg',
-
-      // 4 Cốc Mocktail mới
-      'Mocktail Mới 1': 'mocktail_moi_1.jpg',
-      'Mocktail Mới 2': 'mocktail_moi_2.jpg',
-      'Mocktail Mới 3': 'mocktail_moi_3.jpg',
-      'Mocktail Mới 4': 'mocktail_moi_4.jpg',
-
-      // Shots & Beer
+      '1881 Sparkling': 'bird.jpg',
+      'Rose Bloodsome': 'thanhlong.jpg',
+      'Sweet Glow': 'tropicaldusk.jpg',
       'Monkey Brain': 'monkeybrain.jpg',
       'B52': 'b52.jpg',
       'Beer Local Hanoi': 'localhanoi.jpg',
       'Beer Green Mountain': 'greenmountain.jpg',
       'Beer YellowRed': 'yellowred.jpg',
       'Beer Oceania': 'oceania.jpg',
-
-      // Alcoholic
       'Whiskey Coke': 'coke.jpg',
       'Rum Coke': 'coke.jpg',
       'Jäger Bomb': 'jagerbomb.jpg',
@@ -664,11 +767,9 @@
       document.getElementById('recipe-count').innerText = visible + ' món';
     }
 
-    // Logic kiểm tra nguyên liệu: Ưu tiên rượu chỉ định trước rồi mới loại trừ hoa quả
     function getIngredientImage(text) {
       const lower = text.toLowerCase();
       
-      // 1. ƯU TIÊN SỐ 1: Bắt các loại rượu/siro dễ bị lẫn từ hoa quả
       if (lower.includes('campari') || lower.includes('capari')) {
         return ingredientImages['campari'];
       }
@@ -676,14 +777,12 @@
         return ingredientImages['pandan'];
       }
 
-      // 2. Chặn các loại hoa quả / gia vị tươi
       for (const fruit of fruitBlacklist) {
         if (lower.includes(fruit)) {
           return null;
         }
       }
 
-      // 3. Khớp các loại rượu & đồ trong danh sách chỉ định
       for (const [key, url] of Object.entries(ingredientImages)) {
         if (lower.includes(key)) {
           return url;
@@ -719,24 +818,21 @@
       document.getElementById('sheet-instructions').innerText = instructions;
       document.getElementById('sheet-garnish').innerText = garnish;
 
-          const drinkImgTag = document.getElementById('sheet-cocktail-img');
-    const targetPhoto = drinkImages[name] || 'bird.jpg';
+      const drinkImgTag = document.getElementById('sheet-cocktail-img');
+      const targetPhoto = drinkImages[name] || 'bird.jpg';
 
-    // Đặt độ mờ nhẹ để chống giật khung hình
-    drinkImgTag.style.opacity = '0.4';
-    drinkImgTag.onload = function() {
-      this.style.opacity = '1';
-    };
+      drinkImgTag.style.opacity = '0.4';
+      drinkImgTag.onload = function() {
+        this.style.opacity = '1';
+      };
 
-    // Chống lỗi: nếu ảnh hỏng hoặc mất mạng thì tự đổi về ảnh dự phòng
-    drinkImgTag.onerror = function() {
-      this.onerror = null;
-      this.src = 'bird.jpg';
-      this.style.opacity = '1';
-    };
+      drinkImgTag.onerror = function() {
+        this.onerror = null;
+        this.src = 'bird.jpg';
+        this.style.opacity = '1';
+      };
 
-    drinkImgTag.src = targetPhoto;
-
+      drinkImgTag.src = targetPhoto;
 
       document.getElementById('sheet-overlay').classList.remove('hidden');
       setTimeout(() => {
@@ -764,21 +860,17 @@
       document.getElementById('ing-modal-img').src = '';
     }
 
-    // Tự động tính số lượng món hiển thị ban đầu
     window.addEventListener('DOMContentLoaded', () => {
       filterItems();
     });
   </script>
   
   <script>
-  // Kích hoạt bộ nhớ đệm vĩnh viễn trên điện thoại
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch(() => {});
-    });
-  }
-</script>
-
-  
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
 </body>
 </html>
