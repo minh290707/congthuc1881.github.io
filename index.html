@@ -723,10 +723,24 @@
       document.getElementById('sheet-instructions').innerText = instructions;
       document.getElementById('sheet-garnish').innerText = garnish;
 
-      // Hiển thị ảnh thành phẩm của cốc rượu (Dáng đứng)
-      const drinkImgTag = document.getElementById('sheet-cocktail-img');
-      const cocktailPhoto = drinkImages[name] || 'bird.jpg';
-      drinkImgTag.src = cocktailPhoto;
+          const drinkImgTag = document.getElementById('sheet-cocktail-img');
+    const targetPhoto = drinkImages[name] || 'bird.jpg';
+
+    // Đặt độ mờ nhẹ để chống giật khung hình
+    drinkImgTag.style.opacity = '0.4';
+    drinkImgTag.onload = function() {
+      this.style.opacity = '1';
+    };
+
+    // Chống lỗi: nếu ảnh hỏng hoặc mất mạng thì tự đổi về ảnh dự phòng
+    drinkImgTag.onerror = function() {
+      this.onerror = null;
+      this.src = 'bird.jpg';
+      this.style.opacity = '1';
+    };
+
+    drinkImgTag.src = targetPhoto;
+
 
       document.getElementById('sheet-overlay').classList.remove('hidden');
       setTimeout(() => {
