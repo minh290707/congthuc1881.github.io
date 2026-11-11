@@ -148,6 +148,274 @@
         0 8px 30px rgba(255, 255, 255, 0.25),
         inset 0 -1px 8px rgba(255, 255, 255, 0.35);
     }
+
+    /* =======================================================
+       HIỆU ỨNG TỜ GIẤY CỔ XÉ MÉP CẨU THẢ (TORN PAPER EFFECT)
+       ======================================================= */
+    #recipe-sheet {
+      background-color: #f4ebd0 !important; /* Màu giấy da/giấy kraft cũ */
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(200, 160, 110, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(185, 140, 90, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(245, 235, 210, 0.95) 0%, rgba(220, 195, 155, 0.9) 100%) !important;
+      color: #3d1c06 !important;
+      box-shadow: 
+        0 -10px 30px rgba(0, 0, 0, 0.7), 
+        inset 0 0 45px rgba(160, 105, 50, 0.35) !important;
+      border: none !important;
+      border-radius: 0 !important;
+      
+      /* Cắt mép trên theo đường xé răng cưa gồ ghề cẩu thả */
+      clip-path: polygon(
+        0% 18px, 
+        3% 2px, 6% 16px, 10% 4px, 14% 19px, 18% 5px, 23% 18px, 27% 3px, 32% 17px, 36% 6px, 
+        41% 19px, 45% 4px, 50% 18px, 54% 2px, 59% 19px, 63% 5px, 68% 18px, 72% 3px, 
+        77% 19px, 81% 6px, 86% 17px, 90% 4px, 94% 18px, 97% 2px, 100% 16px, 
+        100% 100%, 0% 100%
+      );
+      padding-top: 2rem !important;
+    }
+
+    /* Thanh gạt đầu trang biến thành vết băng dính đục dán tạm */
+    #recipe-sheet > div:first-child {
+      background: rgba(220, 205, 175, 0.65) !important;
+      box-shadow: 0 1px 3px rgba(120, 80, 40, 0.25);
+      border-radius: 2px !important;
+      width: 50px !important;
+      height: 7px !important;
+      transform: rotate(-1.5deg);
+    }
+
+    /* Tiêu đề cốc rượu đổi sang màu đỏ thẫm mực bút máy */
+    #sheet-title {
+      color: #7a0c14 !important;
+      font-family: 'Playfair Display', Georgia, serif !important;
+      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.7);
+    }
+
+    /* Badge Danh mục (Cocktail, Mocktail...) đổi sang tem đóng dấu đỏ viền rách */
+    #sheet-category {
+      background-color: rgba(139, 17, 21, 0.15) !important;
+      color: #8B1115 !important;
+      border: 1.5px dashed #8B1115 !important;
+      font-weight: 800;
+    }
+
+    /* Phương pháp pha chế: Vệt giấy màu ngả vàng nâu */
+    #sheet-method-box {
+      background: rgba(180, 130, 80, 0.18) !important;
+      border: 1px dashed rgba(139, 69, 19, 0.4) !important;
+      color: #4a2608 !important;
+    }
+    #sheet-method-box b, #sheet-method {
+      color: #7a0c14 !important;
+    }
+
+    /* Từng dòng nguyên liệu: Biến thành ô giấy viết tay màu be */
+    #sheet-ingredients .clickable-ingredient,
+    #sheet-ingredients > div {
+      background: rgba(255, 250, 240, 0.8) !important;
+      border: 1px solid rgba(160, 110, 60, 0.35) !important;
+      box-shadow: 0 1px 4px rgba(120, 80, 40, 0.1) !important;
+      color: #381a0e !important;
+      font-weight: 600;
+    }
+    #sheet-ingredients .text-train-gold {
+      color: #8B1115 !important;
+      font-weight: 700;
+    }
+
+    /* Khung hướng dẫn thao tác */
+    #sheet-instructions {
+      background: rgba(255, 250, 240, 0.8) !important;
+      border: 1.5px dashed rgba(160, 110, 60, 0.4) !important;
+      color: #381a0e !important;
+      font-style: italic;
+    }
+
+    /* Tiêu đề các mục con */
+    #recipe-sheet h3 {
+      color: #7a0c14 !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px;
+    }
+
+    #sheet-garnish {
+      color: #9e4b16 !important;
+      font-weight: 600;
+    }
+
+    /* Khung ảnh ly cocktail: Khung viền ảnh chụp Polaroid cũ */
+    #sheet-cocktail-image-box > div {
+      background: #fffdfa !important;
+      border: 1px solid rgba(160, 120, 80, 0.35) !important;
+      padding: 10px 10px 18px 10px !important;
+      border-radius: 4px !important;
+      box-shadow: 0 8px 20px rgba(80, 40, 10, 0.25) !important;
+      transform: rotate(0.8deg);
+    }
+
+    /* Nút Đóng: Đổi thành nút sáp niêm phong đỏ vintage */
+    #recipe-sheet button[onclick="closeSheet()"] {
+      background: #7a0c14 !important;
+      color: #f7ebd2 !important;
+      border: 1px solid #50090e !important;
+      box-shadow: 0 4px 12px rgba(80, 9, 14, 0.4) !important;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Bo tròn 2 góc và làm mép xé gợn mềm mại */
+    #recipe-sheet {
+      background-color: #f5ebd3 !important;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(200, 160, 110, 0.35) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(185, 140, 90, 0.3) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(245, 235, 210, 0.95) 0%, rgba(220, 195, 155, 0.85) 100%) !important;
+      color: #3d1c06 !important;
+      clip-path: none !important; /* Xóa bỏ đường cắt răng cưa nhọn cũ */
+      border-top-left-radius: 28px !important;
+      border-top-right-radius: 28px !important;
+      border-top: 2px dashed rgba(160, 110, 60, 0.4) !important;
+      -webkit-mask-image: radial-gradient(circle at 10px 0, transparent 0, transparent 4px, black 5px);
+      -webkit-mask-size: 14px 100%;
+      mask-image: radial-gradient(circle at 10px 0, transparent 0, transparent 4px, black 5px);
+      mask-size: 14px 100%;
+      padding-top: 1.5rem !important;
+    }
+
+    /* 1. Khung Phương pháp: Nền nâu nhạt, chữ chuyển sang nâu đậm & đỏ thẫm */
+    #recipe-sheet .bg-train-gold\/10,
+    #sheet-method-box {
+      background-color: rgba(139, 17, 21, 0.08) !important;
+      border: 1px dashed rgba(139, 17, 21, 0.3) !important;
+      color: #7a0c14 !important;
+      font-weight: 700 !important;
+    }
+    #sheet-method {
+      color: #381a0e !important;
+      font-weight: 600 !important;
+    }
+
+    /* 2. Dòng hướng dẫn 'Chạm vào chai rượu để xem ảnh' */
+    #recipe-sheet .text-train-gold\/80 {
+      color: #9e4b16 !important; /* Đổi sang màu nâu cam đất đậm */
+      font-weight: 700 !important;
+    }
+
+    /* 3. Dòng chữ Trang trí (Garnish) */
+    #sheet-garnish {
+      color: #7a0c14 !important; /* Đổi sang đỏ thẫm mực bút máy */
+      font-weight: 700 !important;
+      font-style: italic;
+    }
+
+    /* =======================================================
+       100% THUẦN CODE: HIỆU ỨNG GIẤY KRAFT NHĂN NHÀU NỔI KHỐI 3D
+       ======================================================= */
+    #recipe-sheet {
+      background-color: #d6be9a !important;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cfilter id='crumple'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='5' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23ffffff' surfaceScale='2.8' result='light'%3E%3CfeDistantLight azimuth='55' elevation='48'/%3E%3C/feDiffuseLighting%3E%3CfeBlend mode='multiply' in='SourceGraphic' in2='light'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23d8c19f' filter='url(%23crumple)'/%3E%3C/svg%3E"),
+        linear-gradient(132deg, transparent 42%, rgba(60, 30, 10, 0.12) 44%, rgba(255, 255, 255, 0.45) 45.5%, transparent 48%),
+        linear-gradient(48deg, transparent 58%, rgba(60, 30, 10, 0.1) 60%, rgba(255, 255, 255, 0.4) 61.5%, transparent 64%),
+        radial-gradient(circle at 50% 50%, rgba(245, 235, 215, 0.6) 0%, rgba(185, 150, 105, 0.55) 100%) !important;
+      background-size: 350px 350px, auto, auto, auto !important;
+
+      color: #3d1c06 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: 
+        0 -15px 45px rgba(0, 0, 0, 0.85), 
+        inset 0 0 45px rgba(100, 60, 20, 0.35) !important;
+
+      clip-path: polygon(
+        0% 12px, 2% 9px, 5% 14px, 8% 8px, 11% 13px, 14% 10px, 17% 15px, 20% 9px, 
+        23% 14px, 26% 8px, 29% 13px, 32% 10px, 35% 15px, 38% 9px, 42% 14px, 45% 8px, 
+        49% 15px, 52% 10px, 56% 14px, 59% 9px, 62% 15px, 66% 10px, 69% 14px, 73% 8px, 
+        76% 15px, 80% 10px, 84% 14px, 87% 9px, 90% 15px, 94% 10px, 97% 13px, 100% 11px,
+        100% 100%, 0% 100%
+      );
+      padding-top: 2rem !important;
+    }
+
+    #recipe-sheet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65), transparent);
+      pointer-events: none;
+    }
+
+  /* =======================================================
+       CÂN CHỈNH LẠI CỠ CHỮ VỪA VẶN, HÀI HÒA CHO BẢNG CÔNG THỨC
+       ======================================================= */
+    /* 1. Tên cốc rượu gọn gàng */
+    #sheet-title {
+      font-size: 1.65rem !important; /* Hạ từ 1.85rem xuống 1.45rem (~23px) */
+      line-height: 1.25 !important;
+      margin-top: 0.3rem !important;
+      margin-bottom: 0.45rem !important;
+    }
+
+    /* 2. Badge Cocktail/Mocktail */
+    #sheet-category {
+      font-size: 0.68rem !important; /* ~11px */
+      padding: 2px 7px !important;
+    }
+
+    /* 3. Khung Phương pháp pha chế */
+    #sheet-method-box, #sheet-method-box * {
+      font-size: 0.8rem !important; /* ~13px */
+    }
+
+    /* 4. Các tiêu đề mục (THÀNH PHẦN, HƯỚNG DẪN THAO TÁC, TRANG TRÍ, HÌNH ẢNH) */
+    #recipe-sheet h3 {
+      font-size: 0.8rem !important; /* ~13px */
+      letter-spacing: 0.5px !important;
+      margin-bottom: 0.35rem !important;
+    }
+
+    /* 5. Dòng gợi ý 'Chạm vào chai rượu để xem ảnh' */
+    #recipe-sheet .text-train-gold\/80,
+    #recipe-sheet span.italic {
+      font-size: 0.72rem !important; /* ~11.5px */
+    }
+
+    /* 6. Danh sách nguyên liệu & định lượng */
+    #sheet-ingredients > div,
+    #sheet-ingredients .clickable-ingredient {
+      font-size: 0.875rem !important; /* 14px chuẩn đọc nhanh, không bị thô */
+      padding: 0.5rem 0.75rem !important;
+    }
+
+    /* Chữ 'Xem chai' */
+    #sheet-ingredients .clickable-ingredient span:last-child {
+      font-size: 0.75rem !important; /* ~12px */
+    }
+
+    /* 7. Hướng dẫn thao tác & Trang trí */
+    #sheet-instructions {
+      font-size: 0.875rem !important; /* 14px */
+      line-height: 1.5 !important;
+      padding: 0.65rem 0.75rem !important;
+    }
+
+    #sheet-garnish {
+      font-size: 0.875rem !important; /* 14px */
+      line-height: 1.4 !important;
+    }
+
+    /* 8. Nút Đóng */
+    #recipe-sheet button[onclick="closeSheet()"] {
+      font-size: 0.95rem !important;
+      padding-top: 0.7rem !important;
+      padding-bottom: 0.7rem !important;
+    }
+
   </style>
 </head>
 <body class="font-sans antialiased pb-20 min-h-screen">
