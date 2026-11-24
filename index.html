@@ -156,6 +156,7 @@
       border-top-right-radius: 22px;
       box-shadow: 0 -14px 40px rgba(0, 0, 0, 0.85);
       border-top: 4px solid #B82B26;
+      overflow-x: hidden !important;
     }
 
     .ticket-header-box {
@@ -166,24 +167,25 @@
       position: relative;
     }
 
+    /* Đường đục lỗ xé cuống vé chuẩn nửa hình tròn khuyết 2 bên trên mobile */
     .ticket-perforation {
       position: relative;
-      border-top: 3px dotted #5B0C11;
-      margin: 18px -20px;
-      opacity: 0.45;
+      border-top: 3px dotted rgba(91, 12, 17, 0.45);
+      margin: 20px 0 !important;
+      opacity: 1 !important;
     }
     .ticket-perforation::before,
     .ticket-perforation::after {
       content: "";
       position: absolute;
-      top: -11px;
-      width: 20px;
-      height: 20px;
+      top: -12px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background-color: #2A0406;
     }
-    .ticket-perforation::before { left: -10px; }
-    .ticket-perforation::after { right: -10px; }
+    .ticket-perforation::before { left: -31px !important; }
+    .ticket-perforation::after { right: -31px !important; }
 
     .train-stamp {
       width: 46px;
