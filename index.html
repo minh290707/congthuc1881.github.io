@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>The Train 1881 - Bar Staff Handbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,29 +13,83 @@
           colors: {
             train: { red: '#C41E24', darkred: '#8B1115', cream: '#F5E6CA', gold: '#D4AF37', dark: '#121212', card: '#1C1C1E', border: '#2C2C2E' }
           },
-          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Oswald', 'sans-serif']
+          }
         }
       }
     }
   </script>
   <style>
-    /* 1. NỀN ĐỎ THẪM + HOA VĂN MÂY CUỘN Á ĐÔNG (SVG THUẦN) */
+    /* =======================================================
+       1. NỀN ĐỎ RƯỢU VANG + MÂY XOÁY Á ĐÔNG + PHỐ ĐƯỜNG TÀU (GIỮ MỚI)
+       ======================================================= */
     body {
       color: #381a0e;
       -webkit-tap-highlight-color: transparent;
-      background-color: #630c13;
+      background-color: #5B0C11;
       background-image: 
-        radial-gradient(circle at 85% 15%, rgba(145, 18, 28, 0.6) 0%, transparent 55%),
-        radial-gradient(circle at 10% 90%, rgba(45, 4, 7, 0.8) 0%, transparent 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='%237D121B' opacity='0.55'%3E%3Cpath d='M45,70 C40,45 65,35 80,45 C95,30 125,40 120,65 C135,65 140,85 125,95 C115,105 50,105 45,90 C30,90 25,75 45,70 Z' /%3E%3Cpath d='M65,75 C60,65 75,55 85,65 C95,55 110,65 105,78' fill='none' stroke='%238F1722' stroke-width='2' stroke-linecap='round' /%3E%3Cpath d='M40,85 C48,82 55,86 52,94' fill='none' stroke='%238F1722' stroke-width='2' stroke-linecap='round' /%3E%3Cpath d='M155,170 C150,145 175,135 190,145 C205,130 235,140 230,165 C245,165 250,185 235,195 C225,205 160,205 155,190 C140,190 135,175 155,170 Z' /%3E%3Cpath d='M175,175 C170,165 185,155 195,165 C205,155 220,165 215,178' fill='none' stroke='%238F1722' stroke-width='2' stroke-linecap='round' /%3E%3Cpath d='M185,55 Q185,63 193,63 Q185,63 185,71 Q185,63 177,63 Q185,63 185,55 Z' fill='%23A31D2A' opacity='0.8' /%3E%3Cpath d='M35,165 Q35,171 41,171 Q35,171 35,177 Q35,171 29,171 Q35,171 35,165 Z' fill='%23A31D2A' opacity='0.8' /%3E%3C/g%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: cover, cover, 220px 220px;
+        /* Minh họa Phố Đường Tàu Hà Nội cố định ở đáy màn hình */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260' preserveAspectRatio='xMidYMax slice'%3E%3Cg fill='none' stroke='%23B82B26' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M-10,35 Q180,85 430,25' stroke-width='1.5' opacity='0.6'/%3E%3Cpath d='M-10,55 Q210,115 430,45' stroke-width='1.2' opacity='0.5'/%3E%3Cpath d='M120,0 L110,120 M310,0 L325,95' stroke-width='1.5' opacity='0.45'/%3E%3Cpath d='M0,65 L95,88 L95,210 L0,235 Z' fill='%234A080C' stroke-width='2'/%3E%3Cpath d='M95,95 L155,112 L155,195 L95,205 Z' fill='%234A080C' stroke-width='1.8'/%3E%3Cpath d='M155,118 L205,132 L205,188 L155,194 Z' fill='%234A080C' stroke-width='1.5'/%3E%3Crect x='18' y='92' width='18' height='28' fill='%23B82B26' opacity='0.55'/%3E%3Crect x='52' y='100' width='18' height='28' fill='%23B82B26' opacity='0.55'/%3E%3Crect x='18' y='142' width='18' height='32' fill='%23B82B26' opacity='0.45'/%3E%3Crect x='52' y='148' width='18' height='32' fill='%23B82B26' opacity='0.45'/%3E%3Crect x='112' y='122' width='14' height='22' fill='%23B82B26' opacity='0.5'/%3E%3Crect x='134' y='127' width='14' height='22' fill='%23B82B26' opacity='0.5'/%3E%3Cg transform='translate(245, 128)'%3E%3Crect x='4' y='6' width='42' height='54' rx='6' fill='%236E1016' stroke-width='2.2'/%3E%3Crect x='10' y='14' width='30' height='16' rx='2' fill='%23B82B26' opacity='0.75'/%3E%3Ccircle cx='25' cy='42' r='5' fill='%23E59A54' stroke='none' opacity='0.85'/%3E%3Cline x1='8' y1='52' x2='42' y2='52' stroke-width='2'/%3E%3C/g%3E%3Cpath d='M255,188 Q180,210 15,265' stroke-width='3.5'/%3E%3Cpath d='M288,188 Q245,215 165,265' stroke-width='3.5'/%3E%3Cpath d='M242,194 L296,194 M222,203 L286,203 M196,214 L272,214 M162,226 L252,226 M120,240 L226,240 M68,255 L194,255' stroke-width='3' opacity='0.85'/%3E%3C/g%3E%3C/svg%3E"),
+        /* Dải đường ray chạy dọc lề phải */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='24' viewBox='0 0 22 24'%3E%3Cline x1='4' y1='0' x2='4' y2='24' stroke='%23F7F0E0' stroke-width='1.5' opacity='0.14'/%3E%3Cline x1='18' y1='0' x2='18' y2='24' stroke='%23F7F0E0' stroke-width='1.5' opacity='0.14'/%3E%3Crect x='1' y='9' width='20' height='3' fill='%23F7F0E0' opacity='0.14'/%3E%3C/svg%3E"),
+        /* Hoa văn mây xoáy Á Đông chìm */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23781219' stroke-width='2.5' opacity='0.75'%3E%3Cpath d='M45,80 C35,50 75,35 95,55 C115,35 155,50 145,80 C165,85 165,115 140,120 C115,125 65,125 45,115 C25,110 25,85 45,80 Z'/%3E%3Cpath d='M75,85 C75,72 95,72 95,85 C95,94 83,94 83,86'/%3E%3Cpath d='M165,180 C155,150 195,135 215,155 C235,135 265,150 255,180'/%3E%3Cpath d='M195,185 C195,172 215,172 215,185 C215,194 203,194 203,186'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat, repeat-y, repeat;
+      background-position: bottom center, right 6px top 0, top left;
+      background-size: 100% auto, 22px 24px, 240px 240px;
       background-attachment: fixed;
     }
 
     .no-scrollbar::-webkit-scrollbar { display: none; }
 
-    /* 2. THẺ MÓN: TẠO HIỆU ỨNG TỜ GIẤY CỔ */
+    /* =======================================================
+       2. HEADER CŨ: VIỀN LED TRẮNG NEON + CHỮ LED ĐỎ NEON
+       ======================================================= */
+      .header-led-wrap {
+      position: sticky;
+      top: 8px;
+      z-index: 30;
+      background-color: #50090e;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M10 25 C10 15, 25 15, 30 20 C35 12, 55 12, 60 22 C68 20, 75 28, 68 35 C55 35, 15 35, 10 25 Z' fill='none' stroke='rgba(255,220,180,0.06)' stroke-width='1.2'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: auto, auto, 80px 40px;
+      border: 2px solid #ffffff !important;
+      border-radius: 16px;
+      margin: 8px 8px 0 8px;
+      box-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 18px rgba(255, 255, 255, 0.55),
+        0 0 32px rgba(255, 255, 255, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.45) !important;
+    }
+
+    .neon-led-red {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.5px !important;
+      color: #ff333a !important;
+      text-shadow: 
+        0 0 5px #ff1a24,
+        0 0 12px #ff0011,
+        0 0 25px rgba(255, 0, 17, 0.8) !important;
+    }
+
+    .active-tab { 
+      background-color: #8B1115 !important; 
+      color: #f5ebd3 !important; 
+      border-color: #e52932 !important; 
+      box-shadow: 0 2px 8px rgba(139, 17, 21, 0.6);
+    }
+
+    /* =======================================================
+       3. THẺ MÓN DANH SÁCH CŨ: TỜ GIẤY CỔ MÀU KEM VIỀN NÉT ĐỨT
+       ======================================================= */
     .glass-card {
       background-color: #f5ebd3 !important;
       background-image: 
@@ -58,7 +112,6 @@
       transform: scale(0.985);
     }
 
-    /* 3. TÊN CỐC RƯỢU & CÁC CHI TIẾT ĐỔI SANG MÀU ĐỎ THẪM */
     .glass-card h3 {
       color: #8B1115 !important;
       font-weight: 800 !important;
@@ -82,345 +135,95 @@
       border-color: rgba(139, 17, 21, 0.3) !important;
     }
 
-    /* 4. THANH ĐIỀU HƯỚNG TAB LỌC */
-    .active-tab { 
-      background-color: #8B1115 !important; 
-      color: #f5ebd3 !important; 
-      border-color: #e52932 !important; 
-      box-shadow: 0 2px 8px rgba(139, 17, 21, 0.6);
-    }
-
-    /* POPUP SHEET & OVERLAY CỐ ĐỊNH CHUẨN XÁC */
-    .sheet-open { 
-      transform: translateY(0%) !important; 
+    /* =======================================================
+       4. BẢNG CÔNG THỨC KIỂU CUỐNG VÉ TÀU & BARCODE (GIỮ MỚI)
+       ======================================================= */
+    .sheet-open {
+      transform: translateY(0%) !important;
       visibility: visible !important;
     }
-    .sheet-closed { 
-      transform: translateY(100%) !important; 
+    .sheet-closed {
+      transform: translateY(100%) !important;
       visibility: hidden !important;
     }
 
-    #recipe-sheet {
-      z-index: 50 !important;
+    .ticket-sheet {
+      background-color: #F7F0E0 !important;
+      background-image: 
+        radial-gradient(circle at 50% 40%, #FCF9F2 0%, #EDE1C9 100%) !important;
+      color: #381A0E !important;
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
+      box-shadow: 0 -14px 40px rgba(0, 0, 0, 0.85);
+      border-top: 4px solid #B82B26;
     }
-    #sheet-overlay {
-      z-index: 40 !important;
+
+    .ticket-header-box {
+      border: 1.5px solid #6E1217;
+      background-color: rgba(110, 18, 23, 0.06);
+      padding: 10px 14px;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .ticket-perforation {
+      position: relative;
+      border-top: 3px dotted #5B0C11;
+      margin: 18px -20px;
+      opacity: 0.45;
+    }
+    .ticket-perforation::before,
+    .ticket-perforation::after {
+      content: "";
+      position: absolute;
+      top: -11px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #2A0406;
+    }
+    .ticket-perforation::before { left: -10px; }
+    .ticket-perforation::after { right: -10px; }
+
+    .train-stamp {
+      width: 46px;
+      height: 46px;
+      background: #E59A54;
+      padding: 3px;
+      border: 1.5px dashed #6E1217;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transform: rotate(-4deg);
+      flex-shrink: 0;
     }
 
     .clickable-ingredient {
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
       cursor: pointer;
     }
     .clickable-ingredient:active {
-      transform: scale(0.98);
-      background-color: rgba(139, 17, 21, 0.15);
-      border-color: #8B1115;
-    }
-
-    /* Hiệu ứng đèn LED chữ đỏ neon */
-    .neon-led-red {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-      font-weight: 700 !important;
-      letter-spacing: 1.5px !important;
-      color: #ff333a !important;
-      text-shadow: 
-        0 0 5px #ff1a24,
-        0 0 12px #ff0011,
-        0 0 25px rgba(255, 0, 17, 0.8) !important;
-    }
-
-    /* Header hiệu ứng viền LED trắng neon + Họa tiết mây cổ điển nền đỏ */
-    .header-led-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      background-color: #50090e;
-      background-image: 
-        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
-        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M10 25 C10 15, 25 15, 30 20 C35 12, 55 12, 60 22 C68 20, 75 28, 68 35 C55 35, 15 35, 10 25 Z' fill='none' stroke='rgba(255,220,180,0.06)' stroke-width='1.2'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: auto, auto, 80px 40px;
-      border-bottom: 2px solid #ffffff;
-      box-shadow: 
-        0 2px 8px rgba(255, 255, 255, 0.8),
-        0 4px 18px rgba(255, 255, 255, 0.45),
-        0 8px 30px rgba(255, 255, 255, 0.25),
-        inset 0 -1px 8px rgba(255, 255, 255, 0.35);
+      transform: scale(0.985);
+      background-color: rgba(184, 43, 38, 0.12) !important;
     }
 
     /* =======================================================
-       HIỆU ỨNG TỜ GIẤY CỔ XÉ MÉP CẨU THẢ (TORN PAPER EFFECT)
+       PHÔNG CHỮ VIẾT TAY UỐN LƯỢN CHO TÊN CỐC RƯỢU
        ======================================================= */
-    #recipe-sheet {
-      background-color: #f4ebd0 !important; /* Màu giấy da/giấy kraft cũ */
-      background-image: 
-        radial-gradient(circle at 15% 20%, rgba(200, 160, 110, 0.4) 0%, transparent 40%),
-        radial-gradient(circle at 85% 75%, rgba(185, 140, 90, 0.35) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(245, 235, 210, 0.95) 0%, rgba(220, 195, 155, 0.9) 100%) !important;
-      color: #3d1c06 !important;
-      box-shadow: 
-        0 -10px 30px rgba(0, 0, 0, 0.7), 
-        inset 0 0 45px rgba(160, 105, 50, 0.35) !important;
-      border: none !important;
-      border-radius: 0 !important;
-      
-      /* Cắt mép trên theo đường xé răng cưa gồ ghề cẩu thả */
-      clip-path: polygon(
-        0% 18px, 
-        3% 2px, 6% 16px, 10% 4px, 14% 19px, 18% 5px, 23% 18px, 27% 3px, 32% 17px, 36% 6px, 
-        41% 19px, 45% 4px, 50% 18px, 54% 2px, 59% 19px, 63% 5px, 68% 18px, 72% 3px, 
-        77% 19px, 81% 6px, 86% 17px, 90% 4px, 94% 18px, 97% 2px, 100% 16px, 
-        100% 100%, 0% 100%
-      );
-      padding-top: 2rem !important;
-    }
-
-    /* Thanh gạt đầu trang biến thành vết băng dính đục dán tạm */
-    #recipe-sheet > div:first-child {
-      background: rgba(220, 205, 175, 0.65) !important;
-      box-shadow: 0 1px 3px rgba(120, 80, 40, 0.25);
-      border-radius: 2px !important;
-      width: 50px !important;
-      height: 7px !important;
-      transform: rotate(-1.5deg);
-    }
-
-    /* Tiêu đề cốc rượu đổi sang màu đỏ thẫm mực bút máy */
+    /* 1. Tên cốc rượu trong bảng chi tiết (cuống vé) */
     #sheet-title {
-      color: #7a0c14 !important;
-      font-family: 'Playfair Display', Georgia, serif !important;
-      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.7);
-    }
-
-    /* Badge Danh mục (Cocktail, Mocktail...) đổi sang tem đóng dấu đỏ viền rách */
-    #sheet-category {
-      background-color: rgba(139, 17, 21, 0.15) !important;
-      color: #8B1115 !important;
-      border: 1.5px dashed #8B1115 !important;
-      font-weight: 800;
-    }
-
-    /* Phương pháp pha chế: Vệt giấy màu ngả vàng nâu */
-    #sheet-method-box {
-      background: rgba(180, 130, 80, 0.18) !important;
-      border: 1px dashed rgba(139, 69, 19, 0.4) !important;
-      color: #4a2608 !important;
-    }
-    #sheet-method-box b, #sheet-method {
-      color: #7a0c14 !important;
-    }
-
-    /* Từng dòng nguyên liệu: Biến thành ô giấy viết tay màu be */
-    #sheet-ingredients .clickable-ingredient,
-    #sheet-ingredients > div {
-      background: rgba(255, 250, 240, 0.8) !important;
-      border: 1px solid rgba(160, 110, 60, 0.35) !important;
-      box-shadow: 0 1px 4px rgba(120, 80, 40, 0.1) !important;
-      color: #381a0e !important;
-      font-weight: 600;
-    }
-    #sheet-ingredients .text-train-gold {
-      color: #8B1115 !important;
-      font-weight: 700;
-    }
-
-    /* Khung hướng dẫn thao tác */
-    #sheet-instructions {
-      background: rgba(255, 250, 240, 0.8) !important;
-      border: 1.5px dashed rgba(160, 110, 60, 0.4) !important;
-      color: #381a0e !important;
-      font-style: italic;
-    }
-
-    /* Tiêu đề các mục con */
-    #recipe-sheet h3 {
-      color: #7a0c14 !important;
-      font-weight: 800 !important;
-      letter-spacing: 0.5px;
-    }
-
-    #sheet-garnish {
-      color: #9e4b16 !important;
-      font-weight: 600;
-    }
-
-    /* Khung ảnh ly cocktail: Khung viền ảnh chụp Polaroid cũ */
-    #sheet-cocktail-image-box > div {
-      background: #fffdfa !important;
-      border: 1px solid rgba(160, 120, 80, 0.35) !important;
-      padding: 10px 10px 18px 10px !important;
-      border-radius: 4px !important;
-      box-shadow: 0 8px 20px rgba(80, 40, 10, 0.25) !important;
-      transform: rotate(0.8deg);
-    }
-
-    /* Nút Đóng: Đổi thành nút sáp niêm phong đỏ vintage */
-    #recipe-sheet button[onclick="closeSheet()"] {
-      background: #7a0c14 !important;
-      color: #f7ebd2 !important;
-      border: 1px solid #50090e !important;
-      box-shadow: 0 4px 12px rgba(80, 9, 14, 0.4) !important;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    /* Bo tròn 2 góc và làm mép xé gợn mềm mại */
-    #recipe-sheet {
-      background-color: #f5ebd3 !important;
-      background-image: 
-        radial-gradient(circle at 15% 20%, rgba(200, 160, 110, 0.35) 0%, transparent 40%),
-        radial-gradient(circle at 85% 75%, rgba(185, 140, 90, 0.3) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(245, 235, 210, 0.95) 0%, rgba(220, 195, 155, 0.85) 100%) !important;
-      color: #3d1c06 !important;
-      clip-path: none !important; /* Xóa bỏ đường cắt răng cưa nhọn cũ */
-      border-top-left-radius: 28px !important;
-      border-top-right-radius: 28px !important;
-      border-top: 2px dashed rgba(160, 110, 60, 0.4) !important;
-      -webkit-mask-image: radial-gradient(circle at 10px 0, transparent 0, transparent 4px, black 5px);
-      -webkit-mask-size: 14px 100%;
-      mask-image: radial-gradient(circle at 10px 0, transparent 0, transparent 4px, black 5px);
-      mask-size: 14px 100%;
-      padding-top: 1.5rem !important;
-    }
-
-    /* 1. Khung Phương pháp: Nền nâu nhạt, chữ chuyển sang nâu đậm & đỏ thẫm */
-    #recipe-sheet .bg-train-gold\/10,
-    #sheet-method-box {
-      background-color: rgba(139, 17, 21, 0.08) !important;
-      border: 1px dashed rgba(139, 17, 21, 0.3) !important;
-      color: #7a0c14 !important;
+      font-family: 'Dancing Script', cursive !important;
+      text-transform: none !important; /* Tắt viết hoa toàn bộ để nét uốn lượn mềm mại */
+      font-size: 2.15rem !important;   /* Tăng cỡ chữ cho nét viết tay rõ ràng */
       font-weight: 700 !important;
-    }
-    #sheet-method {
-      color: #381a0e !important;
-      font-weight: 600 !important;
-    }
-
-    /* 2. Dòng hướng dẫn 'Chạm vào chai rượu để xem ảnh' */
-    #recipe-sheet .text-train-gold\/80 {
-      color: #9e4b16 !important; /* Đổi sang màu nâu cam đất đậm */
-      font-weight: 700 !important;
-    }
-
-    /* 3. Dòng chữ Trang trí (Garnish) */
-    #sheet-garnish {
-      color: #7a0c14 !important; /* Đổi sang đỏ thẫm mực bút máy */
-      font-weight: 700 !important;
-      font-style: italic;
-    }
-
-    /* =======================================================
-       100% THUẦN CODE: HIỆU ỨNG GIẤY KRAFT NHĂN NHÀU NỔI KHỐI 3D
-       ======================================================= */
-    #recipe-sheet {
-      background-color: #d6be9a !important;
-      background-image: 
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='450' height='450'%3E%3Cfilter id='crumple'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='5' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23ffffff' surfaceScale='2.8' result='light'%3E%3CfeDistantLight azimuth='55' elevation='48'/%3E%3C/feDiffuseLighting%3E%3CfeBlend mode='multiply' in='SourceGraphic' in2='light'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23d8c19f' filter='url(%23crumple)'/%3E%3C/svg%3E"),
-        linear-gradient(132deg, transparent 42%, rgba(60, 30, 10, 0.12) 44%, rgba(255, 255, 255, 0.45) 45.5%, transparent 48%),
-        linear-gradient(48deg, transparent 58%, rgba(60, 30, 10, 0.1) 60%, rgba(255, 255, 255, 0.4) 61.5%, transparent 64%),
-        radial-gradient(circle at 50% 50%, rgba(245, 235, 215, 0.6) 0%, rgba(185, 150, 105, 0.55) 100%) !important;
-      background-size: 350px 350px, auto, auto, auto !important;
-
-      color: #3d1c06 !important;
-      border: none !important;
-      border-radius: 0 !important;
-      box-shadow: 
-        0 -15px 45px rgba(0, 0, 0, 0.85), 
-        inset 0 0 45px rgba(100, 60, 20, 0.35) !important;
-
-      clip-path: polygon(
-        0% 12px, 2% 9px, 5% 14px, 8% 8px, 11% 13px, 14% 10px, 17% 15px, 20% 9px, 
-        23% 14px, 26% 8px, 29% 13px, 32% 10px, 35% 15px, 38% 9px, 42% 14px, 45% 8px, 
-        49% 15px, 52% 10px, 56% 14px, 59% 9px, 62% 15px, 66% 10px, 69% 14px, 73% 8px, 
-        76% 15px, 80% 10px, 84% 14px, 87% 9px, 90% 15px, 94% 10px, 97% 13px, 100% 11px,
-        100% 100%, 0% 100%
-      );
-      padding-top: 2rem !important;
-    }
-
-    #recipe-sheet::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 12px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65), transparent);
-      pointer-events: none;
-    }
-
-  /* =======================================================
-       CÂN CHỈNH LẠI CỠ CHỮ VỪA VẶN, HÀI HÒA CHO BẢNG CÔNG THỨC
-       ======================================================= */
-    /* 1. Tên cốc rượu gọn gàng */
-    #sheet-title {
-      font-size: 1.65rem !important; /* Hạ từ 1.85rem xuống 1.45rem (~23px) */
-      line-height: 1.25 !important;
-      margin-top: 0.3rem !important;
-      margin-bottom: 0.45rem !important;
-    }
-
-    /* 2. Badge Cocktail/Mocktail */
-    #sheet-category {
-      font-size: 0.68rem !important; /* ~11px */
-      padding: 2px 7px !important;
-    }
-
-    /* 3. Khung Phương pháp pha chế */
-    #sheet-method-box, #sheet-method-box * {
-      font-size: 0.8rem !important; /* ~13px */
-    }
-
-    /* 4. Các tiêu đề mục (THÀNH PHẦN, HƯỚNG DẪN THAO TÁC, TRANG TRÍ, HÌNH ẢNH) */
-    #recipe-sheet h3 {
-      font-size: 0.8rem !important; /* ~13px */
       letter-spacing: 0.5px !important;
-      margin-bottom: 0.35rem !important;
-    }
-
-    /* 5. Dòng gợi ý 'Chạm vào chai rượu để xem ảnh' */
-    #recipe-sheet .text-train-gold\/80,
-    #recipe-sheet span.italic {
-      font-size: 0.72rem !important; /* ~11.5px */
-    }
-
-    /* 6. Danh sách nguyên liệu & định lượng */
-    #sheet-ingredients > div,
-    #sheet-ingredients .clickable-ingredient {
-      font-size: 0.875rem !important; /* 14px chuẩn đọc nhanh, không bị thô */
-      padding: 0.5rem 0.75rem !important;
-    }
-
-    /* Chữ 'Xem chai' */
-    #sheet-ingredients .clickable-ingredient span:last-child {
-      font-size: 0.75rem !important; /* ~12px */
-    }
-
-    /* 7. Hướng dẫn thao tác & Trang trí */
-    #sheet-instructions {
-      font-size: 0.875rem !important; /* 14px */
-      line-height: 1.5 !important;
-      padding: 0.65rem 0.75rem !important;
-    }
-
-    #sheet-garnish {
-      font-size: 0.875rem !important; /* 14px */
-      line-height: 1.4 !important;
-    }
-
-    /* 8. Nút Đóng */
-    #recipe-sheet button[onclick="closeSheet()"] {
-      font-size: 0.95rem !important;
-      padding-top: 0.7rem !important;
-      padding-bottom: 0.7rem !important;
+      line-height: 1.2 !important;
+      color: #6E1217 !important;
     }
 
   </style>
 </head>
-<body class="font-sans antialiased pb-20 min-h-screen">
+<body class="font-sans antialiased pb-24 min-h-screen">
 
-  <!-- Header duy nhất, đã loại bỏ thẻ header trùng lặp -->
+  <!-- HEADER CŨ: VIỀN LED TRẮNG + LOGO & CHỮ LED ĐỎ -->
   <header class="header-led-wrap p-4 backdrop-blur-md">
     <div class="flex items-center justify-between mb-3">
       <div class="flex items-center gap-3.5">
@@ -435,7 +238,6 @@
         </div>
       </div>
 
-      <!-- Số lượng món -->
       <span id="recipe-count" class="shrink-0 z-10 text-xs bg-[#7D121B]/80 text-[#f5ebd3] px-3 py-1 rounded-full border border-[#8B1115] shadow-md ml-2">
         -- món
       </span>
@@ -460,7 +262,7 @@
     </div>
   </header>
 
-  <!-- Danh sách Món -->
+  <!-- DANH SÁCH MÓN CŨ: THẺ TỜ GIẤY KEM VIỀN NÉT ĐỨT -->
   <main class="p-4">
     <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
@@ -753,7 +555,6 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa/cam • Cốt dừa • Kem muối dừa</p>
       </div>
 
-      <!-- 1881 Sparkling -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="1881 spackling 1881 sparkling vitajus atiso soda" onclick="showDetail('1881 Sparkling', 'Mocktail', 'Build', ['50ml Nước ép Vitajus', '50ml Trà Atiso', '15ml Nước đường', '15ml Nước cốt chanh', 'Top up Soda'], 'Rót lần lượt Vitajus, atiso, nước đường và chanh vào ly có sẵn đá. Top up soda lên trên cùng. Không shake, không khuấy.', 'Lát chanh hoặc thảo mộc')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">1881 Sparkling</h3>
@@ -761,7 +562,6 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vitajus • Atiso • Chanh • Đường • Soda</p>
       </div>
 
-      <!-- Rose Bloodsome -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="rose bloodsome tao luu chanh syrup rose hoa hong" onclick="showDetail('Rose Bloodsome', 'Mocktail', 'Shake', ['80ml Nước ép táo lựu', '15ml Nước cốt chanh', '20ml Syrup hoa hồng (Rose)'], 'Cho toàn bộ nguyên liệu vào shaker cùng đá viên. Lắc đều và kỹ (shake đều), sau đó rót ra ly có sẵn đá.', 'Cánh hoa hồng hoặc lát chanh khô')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Rose Bloodsome</h3>
@@ -769,7 +569,6 @@
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Táo lựu • Chanh • Syrup Rose</p>
       </div>
 
-      <!-- Sweet Glow -->
       <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="sweet glow cam tao syrup monin phan tang" onclick="showDetail('Sweet Glow', 'Mocktail', 'Layering (Phân tầng)', ['80ml Nước cam hộp', '80ml Nước táo hộp', '10ml Syrup Monin'], 'Rót 10ml syrup Monin xuống đáy cốc trước. Cho đá viên đầy ly rồi nhẹ nhàng rót nước cam và nước táo lên trên để tạo tầng màu đẹp mắt.', 'Lát cam hoặc lát táo tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Sweet Glow</h3>
@@ -855,57 +654,105 @@
         <p class="text-xs text-train-gold mb-2">Build</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Vodka • Red Bull </p>
       </div>
-      
+
     </div>
   </main>
 
-  <!-- Modal Bottom Sheet chi tiết món -->
+  <!-- =======================================================
+       MODAL CHI TIẾT KIỂU CUỐNG VÉ TÀU & MÃ VẠCH (GIỮ MỚI)
+       ======================================================= -->
   <div id="sheet-overlay" class="fixed inset-0 bg-black/80 z-40 hidden" onclick="closeSheet()"></div>
-  <div id="recipe-sheet" class="fixed inset-x-0 bottom-0 z-50 bg-[#1A1A1C] border-t border-train-gold/30 rounded-t-3xl p-5 sheet-closed transition-transform duration-300 max-h-[85vh] overflow-y-auto no-scrollbar">
-    <div class="w-12 h-1.5 bg-train-border rounded-full mx-auto mb-4"></div>
-    <span id="sheet-category" class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span>
-    <h2 id="sheet-title" class="text-2xl font-serif font-bold text-train-cream mt-1 mb-2">--</h2>
-    <div class="mb-4 text-xs text-train-gold bg-train-gold/10 px-3 py-1.5 rounded-lg border border-train-gold/20"><b>Phương pháp:</b> <span id="sheet-method">Shake</span></div>
-    
+  <div id="recipe-sheet" class="ticket-sheet fixed inset-x-0 bottom-0 z-50 p-5 sheet-closed transition-transform duration-300 max-h-[88vh] overflow-y-auto no-scrollbar">
+    <!-- Thanh gạt đầu cuống vé -->
+    <div class="w-12 h-1.5 bg-[#6E1217]/25 rounded-full mx-auto mb-3.5"></div>
+
+    <!-- Khung tiêu đề vé tàu kèm con tem đoàn tàu ở góc -->
+    <div class="ticket-header-box flex items-start justify-between gap-3 mb-3.5">
+      <div>
+        <span id="sheet-category" class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-[#6E1217] text-[#F7F0E0]">Cocktail</span>
+        <h2 id="sheet-title" class="font-display text-[26px] uppercase tracking-wide text-[#5B0C11] leading-tight mt-1">--</h2>
+        <p class="text-xs text-[#6E1217] font-semibold mt-0.5">Phương pháp: <span id="sheet-method" class="font-bold text-[#B82B26]">Shake</span></p>
+      </div>
+
+      <div class="train-stamp flex flex-col items-center justify-center text-center">
+        <span class="text-[15px] leading-none">🚂</span>
+        <span class="font-display text-[9px] text-[#5B0C11] tracking-tighter leading-none mt-0.5">1881</span>
+      </div>
+    </div>
+
+    <!-- Thành phần & Định lượng -->
     <div class="mb-4">
       <div class="flex items-center justify-between mb-2">
-        <h3 class="text-xs font-bold uppercase text-train-cream/50">Thành phần & Định lượng</h3>
-        <span class="text-[10px] text-train-gold/80 italic">Chạm vào chai rượu để xem ảnh 🔍</span>
+        <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#5B0C11]">Thành phần & Định lượng</h3>
+        <span class="text-[11px] text-[#B82B26] font-bold italic">Chạm vào chai rượu để xem ảnh 🔍</span>
       </div>
       <div id="sheet-ingredients" class="space-y-1.5"></div>
     </div>
 
-    <div class="mb-4"><h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hướng dẫn thao tác</h3><div id="sheet-instructions" class="text-sm text-train-cream/90 bg-train-card p-3 rounded-xl border border-train-border leading-relaxed"></div></div>
-    
-    <div id="sheet-garnish-box" class="mb-4"><h3 class="text-xs font-bold uppercase text-train-cream/50 mb-1">Trang trí (Garnish)</h3><p id="sheet-garnish" class="text-sm text-train-gold italic"></p></div>
+    <!-- Hướng dẫn thao tác -->
+    <div class="mb-3.5">
+      <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#5B0C11] mb-1.5">Hướng dẫn thao tác</h3>
+      <div id="sheet-instructions" class="text-[13.5px] text-[#381A0E] bg-white/75 p-3 rounded-lg border border-dashed border-[#6E1217]/40 leading-relaxed font-medium"></div>
+    </div>
 
-    <!-- KHUNG ẢNH THÀNH PHẨM CỐC RƯỢU DÁNG DỌC -->
-    <div id="sheet-cocktail-image-box" class="mb-5">
-      <h3 class="text-xs font-bold uppercase text-train-cream/50 mb-2">Hình ảnh cốc rượu</h3>
-      <div class="w-full max-w-[280px] mx-auto aspect-[4/5] bg-black/60 rounded-2xl overflow-hidden border border-train-border/60 flex items-center justify-center p-2 shadow-inner">
-        <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" loading="lazy" decoding="async" class="w-full h-full object-contain rounded-xl drop-shadow-md">
+    <!-- Trang trí (Garnish) -->
+    <div id="sheet-garnish-box" class="mb-2">
+      <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#5B0C11] mb-0.5">Trang trí (Garnish)</h3>
+      <p id="sheet-garnish" class="text-[13.5px] text-[#B82B26] font-bold italic"></p>
+    </div>
+
+    <!-- Đường đục lỗ xé cuống vé -->
+    <div class="ticket-perforation"></div>
+
+    <!-- Khung ảnh ly thành phẩm + Mã vạch Barcode -->
+    <div id="sheet-cocktail-image-box" class="mb-4">
+      <div class="w-full max-w-[260px] mx-auto bg-white p-2.5 pb-3 rounded border border-[#6E1217]/25 shadow-md text-center">
+        <div class="aspect-[4/5] w-full bg-[#FAF6EE] rounded overflow-hidden flex items-center justify-center mb-2.5">
+          <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" loading="lazy" decoding="async" class="w-full h-full object-contain">
+        </div>
+        <div class="pt-1 border-t border-dotted border-[#5B0C11]/30">
+          <svg class="w-44 h-8 mx-auto" viewBox="0 0 180 32">
+            <g fill="#2A0406">
+              <rect x="6" y="0" width="3" height="24"/><rect x="11" y="0" width="1.5" height="24"/>
+              <rect x="16" y="0" width="4" height="24"/><rect x="23" y="0" width="2" height="24"/>
+              <rect x="28" y="0" width="1.5" height="24"/><rect x="33" y="0" width="3.5" height="24"/>
+              <rect x="40" y="0" width="2" height="24"/><rect x="45" y="0" width="4" height="24"/>
+              <rect x="52" y="0" width="1.5" height="24"/><rect x="57" y="0" width="3" height="24"/>
+              <rect x="63" y="0" width="2" height="24"/><rect x="68" y="0" width="4.5" height="24"/>
+              <rect x="76" y="0" width="1.5" height="24"/><rect x="81" y="0" width="3" height="24"/>
+              <rect x="87" y="0" width="2.5" height="24"/><rect x="93" y="0" width="1.5" height="24"/>
+              <rect x="98" y="0" width="4" height="24"/><rect x="105" y="0" width="2" height="24"/>
+              <rect x="111" y="0" width="3" height="24"/><rect x="117" y="0" width="1.5" height="24"/>
+              <rect x="122" y="0" width="4" height="24"/><rect x="129" y="0" width="2" height="24"/>
+              <rect x="135" y="0" width="3" height="24"/><rect x="141" y="0" width="1.5" height="24"/>
+              <rect x="146" y="0" width="4" height="24"/><rect x="153" y="0" width="2" height="24"/>
+              <rect x="158" y="0" width="3.5" height="24"/><rect x="165" y="0" width="2" height="24"/>
+              <rect x="170" y="0" width="3" height="24"/>
+            </g>
+            <text x="90" y="31" font-family="monospace" font-size="7.5" fill="#2A0406" text-anchor="middle" letter-spacing="2.5">0 123456 789111</text>
+          </svg>
+        </div>
       </div>
     </div>
 
-    <button onclick="closeSheet()" class="w-full py-3 bg-train-red text-train-cream font-semibold rounded-xl">Đóng</button>
+    <button onclick="closeSheet()" class="w-full py-3 bg-[#5B0C11] text-[#F7F0E0] font-display uppercase tracking-wider text-base rounded-lg shadow-md">Đóng vé</button>
   </div>
 
-  <!-- POPUP XEM ẢNH CHAI RƯỢU/NGUYÊN LIỆU KHI CLICK (DÁNG ĐỨNG) -->
+  <!-- POPUP XEM ẢNH CHAI RƯỢU/NGUYÊN LIỆU KHI CLICK -->
   <div id="ingredient-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden" onclick="closeIngredientModal()">
-    <div class="bg-[#1C1C1E] border border-train-gold/30 rounded-2xl p-4 w-full max-w-xs shadow-2xl relative text-center" onclick="event.stopPropagation()">
-      <button onclick="closeIngredientModal()" class="absolute top-2 right-3 text-train-cream/50 hover:text-train-cream text-2xl font-bold leading-none">&times;</button>
-      <h4 id="ing-modal-title" class="text-sm font-bold text-train-gold mb-3 pr-4 truncate">Tên nguyên liệu</h4>
-      <div class="w-full h-80 bg-black/50 rounded-xl overflow-hidden flex items-center justify-center border border-train-border/50 p-2">
-        <img id="ing-modal-img" src="" alt="Ảnh chai rượu" loading="lazy" decoding="async" class="w-full h-full object-contain drop-shadow-lg">
+    <div class="bg-[#F7F0E0] border-2 border-[#6E1217] rounded-xl p-4 w-full max-w-xs shadow-2xl relative text-center" onclick="event.stopPropagation()">
+      <button onclick="closeIngredientModal()" class="absolute top-2 right-3 text-[#5B0C11] text-2xl font-bold leading-none">&times;</button>
+      <h4 id="ing-modal-title" class="font-display text-base uppercase text-[#5B0C11] mb-3 pr-4 truncate">Tên nguyên liệu</h4>
+      <div class="w-full h-80 bg-white rounded-lg overflow-hidden flex items-center justify-center border border-[#6E1217]/20 p-2">
+        <img id="ing-modal-img" src="" alt="Ảnh chai rượu" loading="lazy" decoding="async" class="w-full h-full object-contain">
       </div>
-      <p class="text-[11px] text-train-cream/50 mt-2">Chạm ra ngoài để đóng</p>
+      <p class="text-[11px] text-[#6E1217]/70 font-semibold mt-2">Chạm ra ngoài để đóng</p>
     </div>
   </div>
 
   <script>
     let activeCategory = 'All';
 
-    // 1. LINK ẢNH CHAI RƯỢU & NGUYÊN LIỆU ĐƯỢC CHỈ ĐỊNH
     const ingredientImages = {
       'vang nổ': 'vangno1881.jpg',
       'bombay': 'bombay1881.jpg',
@@ -935,7 +782,6 @@
       'gin pha hoa đậu biếc': 'daubiec1881.jpg',
     };
 
-    // 2. DANH SÁCH HOA QUẢ CẦN CHẶN
     const fruitBlacklist = [
       'chanh', 'nước cam', 'lát cam', 'dứa', 'dua', 'xoài', 'xoai', 'dưa hấu', 'dua hau', 
       'dưa chuột', 'dua chuot', 'gừng', 'gung', 'thanh long', 'táo', 'tao', 
@@ -943,7 +789,6 @@
       'trứng', 'kem', 'sữa', 'đường', 'muối', 'olive'
     ];
 
-    // 3. LINK ẢNH THÀNH PHẨM CỐC RƯỢU
     const drinkImages = {
       'Dragon Fruit Rose Spritz': 'thanhlong.jpg',
       'Singapore Sling': 'sling.jpg',
@@ -1006,7 +851,6 @@
       activeCategory = cat;
       document.querySelectorAll('.cat-pill').forEach(b => {
         b.classList.remove('active-tab');
-        b.classList.add('bg-train-card', 'text-train-cream/70');
       });
       if(btn) btn.classList.add('active-tab');
       filterItems();
@@ -1037,24 +881,15 @@
 
     function getIngredientImage(text) {
       const lower = text.toLowerCase();
-      
-      if (lower.includes('campari') || lower.includes('capari')) {
-        return ingredientImages['campari'];
-      }
-      if (lower.includes('pandan') || lower.includes('cốm') || lower.includes('com')) {
-        return ingredientImages['pandan'];
-      }
+      if (lower.includes('campari') || lower.includes('capari')) return ingredientImages['campari'];
+      if (lower.includes('pandan') || lower.includes('cốm') || lower.includes('com')) return ingredientImages['pandan'];
 
       for (const fruit of fruitBlacklist) {
-        if (lower.includes(fruit)) {
-          return null;
-        }
+        if (lower.includes(fruit)) return null;
       }
 
       for (const [key, url] of Object.entries(ingredientImages)) {
-        if (lower.includes(key)) {
-          return url;
-        }
+        if (lower.includes(key)) return url;
       }
       return null;
     }
@@ -1072,11 +907,11 @@
         const imgUrl = getIngredientImage(i);
 
         if (imgUrl) {
-          d.className = 'clickable-ingredient flex items-center justify-between text-xs text-train-cream/90 bg-train-card px-3 py-2.5 rounded-lg border border-train-border/50 hover:border-train-red/60';
-          d.innerHTML = `<span>${i}</span><span class="text-train-gold text-xs">📷 Xem chai</span>`;
+          d.className = 'clickable-ingredient flex items-center justify-between text-[13.5px] font-semibold text-[#381A0E] bg-white/85 px-3 py-2 rounded-lg border border-[#6E1217]/30 shadow-sm';
+          d.innerHTML = `<span>${i}</span><span class="text-[#B82B26] font-bold text-xs">📷 Xem chai</span>`;
           d.onclick = () => openIngredientModal(i, imgUrl);
         } else {
-          d.className = 'flex items-center justify-between text-xs text-train-cream/70 bg-train-card/60 px-3 py-2.5 rounded-lg border border-train-border/30';
+          d.className = 'flex items-center justify-between text-[13.5px] font-medium text-[#381A0E]/90 bg-white/60 px-3 py-2 rounded-lg border border-[#6E1217]/15';
           d.innerHTML = `<span>${i}</span>`;
         }
         
@@ -1090,16 +925,12 @@
       const targetPhoto = drinkImages[name] || 'bird.jpg';
 
       drinkImgTag.style.opacity = '0.4';
-      drinkImgTag.onload = function() {
-        this.style.opacity = '1';
-      };
-
+      drinkImgTag.onload = function() { this.style.opacity = '1'; };
       drinkImgTag.onerror = function() {
         this.onerror = null;
         this.src = 'bird.jpg';
         this.style.opacity = '1';
       };
-
       drinkImgTag.src = targetPhoto;
 
       document.getElementById('sheet-overlay').classList.remove('hidden');
