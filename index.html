@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>The Train 1881 - Bar Staff Handbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            train: { red: '#C41E24', darkred: '#8B1115', cream: '#F5E6CA', gold: '#D4AF37', dark: '#121212', card: '#1C1C1E', border: '#2C2C2E' }
+            train: {
+              red: '#E52932',
+              crimson: '#8B1115',
+              wine: '#2D070B',
+              obsidian: '#0D0708',
+              cream: '#F7EFE1',
+              gold: '#F3CB69',
+              amber: '#FF7A2F',
+              card: 'rgba(28, 16, 18, 0.72)',
+              border: 'rgba(247, 239, 225, 0.12)'
+            }
           },
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             serif: ['Playfair Display', 'serif'],
-            display: ['Oswald', 'sans-serif']
+            display: ['Oswald', 'sans-serif'],
+            script: ['Dancing Script', 'cursive']
           }
         }
       }
@@ -24,119 +36,100 @@
   </script>
   <style>
     /* =======================================================
-       1. NỀN ĐỎ RƯỢU VANG + MÂY XOÁY Á ĐÔNG + PHỐ ĐƯỜNG TÀU (GIỮ MỚI)
+       1. NỀN DARK OBSIDIAN + ÁNH ĐỎ RƯỢU VANG + PHỐ ĐƯỜNG TÀU
        ======================================================= */
     body {
-      color: #381a0e;
+      color: #F7EFE1;
       -webkit-tap-highlight-color: transparent;
-      background-color: #5B0C11;
-      background-image: 
-        /* Minh họa Phố Đường Tàu Hà Nội cố định ở đáy màn hình */
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260' preserveAspectRatio='xMidYMax slice'%3E%3Cg fill='none' stroke='%23B82B26' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M-10,35 Q180,85 430,25' stroke-width='1.5' opacity='0.6'/%3E%3Cpath d='M-10,55 Q210,115 430,45' stroke-width='1.2' opacity='0.5'/%3E%3Cpath d='M120,0 L110,120 M310,0 L325,95' stroke-width='1.5' opacity='0.45'/%3E%3Cpath d='M0,65 L95,88 L95,210 L0,235 Z' fill='%234A080C' stroke-width='2'/%3E%3Cpath d='M95,95 L155,112 L155,195 L95,205 Z' fill='%234A080C' stroke-width='1.8'/%3E%3Cpath d='M155,118 L205,132 L205,188 L155,194 Z' fill='%234A080C' stroke-width='1.5'/%3E%3Crect x='18' y='92' width='18' height='28' fill='%23B82B26' opacity='0.55'/%3E%3Crect x='52' y='100' width='18' height='28' fill='%23B82B26' opacity='0.55'/%3E%3Crect x='18' y='142' width='18' height='32' fill='%23B82B26' opacity='0.45'/%3E%3Crect x='52' y='148' width='18' height='32' fill='%23B82B26' opacity='0.45'/%3E%3Crect x='112' y='122' width='14' height='22' fill='%23B82B26' opacity='0.5'/%3E%3Crect x='134' y='127' width='14' height='22' fill='%23B82B26' opacity='0.5'/%3E%3Cg transform='translate(245, 128)'%3E%3Crect x='4' y='6' width='42' height='54' rx='6' fill='%236E1016' stroke-width='2.2'/%3E%3Crect x='10' y='14' width='30' height='16' rx='2' fill='%23B82B26' opacity='0.75'/%3E%3Ccircle cx='25' cy='42' r='5' fill='%23E59A54' stroke='none' opacity='0.85'/%3E%3Cline x1='8' y1='52' x2='42' y2='52' stroke-width='2'/%3E%3C/g%3E%3Cpath d='M255,188 Q180,210 15,265' stroke-width='3.5'/%3E%3Cpath d='M288,188 Q245,215 165,265' stroke-width='3.5'/%3E%3Cpath d='M242,194 L296,194 M222,203 L286,203 M196,214 L272,214 M162,226 L252,226 M120,240 L226,240 M68,255 L194,255' stroke-width='3' opacity='0.85'/%3E%3C/g%3E%3C/svg%3E"),
+      background-color: #0D0708;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(139, 17, 21, 0.42) 0%, rgba(28, 7, 10, 0.25) 45%, rgba(13, 7, 8, 0.96) 100%),
+        /* Minh họa Phố Đường Tàu Hà Nội chìm tinh tế ở đáy màn hình */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260' preserveAspectRatio='xMidYMax slice'%3E%3Cg fill='none' stroke='%23E52932' stroke-linecap='round' stroke-linejoin='round' opacity='0.22'%3E%3Cpath d='M-10,35 Q180,85 430,25' stroke-width='1.5'/%3E%3Cpath d='M-10,55 Q210,115 430,45' stroke-width='1.2'/%3E%3Cpath d='M120,0 L110,120 M310,0 L325,95' stroke-width='1.5'/%3E%3Cpath d='M0,65 L95,88 L95,210 L0,235 Z' fill='%231F0609' stroke-width='2'/%3E%3Cpath d='M95,95 L155,112 L155,195 L95,205 Z' fill='%231F0609' stroke-width='1.8'/%3E%3Cpath d='M155,118 L205,132 L205,188 L155,194 Z' fill='%231F0609' stroke-width='1.5'/%3E%3Crect x='18' y='92' width='18' height='28' fill='%23F3CB69' opacity='0.35'/%3E%3Crect x='52' y='100' width='18' height='28' fill='%23F3CB69' opacity='0.35'/%3E%3Crect x='18' y='142' width='18' height='32' fill='%23F3CB69' opacity='0.25'/%3E%3Crect x='52' y='148' width='18' height='32' fill='%23F3CB69' opacity='0.25'/%3E%3Cg transform='translate(245, 128)'%3E%3Crect x='4' y='6' width='42' height='54' rx='6' fill='%232B080C' stroke-width='2.2'/%3E%3Ccircle cx='25' cy='42' r='5' fill='%23F3CB69' stroke='none' opacity='0.8'/%3E%3C/g%3E%3Cpath d='M255,188 Q180,210 15,265' stroke-width='3'/%3E%3Cpath d='M288,188 Q245,215 165,265' stroke-width='3'/%3E%3Cpath d='M242,194 L296,194 M222,203 L286,203 M196,214 L272,214 M162,226 L252,226 M120,240 L226,240 M68,255 L194,255' stroke-width='2.5'/%3E%3C/g%3E%3C/svg%3E"),
         /* Dải đường ray chạy dọc lề phải */
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='24' viewBox='0 0 22 24'%3E%3Cline x1='4' y1='0' x2='4' y2='24' stroke='%23F7F0E0' stroke-width='1.5' opacity='0.14'/%3E%3Cline x1='18' y1='0' x2='18' y2='24' stroke='%23F7F0E0' stroke-width='1.5' opacity='0.14'/%3E%3Crect x='1' y='9' width='20' height='3' fill='%23F7F0E0' opacity='0.14'/%3E%3C/svg%3E"),
-        /* Hoa văn mây xoáy Á Đông chìm */
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23781219' stroke-width='2.5' opacity='0.75'%3E%3Cpath d='M45,80 C35,50 75,35 95,55 C115,35 155,50 145,80 C165,85 165,115 140,120 C115,125 65,125 45,115 C25,110 25,85 45,80 Z'/%3E%3Cpath d='M75,85 C75,72 95,72 95,85 C95,94 83,94 83,86'/%3E%3Cpath d='M165,180 C155,150 195,135 215,155 C235,135 265,150 255,180'/%3E%3Cpath d='M195,185 C195,172 215,172 215,185 C215,194 203,194 203,186'/%3E%3C/g%3E%3C/svg%3E");
-      background-repeat: no-repeat, repeat-y, repeat;
-      background-position: bottom center, right 6px top 0, top left;
-      background-size: 100% auto, 22px 24px, 240px 240px;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='24' viewBox='0 0 22 24'%3E%3Cline x1='4' y1='0' x2='4' y2='24' stroke='%23F7EFE1' stroke-width='1.2' opacity='0.06'/%3E%3Cline x1='18' y1='0' x2='18' y2='24' stroke='%23F7EFE1' stroke-width='1.2' opacity='0.06'/%3E%3Crect x='1' y='9' width='20' height='2.5' fill='%23F7EFE1' opacity='0.06'/%3E%3C/svg%3E");
+      background-repeat: no-repeat, no-repeat, repeat-y;
+      background-position: top center, bottom center, right 6px top 0;
+      background-size: 100% 100%, 100% auto, 22px 24px;
       background-attachment: fixed;
     }
 
     .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
     /* =======================================================
-       2. HEADER CŨ: VIỀN LED TRẮNG NEON + CHỮ LED ĐỎ NEON
+       2. HEADER GLASSMORPHISM + VIỀN LED TRẮNG + CHỮ LED ĐỎ NEON
        ======================================================= */
-      .header-led-wrap {
+    .header-led-wrap {
       position: sticky;
-      top: 8px;
+      top: 10px;
       z-index: 30;
-      background-color: #50090e;
-      background-image: 
-        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
-        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M10 25 C10 15, 25 15, 30 20 C35 12, 55 12, 60 22 C68 20, 75 28, 68 35 C55 35, 15 35, 10 25 Z' fill='none' stroke='rgba(255,220,180,0.06)' stroke-width='1.2'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: auto, auto, 80px 40px;
-      border: 2px solid #ffffff !important;
-      border-radius: 16px;
-      margin: 8px 8px 0 8px;
-      box-shadow: 
-        0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 18px rgba(255, 255, 255, 0.55),
-        0 0 32px rgba(255, 255, 255, 0.3),
-        inset 0 0 10px rgba(255, 255, 255, 0.45) !important;
+      background: rgba(34, 9, 13, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      margin: 10px 12px 0 12px;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.65),
+        0 0 12px rgba(255, 255, 255, 0.45),
+        inset 0 0 14px rgba(255, 255, 255, 0.14);
     }
 
     .neon-led-red {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-      font-weight: 700 !important;
-      letter-spacing: 1.5px !important;
-      color: #ff333a !important;
-      text-shadow: 
-        0 0 5px #ff1a24,
-        0 0 12px #ff0011,
-        0 0 25px rgba(255, 0, 17, 0.8) !important;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #ff3b42;
+      text-shadow:
+        0 0 6px rgba(255, 40, 50, 0.9),
+        0 0 16px rgba(229, 41, 50, 0.65);
     }
 
-    .active-tab { 
-      background-color: #8B1115 !important; 
-      color: #f5ebd3 !important; 
-      border-color: #e52932 !important; 
-      box-shadow: 0 2px 8px rgba(139, 17, 21, 0.6);
+    .cat-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(247, 239, 225, 0.12);
+      color: rgba(247, 239, 225, 0.78);
+    }
+
+    .cat-pill:hover {
+      background: rgba(229, 41, 50, 0.18);
+      border-color: rgba(229, 41, 50, 0.4);
+    }
+
+    .active-tab {
+      background: linear-gradient(135deg, #E52932 0%, #9E1419 100%) !important;
+      color: #FFF9F0 !important;
+      border-color: rgba(255, 255, 255, 0.35) !important;
+      box-shadow: 0 4px 14px rgba(229, 41, 50, 0.45);
+      font-weight: 700;
     }
 
     /* =======================================================
-       3. THẺ MÓN DANH SÁCH CŨ: TỜ GIẤY CỔ MÀU KEM VIỀN NÉT ĐỨT
+       3. THẺ MÓN DANH SÁCH: MODERN DARK GLASS CARD
        ======================================================= */
     .glass-card {
-      background-color: #f5ebd3 !important;
-      background-image: 
-        radial-gradient(circle at 75% 20%, rgba(210, 180, 140, 0.45) 0%, transparent 45%),
-        radial-gradient(circle at 20% 70%, rgba(198, 160, 115, 0.35) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(240, 225, 195, 0.9) 0%, rgba(225, 205, 170, 0.8) 100%) !important;
-      border: 1.5px dashed rgba(160, 110, 60, 0.35) !important;
-      border-radius: 10px !important;
-      box-shadow: 
-        0 6px 16px rgba(0, 0, 0, 0.5), 
-        inset 0 0 18px rgba(180, 130, 80, 0.35) !important;
-      color: #381a0e !important;
+      background: linear-gradient(145deg, rgba(34, 19, 22, 0.78) 0%, rgba(20, 11, 13, 0.88) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(247, 239, 225, 0.11);
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       position: relative;
-      transition: transform 0.15s ease;
-      cursor: pointer;
-      pointer-events: auto !important;
+      overflow: hidden;
+      transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(243, 203, 105, 0.35);
+      box-shadow: 0 12px 32px rgba(139, 17, 21, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.14);
     }
 
     .glass-card:active {
       transform: scale(0.985);
     }
 
-    .glass-card h3 {
-      color: #8B1115 !important;
-      font-weight: 800 !important;
-      letter-spacing: 0.3px;
-    }
-
-    .glass-card p.text-xs {
-      color: #9e4b16 !important;
-      font-weight: 700 !important;
-    }
-
-    .glass-card p.text-\[11px\] {
-      color: #4a2812 !important;
-      border-top-color: rgba(139, 17, 21, 0.22) !important;
-      font-weight: 600 !important;
-    }
-
-    .glass-card span.uppercase {
-      background-color: rgba(139, 17, 21, 0.12) !important;
-      color: #8B1115 !important;
-      border-color: rgba(139, 17, 21, 0.3) !important;
-    }
-
     /* =======================================================
-       4. BẢNG CÔNG THỨC KIỂU CUỐNG VÉ TÀU & BARCODE (GIỮ MỚI)
+       4. MODAL CHI TIẾT KIỂU DARK GLASS COCKTAIL SHEET
        ======================================================= */
     .sheet-open {
       transform: translateY(0%) !important;
@@ -147,367 +140,359 @@
       visibility: hidden !important;
     }
 
-    .ticket-sheet {
-      background-color: #F7F0E0 !important;
-      background-image: 
-        radial-gradient(circle at 50% 40%, #FCF9F2 0%, #EDE1C9 100%) !important;
-      color: #381A0E !important;
-      border-top-left-radius: 22px;
-      border-top-right-radius: 22px;
-      box-shadow: 0 -14px 40px rgba(0, 0, 0, 0.85);
-      border-top: 4px solid #B82B26;
-      overflow-x: hidden !important;
+    .modern-sheet {
+      background: linear-gradient(180deg, rgba(28, 13, 16, 0.96) 0%, rgba(14, 8, 9, 0.99) 100%);
+      backdrop-filter: blur(26px);
+      -webkit-backdrop-filter: blur(26px);
+      color: #F7EFE1;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+      box-shadow: 0 -18px 50px rgba(0, 0, 0, 0.88);
+      border-top: 1.5px solid rgba(243, 203, 105, 0.38);
     }
 
-    .ticket-header-box {
-      border: 1.5px solid #6E1217;
-      background-color: rgba(110, 18, 23, 0.06);
-      padding: 10px 14px;
-      border-radius: 4px;
-      position: relative;
-    }
-
-    /* Đường đục lỗ xé cuống vé chuẩn nửa hình tròn khuyết 2 bên trên mobile */
-    .ticket-perforation {
-      position: relative;
-      border-top: 3px dotted rgba(91, 12, 17, 0.45);
-      margin: 20px 0 !important;
-      opacity: 1 !important;
-    }
-    .ticket-perforation::before,
-    .ticket-perforation::after {
-      content: "";
-      position: absolute;
-      top: -12px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background-color: #2A0406;
-    }
-    .ticket-perforation::before { left: -31px !important; }
-    .ticket-perforation::after { right: -31px !important; }
-
-    .train-stamp {
-      width: 46px;
-      height: 46px;
-      background: #E59A54;
-      padding: 3px;
-      border: 1.5px dashed #6E1217;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transform: rotate(-4deg);
-      flex-shrink: 0;
-    }
-
-    .clickable-ingredient {
-      transition: all 0.15s ease;
-      cursor: pointer;
-    }
-    .clickable-ingredient:active {
-      transform: scale(0.985);
-      background-color: rgba(184, 43, 38, 0.12) !important;
-    }
-
-    /* =======================================================
-       PHÔNG CHỮ VIẾT TAY UỐN LƯỢN CHO TÊN CỐC RƯỢU
-       ======================================================= */
-    /* 1. Tên cốc rượu trong bảng chi tiết (cuống vé) */
     #sheet-title {
-      font-family: 'Dancing Script', cursive !important;
-      text-transform: none !important; /* Tắt viết hoa toàn bộ để nét uốn lượn mềm mại */
-      font-size: 2.15rem !important;   /* Tăng cỡ chữ cho nét viết tay rõ ràng */
-      font-weight: 700 !important;
-      letter-spacing: 0.5px !important;
-      line-height: 1.2 !important;
-      color: #6E1217 !important;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.35rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #F7EFE1;
+      text-shadow: 0 2px 12px rgba(229, 41, 50, 0.35);
     }
 
+    .mult-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(247, 239, 225, 0.14);
+      color: rgba(247, 239, 225, 0.75);
+      transition: all 0.15s ease;
+    }
+
+    .mult-btn.active {
+      background: linear-gradient(135deg, #F3CB69 0%, #D49B2A 100%);
+      color: #1A0709;
+      border-color: #FFF3D1;
+      font-weight: 800;
+      box-shadow: 0 0 14px rgba(243, 203, 105, 0.45);
+    }
+
+    .ing-row {
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(247, 239, 225, 0.09);
+      transition: all 0.16s ease;
+    }
+
+    .ing-row.checked {
+      background: rgba(34, 197, 94, 0.1);
+      border-color: rgba(74, 222, 128, 0.32);
+    }
+
+    .ing-row.checked .ing-label {
+      text-decoration: line-through;
+      opacity: 0.55;
+    }
+
+    .step-row {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(247, 239, 225, 0.08);
+      transition: all 0.16s ease;
+    }
+
+    .step-row.done {
+      background: rgba(243, 203, 105, 0.08);
+      border-color: rgba(243, 203, 105, 0.28);
+      opacity: 0.65;
+    }
   </style>
 </head>
-<body class="font-sans antialiased pb-24 min-h-screen">
+<body class="font-sans antialiased pb-28 min-h-screen selection:bg-train-red selection:text-white">
 
-  <!-- HEADER CŨ: VIỀN LED TRẮNG + LOGO & CHỮ LED ĐỎ -->
-  <header class="header-led-wrap p-4 backdrop-blur-md">
-    <div class="flex items-center justify-between mb-3">
+  <!-- HEADER: VIỀN LED TRẮNG + LOGO & CHỮ LED ĐỎ -->
+  <header class="header-led-wrap p-4">
+    <div class="flex items-center justify-between mb-3.5">
       <div class="flex items-center gap-3.5">
-        <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="w-14 h-14 rounded-full object-cover shadow-md">
+        <div class="relative">
+          <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="w-13 h-13 w-[52px] h-[52px] rounded-full object-cover ring-2 ring-white/80 shadow-lg">
+          <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 ring-2 ring-[#22090D]" title="Bar Online"></span>
+        </div>
         <div class="flex flex-col justify-center">
-          <h1 class="neon-led-red text-[22px] leading-none">
+          <h1 class="neon-led-red text-[21px] leading-none">
             THE TRAIN 1881
           </h1>
-          <p class="text-[12px] text-[#f3cb69] font-normal uppercase tracking-[0.28em] mt-1.5" style="text-shadow: 0 0 6px rgba(243, 203, 105, 0.45);">
-            COCKTAILS • BAR
+          <p class="text-[11px] text-[#F3CB69] font-semibold uppercase tracking-[0.26em] mt-1.5" style="text-shadow: 0 0 8px rgba(243, 203, 105, 0.4);">
+            COCKTAILS • BAR HANDBOOK
           </p>
         </div>
       </div>
 
-      <span id="recipe-count" class="shrink-0 z-10 text-xs bg-[#7D121B]/80 text-[#f5ebd3] px-3 py-1 rounded-full border border-[#8B1115] shadow-md ml-2">
+      <span id="recipe-count" class="shrink-0 z-10 text-xs font-bold bg-white/10 text-[#F7EFE1] px-3 py-1.5 rounded-full border border-white/20 backdrop-blur-md">
         -- món
       </span>
     </div>
 
-    <!-- Thanh tìm kiếm -->
+    <!-- Thanh tìm kiếm Glass -->
     <div class="relative w-full">
-      <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Tìm Kiếm Món...1881" 
-        class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#330508]/85 border border-[#8B1115]/60 text-[#f5ebd3] placeholder-[#f5ebd3]/50 text-sm focus:outline-none focus:border-[#e52932]">
-      <svg class="w-4 h-4 text-[#f5ebd3]/50 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Tìm tên món, rượu nền, nguyên liệu..."
+        class="w-full pl-10 pr-9 py-2.5 rounded-xl bg-black/45 border border-white/15 text-[#F7EFE1] placeholder-[#F7EFE1]/45 text-sm focus:outline-none focus:border-[#F3CB69]/70 focus:bg-black/60 transition-all">
+      <svg class="w-4 h-4 text-[#F3CB69]/75 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
       </svg>
+      <button id="clear-search" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-xs text-white/50 hover:text-white px-1.5 py-0.5 rounded bg-white/10">✕</button>
     </div>
 
     <!-- Bộ lọc danh mục -->
-    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 text-xs font-medium">
-      <button onclick="setTab('All', this)" class="cat-pill active-tab px-3.5 py-1.5 rounded-full border border-[#8B1115] whitespace-nowrap transition-all">Tất cả</button>
-      <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🍸 Cocktail</button>
-      <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🍹 Mocktail</button>
-      <button onclick="setTab('Alcoholic', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🥃 Alcoholic</button>
-      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full bg-[#330508]/80 border border-[#8B1115]/50 text-[#f5ebd3]/90 hover:bg-[#7D121B] whitespace-nowrap transition-all">🍷 Shots & 🍺 Beer</button>
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 text-xs">
+      <button onclick="setTab('All', this)" class="cat-pill active-tab px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">Tất cả</button>
+      <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍸 Cocktail</button>
+      <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍹 Mocktail</button>
+      <button onclick="setTab('Alcoholic', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🥃 Alcoholic</button>
+      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍷 Shots & 🍺 Beer</button>
     </div>
   </header>
 
-  <!-- DANH SÁCH MÓN CŨ: THẺ TỜ GIẤY KEM VIỀN NÉT ĐỨT -->
-  <main class="p-4">
+  <!-- DANH SÁCH MÓN: MODERN DARK GLASS CARDS -->
+  <main class="px-3.5 pt-4 max-w-4xl mx-auto">
     <div id="recipe-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
       <!-- COCKTAIL CLASSIC & SIGNATURE -->
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="dragon fruit rose spritz vang no" onclick="showDetail('Dragon Fruit Rose Spritz', 'Cocktail', 'Build / Top up', ['50-60ml Nước ép thanh long đỏ', '15ml Siro hoa hồng', '15ml Nước chanh tươi', 'Top up Vang nổ'], 'Cho đá vào ly. Rót nước ép thanh long, siro và chanh khuấy nhẹ. Top up vang nổ.', 'Lát thanh long đỏ và hoa hồng bóp nát rắc lên')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="dragon fruit rose spritz vang no" onclick="showDetail('Dragon Fruit Rose Spritz', 'Cocktail', 'Build / Top up', ['50-60ml Nước ép thanh long đỏ', '15ml Siro hoa hồng', '15ml Nước chanh tươi', 'Top up Vang nổ'], 'Cho đá vào ly. Rót nước ép thanh long, siro và chanh khuấy nhẹ. Top up vang nổ.', 'Lát thanh long đỏ và hoa hồng bóp nát rắc lên')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Dragon Fruit Rose Spritz</h3>
         <p class="text-xs text-train-gold mb-2">Build / Top up</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Thanh long đỏ • Siro hoa hồng • Chanh • Vang nổ</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="singapore sling gin cherry cointreau dua" onclick="showDetail('Singapore Sling', 'Cocktail', 'Shake', ['50ml Bombay (Gin)', '15ml Rượu cherry', '15ml Cointreau', '60ml Nước ép dứa', '15ml Chanh tươi', '10ml Grenadine (dâu hoặc lựu)', '1 dash Angostura bitters'], 'Shake mạnh với đá. Rót ra ly cao.', 'Dứa cherry')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="singapore sling gin cherry cointreau dua" onclick="showDetail('Singapore Sling', 'Cocktail', 'Shake', ['50ml Bombay (Gin)', '15ml Rượu cherry', '15ml Cointreau', '60ml Nước ép dứa', '15ml Chanh tươi', '10ml Grenadine (dâu hoặc lựu)', '1 dash Angostura bitters'], 'Shake mạnh với đá. Rót ra ly cao.', 'Dứa cherry')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Singapore Sling</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Gin • Rượu cherry • Cointreau • Nước dứa • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="aperol spritz vang no" onclick="showDetail('Aperol Spritz', 'Cocktail', 'Top up', ['50ml Vang nổ', '50ml Aperol', '15-20ml soda'], ' Rót theo thứ tự vào cốc vang size vừa cho nửa cốc đá. ', 'Nửa lát cam vàng cho vào cốc')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="aperol spritz vang no" onclick="showDetail('Aperol Spritz', 'Cocktail', 'Top up', ['50ml Vang nổ', '50ml Aperol', '15-20ml soda'], 'Rót theo thứ tự vào cốc vang size vừa cho nửa cốc đá.', 'Nửa lát cam vàng cho vào cốc')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Aperol Spritz</h3>
         <p class="text-xs text-train-gold mb-2">Top up</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vang nổ • Aperol • Soda</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="jungle bird dark rum campari dua" onclick="showDetail('Jungle Bird', 'Cocktail', 'Shake', ['45ml Dark rum', '15ml Campari', '45ml Nước dứa tươi', '15ml Chanh tươi', '15ml Syrup đường'], 'Shake đều với đá. Lọc rót ra ly Rocks đá mới.', 'Lát dứa hoặc vỏ cam')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="jungle bird dark rum campari dua" onclick="showDetail('Jungle Bird', 'Cocktail', 'Shake', ['45ml Dark rum', '15ml Campari', '45ml Nước dứa tươi', '15ml Chanh tươi', '15ml Syrup đường'], 'Shake đều với đá. Lọc rót ra ly Rocks đá mới.', 'Lát dứa hoặc vỏ cam')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Jungle Bird</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Dark rum • Campari • Nước dứa • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="god father scotch whisky amaretto" onclick="showDetail('God Father', 'Cocktail', 'Stir', ['50ml Jimbean', '25ml Amaretto'], 'Cho đá vào ly Rock, rót Whisky và Amaretto. Khuấy 15-20s.', 'Vỏ cam')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="god father scotch whisky amaretto" onclick="showDetail('God Father', 'Cocktail', 'Stir', ['50ml Jimbean', '25ml Amaretto'], 'Cho đá vào ly Rock, rót Whisky và Amaretto. Khuấy 15-20s.', 'Vỏ cam')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">God Father</h3>
         <p class="text-xs text-train-gold mb-2">Stir ( Ngoáy )</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Scotch whisky • Amaretto</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="hurricane dark rum rum trang cam grenadine" onclick="showDetail('Hurricane', 'Cocktail', 'Shake', ['40ml Dark rum', '40ml Bacardi', '20ml Chanh tươi', '60ml Nước cam', '20ml Grenadine( dâu hoặc lựu)', '10ml Syrup đường'], 'Shake mạnh tất cả nguyên liệu với đá. Rót ra ly Hurricane.', 'Lát cam, cherry')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="hurricane dark rum rum trang cam grenadine" onclick="showDetail('Hurricane', 'Cocktail', 'Shake', ['40ml Dark rum', '40ml Bacardi', '20ml Chanh tươi', '60ml Nước cam', '20ml Grenadine (dâu hoặc lựu)', '10ml Syrup đường'], 'Shake mạnh tất cả nguyên liệu với đá. Rót ra ly Hurricane.', 'Lát cam, cherry')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Hurricane</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Dark rum • Rum trắng • Nước cam • Grenadine</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="blood and sand scotch whisky cherry heering vermouth" onclick="showDetail('Blood and Sand', 'Cocktail', 'Shake', ['40ml Jimbean', '30ml Nước cam tươi', '30ml Cherry Heering', '30ml Vermouth đỏ'], 'Shake đều với đá. Lọc rót ra ly Coupe hoặc Martini đã làm lạnh.', 'Vỏ cam hoặc cherry')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="blood and sand scotch whisky cherry heering vermouth" onclick="showDetail('Blood and Sand', 'Cocktail', 'Shake', ['40ml Jimbean', '30ml Nước cam tươi', '30ml Cherry Heering', '30ml Vermouth đỏ'], 'Shake đều với đá. Lọc rót ra ly Coupe hoặc Martini đã làm lạnh.', 'Vỏ cam hoặc cherry')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Blood and Sand</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Scotch whisky • Nước cam • Cherry Heering • Vermouth</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="tequila sunrise cam grenadine" onclick="showDetail('Tequila Sunrise', 'Cocktail', 'Build / Layer', ['45ml Tequila', '90ml Nước cam tươi', '15ml Grenadine (dâu hoặc lựu)'], 'Rót Tequila và nước cam vào ly đầy đá. Rót từ từ Grenadine xuống đáy ly tạo hiệu ứng chuyển màu.', 'Lát cam, cherry')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="tequila sunrise cam grenadine" onclick="showDetail('Tequila Sunrise', 'Cocktail', 'Build / Layer', ['45ml Tequila', '90ml Nước cam tươi', '15ml Grenadine (dâu hoặc lựu)'], 'Rót Tequila và nước cam vào ly đầy đá. Rót từ từ Grenadine xuống đáy ly tạo hiệu ứng chuyển màu.', 'Lát cam, cherry')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Tequila Sunrise</h3>
         <p class="text-xs text-train-gold mb-2">Build / Layer</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Tequila • Nước cam tươi • Grenadine</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="com cocktail dua pandan bacardi cointreau malibu" onclick="showDetail('Cốm Cocktail', 'Cocktail', 'Shake', ['50ml Nước dứa', '30ml Siro pandan', '40ml Bacardi', '15ml Cointreau', '15ml Malibu'], 'Cho tất cả nguyên liệu vào shaker lắc đều. Shake xong đổ cả đá và nước vào cốc.', 'Lá dứa hoặc cốm')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="com cocktail dua pandan bacardi cointreau malibu" onclick="showDetail('Cốm Cocktail', 'Cocktail', 'Shake', ['50ml Nước dứa', '30ml Siro pandan', '40ml Bacardi', '15ml Cointreau', '15ml Malibu'], 'Cho tất cả nguyên liệu vào shaker lắc đều. Shake xong đổ cả đá và nước vào cốc.', 'Lá dứa hoặc cốm')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Cốm Cocktail</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa • Siro cốm • Bacardi • Cointreau • Malibu</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="mango lac xoai vodka soda" onclick="showDetail('Mango Lắc', 'Cocktail', 'Shake', ['30-50ml Sinh tố xoài dầm', '20ml Siro xoài', '1 quả Chanh', '50ml Vodka', 'Top up Soda'], 'Lăn cốc qua muối ớt. Shake nguyên liệu trừ soda với đá. Rót ra cốc, top up soda.', 'Viền muối ớt, lát xoài')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="mango lac xoai vodka soda" onclick="showDetail('Mango Lắc', 'Cocktail', 'Shake', ['30-50ml Sinh tố xoài dầm', '20ml Siro xoài', '1 quả Chanh', '50ml Vodka', 'Top up Soda'], 'Lăn cốc qua muối ớt. Shake nguyên liệu trừ soda với đá. Rót ra cốc, top up soda.', 'Viền muối ớt, lát xoài')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Mango Lắc</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Sinh tố xoài • Vodka • Chanh • Soda • Muối ớt</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="penicillin gung bourbon jim beam mat ong" onclick="showDetail('Penicillin', 'Cocktail', 'Muddle & Shake', ['4-5 lát Gừng tươi', '50ml Jimbean', '20ml Nước chanh', '15ml Mật ong'], 'Cắt 4-5 lát gừng vào shaker dầm nát. Thêm Bourbon, chanh, mật ong, đá. Shake mạnh, lọc 2 lần ra ly.', 'Twist vỏ chanh vàng')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="penicillin gung bourbon jim beam mat ong" onclick="showDetail('Penicillin', 'Cocktail', 'Muddle & Shake', ['4-5 lát Gừng tươi', '50ml Jimbean', '20ml Nước chanh', '15ml Mật ong'], 'Cắt 4-5 lát gừng vào shaker dầm nát. Thêm Bourbon, chanh, mật ong, đá. Shake mạnh, lọc 2 lần ra ly.', 'Twist vỏ chanh vàng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Penicillin</h3>
         <p class="text-xs text-train-gold mb-2">Muddle & Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Gừng • Bourbon Jim Bean • Chanh • Mật ong</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="watermelon cucumber dua chuot dua hau gin" onclick="showDetail('Watermelon Cucumber', 'Cocktail', 'Muddle & Shake', ['4-5 lát Dưa chuột', '20ml Chanh', '15ml Đường', '50ml Nước dưa hấu', '50ml Bombay (Gin)'], 'Áp 2 lát dưa chuột mỏng vào ly. Dầm 4-5 lát dưa chuột trong shaker, thêm các nguyên liệu còn lại và đá, shake đều lọc 2 lần.', 'Lát dưa chuột áp thành cốc')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="watermelon cucumber dua chuot dua hau gin" onclick="showDetail('Watermelon Cucumber', 'Cocktail', 'Muddle & Shake', ['4-5 lát Dưa chuột', '20ml Chanh', '15ml Đường', '50ml Nước dưa hấu', '50ml Bombay (Gin)'], 'Áp 2 lát dưa chuột mỏng vào ly. Dầm 4-5 lát dưa chuột trong shaker, thêm các nguyên liệu còn lại và đá, shake đều lọc 2 lần.', 'Lát dưa chuột áp thành cốc')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Watermelon Cucumber</h3>
         <p class="text-xs text-train-gold mb-2">Muddle & Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Dưa chuột • Nước dưa hấu • Gin • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="mojito chanh bac ha bacardi soda" onclick="showDetail('Mojito', 'Cocktail', 'Muddle & Build', ['1 quả Chanh', '2 thìa Đường', '50ml Bacardi', 'Vài nhánh Bạc hà', 'Top up Soda'], 'Dầm nhẹ chanh, đường và lá bạc hà trong ly. Thêm Bacardi, đá đập nát, khuấy nhẹ và top up soda.', 'Đọt lá bạc hà, lát chanh')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="mojito chanh bac ha bacardi soda" onclick="showDetail('Mojito', 'Cocktail', 'Muddle & Build', ['1 quả Chanh', '2 thìa Đường', '50ml Bacardi', 'Vài nhánh Bạc hà', 'Top up Soda'], 'Dầm nhẹ chanh, đường và lá bạc hà trong ly. Thêm Bacardi, đá đập nát, khuấy nhẹ và top up soda.', 'Đọt lá bạc hà, lát chanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Mojito</h3>
         <p class="text-xs text-train-gold mb-2">Muddle & Build</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Chanh • Bạc hà • Bacardi • Soda</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="margarita tequila cointreau chanh" onclick="showDetail('Margarita', 'Cocktail', 'Shake', ['50ml Tequila', '30ml Cointreau', '30ml Nước chanh', '5-10ml Đường'], 'Viền muối quanh miệng ly. Shake các nguyên liệu với đá. Lọc bỏ đá khi rót ra ly.', 'Viền muối, cài lát chanh')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="margarita tequila cointreau chanh" onclick="showDetail('Margarita', 'Cocktail', 'Shake', ['50ml Tequila', '30ml Cointreau', '30ml Nước chanh', '5-10ml Đường'], 'Viền muối quanh miệng ly. Shake các nguyên liệu với đá. Lọc bỏ đá khi rót ra ly.', 'Viền muối, cài lát chanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Margarita</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Tequila • Cointreau • Chanh • Viền muối</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="coffee martini vodka kahlua espresso" onclick="showDetail('Coffee Martini', 'Cocktail', 'Shake', ['30ml Vodka', '30ml Kahlua', '30ml Cà phê ', '7-8ml Đường'], 'Shake thật mạnh với nhiều đá để tạo lớp bọt foam đẹp. Lọc bỏ đá rót ra ly Coupe.', '3 hạt cà phê')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="coffee martini vodka kahlua espresso" onclick="showDetail('Coffee Martini', 'Cocktail', 'Shake', ['30ml Vodka', '30ml Kahlua', '30ml Cà phê', '7-8ml Đường'], 'Shake thật mạnh với nhiều đá để tạo lớp bọt foam đẹp. Lọc bỏ đá rót ra ly Coupe.', '3 hạt cà phê')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Coffee Martini</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vodka • Kahlua • Espresso</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="Daiquiri" onclick="showDetail('Daiquiri', 'Cocktail', 'Shake', ['50ml Bacardi', '1 quả Chanh', '15ml Đường'], 'Shake mạnh với đá. Lọc bỏ đá khi rót ra ly lạnh.', 'Lát chanh vàng')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="daiquiri" onclick="showDetail('Daiquiri', 'Cocktail', 'Shake', ['50ml Bacardi', '1 quả Chanh', '15ml Đường'], 'Shake mạnh với đá. Lọc bỏ đá khi rót ra ly lạnh.', 'Lát chanh vàng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Daiquiri</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Rum • Nước chanh tươi • Đường</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="mai tai rum cointreau chanh" onclick="showDetail('Mai Tai', 'Cocktail', 'Shake', ['35ml Dark rum', '15ml Bacardi', '15ml Cointreau', '15ml Syrup đường', '20ml Nước chanh'], 'Shake tất cả nguyên liệu với đá. Rót ra ly chứa đá đập.', 'Nhánh bạc hà, vỏ chanh')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="mai tai rum cointreau chanh" onclick="showDetail('Mai Tai', 'Cocktail', 'Shake', ['35ml Dark rum', '15ml Bacardi', '15ml Cointreau', '15ml Syrup đường', '20ml Nước chanh'], 'Shake tất cả nguyên liệu với đá. Rót ra ly chứa đá đập.', 'Nhánh bạc hà, vỏ chanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Mai Tai</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Rum vàng • Rum trắng • Cointreau • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="tropical dusk rum tequila dau cam" onclick="showDetail('Tropical Dusk', 'Cocktail', 'Shake & Layer', ['20ml Bacardi', '30ml Tequila', '10ml Siro dâu', '50-80ml Nước cam vắt'], 'Shake Rum, Tequila, siro dâu với đá 15 giây. Rót ra ly, phân tầng từ từ với nước cam.', 'Lát cam tươi')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="tropical dusk rum tequila dau cam" onclick="showDetail('Tropical Dusk', 'Cocktail', 'Shake & Layer', ['20ml Bacardi', '30ml Tequila', '10ml Siro dâu', '50-80ml Nước cam vắt'], 'Shake Rum, Tequila, siro dâu với đá 15 giây. Rót ra ly, phân tầng từ từ với nước cam.', 'Lát cam tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Tropical Dusk</h3>
         <p class="text-xs text-train-gold mb-2">Shake & Layer</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Rum • Tequila • Siro dâu • Nước cam</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="sex on the beach vodka dua cam dau" onclick="showDetail('Sex on the Beach', 'Cocktail', 'Shake & Layer', ['50ml Vodka', '50ml Nước dứa', '30ml Nước cam', '15ml Siro dứa', '15ml Sinh tố dâu'], 'Rót sinh tố dâu ở đáy ly. Shake riêng Vodka, dứa, cam, siro dứa với đá rồi rót nhẹ lên trên.', 'Lát cam, cherry')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="sex on the beach vodka dua cam dau" onclick="showDetail('Sex on the Beach', 'Cocktail', 'Shake & Layer', ['50ml Vodka', '50ml Nước dứa', '30ml Nước cam', '15ml Siro dứa', '15ml Sinh tố dâu'], 'Rót sinh tố dâu ở đáy ly. Shake riêng Vodka, dứa, cam, siro dứa với đá rồi rót nhẹ lên trên.', 'Lát cam, cherry')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Sex on the Beach</h3>
         <p class="text-xs text-train-gold mb-2">Shake & Layer</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vodka • Nước dứa • Nước cam • Sinh tố dâu</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="long island iced tea rum tequila vodka gin cointreau coca" onclick="showDetail('Long Island Iced Tea', 'Cocktail', 'Build / Shake', ['15ml Bacardi', '15ml Tequila', '15ml Vodka', '15ml Bombay (Gin)', '10ml Cointreau', 'Nửa quả Chanh', 'Top up Coca-Cola'], 'Shake nhẹ các loại rượu với chanh và đá. Rót ra ly, top up Coca-Cola.', 'Lát chanh tươi')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="long island iced tea rum tequila vodka gin cointreau coca" onclick="showDetail('Long Island Iced Tea', 'Cocktail', 'Build / Shake', ['15ml Bacardi', '15ml Tequila', '15ml Vodka', '15ml Bombay (Gin)', '10ml Cointreau', 'Nửa quả Chanh', 'Top up Coca-Cola'], 'Shake nhẹ các loại rượu với chanh và đá. Rót ra ly, top up Coca-Cola.', 'Lát chanh tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Long Island Iced Tea</h3>
         <p class="text-xs text-train-gold mb-2">Build / Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Rum • Tequila • Vodka • Gin • Cointreau • Coke</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="sangria vang do cointreau coca tao cam" onclick="showDetail('Sangria', 'Cocktail', 'Shake', ['50ml Vang đỏ', '15ml Cointreau', '40ml Coca-Cola', '5-10ml Syrup', 'Cam vàng', 'Táo cắt nhỏ'], 'Cho hoa quả, các loại rượu và đá vào shaker. Shake đều, rót ra ly cao.', 'Lát cam, miếng táo')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="sangria vang do cointreau coca tao cam" onclick="showDetail('Sangria', 'Cocktail', 'Shake', ['50ml Vang đỏ', '15ml Cointreau', '40ml Coca-Cola', '5-10ml Syrup', 'Cam vàng', 'Táo cắt nhỏ'], 'Cho hoa quả, các loại rượu và đá vào shaker. Shake đều, rót ra ly cao.', 'Lát cam, miếng táo')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Sangria</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vang đỏ • Cointreau • Coca-Cola • Hoa quả tươi</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="pink lady gin dau trung" onclick="showDetail('Pink Lady', 'Cocktail', 'Double Shake', ['50ml Bombay (Gin)', '20ml Siro dâu', '15ml Sinh tố dâu', '1 Lòng trắng trứng', '1 ấn Đường', '1 quả Chanh'], 'Shake lần 1 không đá với lò xo. Shake lần 2 có đá. Lọc bỏ đá rót ra ly.', 'Quả cherry')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="pink lady gin dau trung" onclick="showDetail('Pink Lady', 'Cocktail', 'Double Shake', ['50ml Bombay (Gin)', '20ml Siro dâu', '15ml Sinh tố dâu', '1 Lòng trắng trứng', '1 ấn Đường', '1 quả Chanh'], 'Shake lần 1 không đá với lò xo. Shake lần 2 có đá. Lọc bỏ đá rót ra ly.', 'Quả cherry')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Pink Lady</h3>
         <p class="text-xs text-train-gold mb-2">Double Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Gin • Siro dâu • Lòng trắng trứng • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="pina colada dua cot dua malibu bacardi" onclick="showDetail('Pina Colada', 'Cocktail', 'Shake / Blend', ['50ml Nước dứa', '25ml Cốt dừa', '30ml Malibu', '50ml Bacardi', '1 ấn Đường'], 'Shake đều với đá viên hoặc xay nhuyễn (blend) với đá.', 'Lát dứa')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="pina colada dua cot dua malibu bacardi" onclick="showDetail('Pina Colada', 'Cocktail', 'Shake / Blend', ['50ml Nước dứa', '25ml Cốt dừa', '30ml Malibu', '50ml Bacardi', '1 ấn Đường'], 'Shake đều với đá viên hoặc xay nhuyễn (blend) với đá.', 'Lát dứa')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Pina Colada</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa • Cốt dừa • Malibu • Bacardi</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="pornstar martini dua chanh leo vodka" onclick="showDetail('Pornstar Martini', 'Cocktail', 'Shake', ['50ml Nước dứa', '20ml Siro chanh leo', '2/3 quả Chanh leo tươi', '50ml Vodka', 'Nửa quả Chanh'], 'Shake mạnh đóng đá tất cả nguyên liệu. Lọc 2 lần ra ly Martini.', '1/3 quả chanh leo thả nổi')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="pornstar martini dua chanh leo vodka" onclick="showDetail('Pornstar Martini', 'Cocktail', 'Shake', ['50ml Nước dứa', '20ml Siro chanh leo', '2/3 quả Chanh leo tươi', '50ml Vodka', 'Nửa quả Chanh'], 'Shake mạnh đóng đá tất cả nguyên liệu. Lọc 2 lần ra ly Martini.', '1/3 quả chanh leo thả nổi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Pornstar Martini</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa • Chanh leo • Vodka</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="paloma cam tequila blueberry" onclick="showDetail('Paloma', 'Cocktail', 'Build / Shake', ['50ml Nước cam', '50ml Tequila', '25ml Siro blueberry', 'Nửa quả Chanh', '15ml Đường'], 'Shake các nguyên liệu với đá. Rót ra ly viền muối.', 'Viền muối, lát cam')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="paloma cam tequila blueberry" onclick="showDetail('Paloma', 'Cocktail', 'Build / Shake', ['50ml Nước cam', '50ml Tequila', '25ml Siro blueberry', 'Nửa quả Chanh', '15ml Đường'], 'Shake các nguyên liệu với đá. Rót ra ly viền muối.', 'Viền muối, lát cam')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Paloma</h3>
         <p class="text-xs text-train-gold mb-2">Build / Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Tequila • Nước cam • Siro blueberry • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="old fashioned whisky bitters cam" onclick="showDetail('Old Fashioned', 'Cocktail', 'Stir', ['1 thìa Đường cát', '6 dash Angostura bitters', '60ml Jimbean'], 'Khuấy đường + bitters + whisky không đá 15s. Thêm đá khối khuấy lần 2. Yểm tinh dầu vỏ cam.', 'Vỏ cam yểm tinh dầu')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="old fashioned whisky bitters cam" onclick="showDetail('Old Fashioned', 'Cocktail', 'Stir', ['1 thìa Đường cát', '6 dash Angostura bitters', '60ml Jimbean'], 'Khuấy đường + bitters + whisky không đá 15s. Thêm đá khối khuấy lần 2. Yểm tinh dầu vỏ cam.', 'Vỏ cam yểm tinh dầu')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Old Fashioned</h3>
         <p class="text-xs text-train-gold mb-2">Stir ( Ngoáy )</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">60ml Whisky • Angostura Bitters • Đường</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="negroni campari vermouth gin" onclick="showDetail('Negroni', 'Cocktail', 'Stir', ['30ml Campari', '30ml Sweet Vermouth', '30ml Bombay (Gin)'], 'Cho đá vào ly, rót 3 loại rượu tỉ lệ 1:1:1. Khuấy đều 20s.', 'Vỏ cam')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="negroni campari vermouth gin" onclick="showDetail('Negroni', 'Cocktail', 'Stir', ['30ml Campari', '30ml Sweet Vermouth', '30ml Bombay (Gin)'], 'Cho đá vào ly, rót 3 loại rượu tỉ lệ 1:1:1. Khuấy đều 20s.', 'Vỏ cam')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Negroni</h3>
         <p class="text-xs text-train-gold mb-2">Stir ( Ngoáy )</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Campari • Sweet Vermouth • Gin</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="dry martini gin vermouth" onclick="showDetail('Dry Martini', 'Cocktail', 'Stir', ['60ml Bombay (Gin)', '15ml Extra Dry '], 'Khuấy đều Gin và Vermouth với đá trong mixing glass. Lọc rót ra ly Martini.', 'Quả olive')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="dry martini gin vermouth" onclick="showDetail('Dry Martini', 'Cocktail', 'Stir', ['60ml Bombay (Gin)', '15ml Extra Dry'], 'Khuấy đều Gin và Vermouth với đá trong mixing glass. Lọc rót ra ly Martini.', 'Quả olive')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Dry Martini</h3>
         <p class="text-xs text-train-gold mb-2">Stir ( Ngoáy )</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">60ml Gin • 15ml Dry Vermouth</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="vodka sour bitters chanh trung" onclick="showDetail('Vodka Sour', 'Cocktail', 'Double Shake', ['60ml Vodka', '7-8 dash Angostura bitters', '1.5 quả Chanh', '15ml Đường', '1 Lòng trắng trứng'], 'Shake lò xo không đá 15s. Thêm đá shake tiếp 10s. Lọc rót ra ly.', 'Giọt bitters decor')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="vodka sour bitters chanh trung" onclick="showDetail('Vodka Sour', 'Cocktail', 'Double Shake', ['60ml Vodka', '7-8 dash Angostura bitters', '1.5 quả Chanh', '15ml Đường', '1 Lòng trắng trứng'], 'Shake lò xo không đá 15s. Thêm đá shake tiếp 10s. Lọc rót ra ly.', 'Giọt bitters decor')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Vodka Sour</h3>
         <p class="text-xs text-train-gold mb-2">Double Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vodka • Chanh • Lòng trắng trứng • Bitters</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="whiskey sour jack daniels bitters chanh trung" onclick="showDetail('Whiskey Sour', 'Cocktail', 'Double Shake', ['60ml Jimbean', '6-8 dash Angostura bitters', '1.5 quả Chanh', '15ml Đường', '1 Lòng trắng trứng'], 'Shake lò xo không đá 15s. Thêm đá shake 10s. Lọc rót ra ly.', 'Vỏ cam decor')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="whiskey sour jack daniels bitters chanh trung" onclick="showDetail('Whiskey Sour', 'Cocktail', 'Double Shake', ['60ml Jimbean', '6-8 dash Angostura bitters', '1.5 quả Chanh', '15ml Đường', '1 Lòng trắng trứng'], 'Shake lò xo không đá 15s. Thêm đá shake 10s. Lọc rót ra ly.', 'Vỏ cam decor')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Whiskey Sour</h3>
         <p class="text-xs text-train-gold mb-2">Double Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Jimbean • Chanh • Lòng trắng trứng • Bitters</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="frozen citrus vodka" onclick="showDetail('Frozen Citrus Cocktail', 'Cocktail', 'Blend / Shake', ['50ml Vodka', '20ml Chanh xanh', '20ml Chanh vàng', '20ml Mật ong', '10ml Đường', '2 miếng Vỏ chanh'], 'Cho tất cả nguyên liệu cùng đá vào bình shake kỹ hoặc xay mịn (frozen), rót ra ly.', '2 miếng vỏ chanh')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="frozen citrus vodka" onclick="showDetail('Frozen Citrus Cocktail', 'Cocktail', 'Blend / Shake', ['50ml Vodka', '20ml Chanh xanh', '20ml Chanh vàng', '20ml Mật ong', '10ml Đường', '2 miếng Vỏ chanh'], 'Cho tất cả nguyên liệu cùng đá vào bình shake kỹ hoặc xay mịn (frozen), rót ra ly.', '2 miếng vỏ chanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Frozen Citrus Cocktail</h3>
         <p class="text-xs text-train-gold mb-2">Puree (xay mịn)</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vodka • Chanh xanh • Chanh vàng • Mật ong</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="seoul peach cloud gin" onclick="showDetail('Seoul Peach Cloud', 'Cocktail', 'Shake', ['45ml Bombay (Gin)', '25ml Nước cốt chanh (bắt buộc)', '15ml Giffard Đào', '15ml Monin Bưởi hồng'], 'Cho tất cả các nguyên liệu vào shaker cùng đá, shake đều và rót ra ly.', 'Vỏ chanh hoặc đào lát')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="seoul peach cloud gin" onclick="showDetail('Seoul Peach Cloud', 'Cocktail', 'Shake', ['45ml Bombay (Gin)', '25ml Nước cốt chanh (bắt buộc)', '15ml Giffard Đào', '15ml Monin Bưởi hồng'], 'Cho tất cả các nguyên liệu vào shaker cùng đá, shake đều và rót ra ly.', 'Vỏ chanh hoặc đào lát')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Seoul Peach Cloud</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Gin • Giffard Đào • Monin Bưởi hồng • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="blooming kiss gin" onclick="showDetail('Blooming Kiss', 'Cocktail', 'Stir & Build', ['45ml Bombay (Gin)', '15ml Monin Rose', '15ml Monin Elderflower', '3-4ml gin pha hoa đậu biếc','15ml nước chanh (để ngoài)', 'Top up Soda (gần đầy cốc)'], 'Khuấy đều Gin cùng siro Rose và Elderflower với đá trong ly, chanh để riêng bên ngoài, sau đó top up Soda lên trên cách miệng cốc 1 đốt ngón tay.', 'viền cốc với hoa hồng')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="blooming kiss gin" onclick="showDetail('Blooming Kiss', 'Cocktail', 'Stir & Build', ['45ml Bombay (Gin)', '15ml Monin Rose', '15ml Monin Elderflower', '3-4ml gin pha hoa đậu biếc', '15ml nước chanh (để ngoài)', 'Top up Soda (gần đầy cốc)'], 'Khuấy đều Gin cùng siro Rose và Elderflower với đá trong ly. Chanh để riêng bên ngoài. Top up Soda lên trên cách miệng cốc 1 đốt ngón tay.', 'viền cốc với hoa hồng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Blooming Kiss</h3>
         <p class="text-xs text-train-gold mb-2">Stir & Build ( Ngoáy phân tầng )</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Gin • Monin Rose • Elderflower • Soda</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="redrum margarita tequila" onclick="showDetail('Redrum Margarita', 'Cocktail', 'Shake & Float', ['45ml Tequila', '15ml Cốt mơ (hộp)', '15ml Nước cốt chanh', '10-15ml Đường', 'Top up Rượu vang đỏ'], 'Viền miệng ly bằng muối ớt. Cho Tequila, cốt mơ, chanh và đường vào bình shake đều với đá rồi rót ra ly. Nhẹ nhàng rót rượu vang đỏ lên trên mặt (float/top up).', 'Viền muối ớt quanh miệng ly')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="redrum margarita tequila" onclick="showDetail('Redrum Margarita', 'Cocktail', 'Shake & Float', ['45ml Tequila', '15ml Cốt mơ (hộp)', '15ml Nước cốt chanh', '10-15ml Đường', 'Top up Rượu vang đỏ'], 'Viền miệng ly bằng muối ớt. Cho Tequila, cốt mơ, chanh và đường vào bình shake đều với đá rồi rót ra ly. Nhẹ nhàng rót rượu vang đỏ lên trên mặt (float/top up).', 'Viền muối ớt quanh miệng ly')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Redrum Margarita</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Tequila • Cốt mơ • Vang đỏ • Muối ớt</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Cocktail" data-search="cry on sofa vodka gin" onclick="showDetail('Cry On Sofa', 'Cocktail', 'Shake / Build', ['45ml Vodka', '5ml Gin pha hoa đậu biếc', '15ml Siro chanh leo', '15ml Monin Bưởi hồng', '15ml Nước cốt chanh'], 'Shake đều Vodka, chanh leo, bưởi hồng và nước cốt chanh với đá rồi rót ra ly. Đổ nhẹ 5ml Gin ngâm hoa đậu biếc lên trên để tạo tầng màu tím bắt mắt.', 'Hoa đậu biếc hoặc lát chanh')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Cocktail" data-search="cry on sofa vodka gin" onclick="showDetail('Cry On Sofa', 'Cocktail', 'Shake / Build', ['45ml Vodka', '5ml Gin pha hoa đậu biếc', '15ml Siro chanh leo', '15ml Monin Bưởi hồng', '15ml Nước cốt chanh'], 'Shake đều Vodka, chanh leo, bưởi hồng và nước cốt chanh với đá rồi rót ra ly. Đổ nhẹ 5ml Gin ngâm hoa đậu biếc lên trên để tạo tầng màu tím bắt mắt.', 'Hoa đậu biếc hoặc lát chanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-red/20 text-train-red border border-train-red/30">Cocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Cry On Sofa</h3>
         <p class="text-xs text-train-gold mb-2">Shake & Build ( Ngoáy phân tầng )</p>
@@ -515,63 +500,63 @@
       </div>
 
       <!-- MOCKTAIL -->
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="com ha noi dua pandan cot dua" onclick="showDetail('Cốm Hà Nội', 'Mocktail', 'Shake', ['75ml Nước dứa', '30ml Siro pandan', '25ml Sữa tươi', '25ml Cốt dừa'], 'Shake tất cả nguyên liệu với đá viên. Rót ra ly.', 'Hạt cốm tươi')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="com ha noi dua pandan cot dua" onclick="showDetail('Cốm Hà Nội', 'Mocktail', 'Shake', ['75ml Nước dứa', '30ml Siro pandan', '25ml Sữa tươi', '25ml Cốt dừa'], 'Shake tất cả nguyên liệu với đá viên. Rót ra ly.', 'Hạt cốm tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Cốm Hà Nội</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa • Siro cốm • Sữa tươi • Cốt dừa</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="mango shake mule xoai chanh soda" onclick="showDetail('Mango Shake Mule', 'Mocktail', 'Build / Top up', ['40ml Sinh tố xoài', '15ml Siro xoài', '1 quả Chanh', 'Top up Soda'], 'Lăn miệng cốc qua muối ớt. Cho sinh tố xoài, siro, chanh vào cốc đầy đá, top up soda.', 'Viền muối ớt, lát xoài')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="mango shake mule xoai chanh soda" onclick="showDetail('Mango Shake Mule', 'Mocktail', 'Build / Top up', ['40ml Sinh tố xoài', '15ml Siro xoài', '1 quả Chanh', 'Top up Soda'], 'Lăn miệng cốc qua muối ớt. Cho sinh tố xoài, siro, chanh vào cốc đầy đá, top up soda.', 'Viền muối ớt, lát xoài')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Mango Shake Mule</h3>
         <p class="text-xs text-train-gold mb-2">Build / Top up</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Sinh tố xoài • Siro xoài • Chanh • Soda</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="frozen citrus chanh mat ong" onclick="showDetail('Frozen Citrus', 'Mocktail', 'Blend', ['20ml Chanh xanh', '20ml Chanh vàng', '20ml Mật ong', '10ml Đường', '2 miếng Vỏ chanh'], 'Cho tất cả nguyên liệu cùng đá vào máy xay nhuyễn.', 'Vỏ chanh bào')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="frozen citrus chanh mat ong" onclick="showDetail('Frozen Citrus', 'Mocktail', 'Blend', ['20ml Chanh xanh', '20ml Chanh vàng', '20ml Mật ong', '10ml Đường', '2 miếng Vỏ chanh'], 'Cho tất cả nguyên liệu cùng đá vào máy xay nhuyễn.', 'Vỏ chanh bào')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Frozen Citrus</h3>
         <p class="text-xs text-train-gold mb-2">Blend</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Chanh xanh/vàng • Mật ong • Đá xay</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="watermelon spritz dua hau cam soda" onclick="showDetail('Watermelon Spritz', 'Mocktail', 'Shake & Top up', ['100ml Nước dưa hấu', '30ml Siro cam', 'Top up Soda'], 'Shake nước dưa hấu và siro cam với đá. Rót ra ly, top up soda.', 'Tam giác dưa hấu')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="watermelon spritz dua hau cam soda" onclick="showDetail('Watermelon Spritz', 'Mocktail', 'Shake & Top up', ['100ml Nước dưa hấu', '30ml Siro cam', 'Top up Soda'], 'Shake nước dưa hấu và siro cam với đá. Rót ra ly, top up soda.', 'Tam giác dưa hấu')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Watermelon Spritz</h3>
         <p class="text-xs text-train-gold mb-2">Shake & Top up</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dưa hấu • Siro cam • Soda</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="blue lagoon dua vo cam blue curacao chanh" onclick="showDetail('Blue Lagoon', 'Mocktail', 'Shake & Top up', ['60ml Nước dứa', '25-30ml Siro vỏ cam', '1/2 quả Chanh tươi'], 'Shake với đá 20s. Rót ra cốc lọc đá, thêm đá mới và top up Soda.', 'Lát chanh xanh')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="blue lagoon dua vo cam blue curacao chanh" onclick="showDetail('Blue Lagoon', 'Mocktail', 'Shake & Top up', ['60ml Nước dứa', '25-30ml Siro vỏ cam', '1/2 quả Chanh tươi'], 'Shake với đá 20s. Rót ra cốc lọc đá, thêm đá mới và top up Soda.', 'Lát chanh xanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Blue Lagoon</h3>
         <p class="text-xs text-train-gold mb-2">Shake & Top up</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa • Siro vỏ cam xanh • Chanh • Soda</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="jack frost dua cam cot dua kem muoi" onclick="showDetail('Jack Frost', 'Mocktail', 'Blend & Topping', ['50ml Nước dứa', '50ml Nước cam', '25ml Cốt dừa', '20ml Siro vỏ cam', 'Kem muối dừa'], 'Xay nhuyễn các nguyên liệu với đá. Rót ra ly và phủ lớp kem dừa đánh bông lên trên.', 'Kem dừa')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="jack frost dua cam cot dua kem muoi" onclick="showDetail('Jack Frost', 'Mocktail', 'Blend & Topping', ['50ml Nước dứa', '50ml Nước cam', '25ml Cốt dừa', '20ml Siro vỏ cam', 'Kem muối dừa'], 'Xay nhuyễn các nguyên liệu với đá. Rót ra ly và phủ lớp kem dừa đánh bông lên trên.', 'Kem dừa')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Jack Frost</h3>
         <p class="text-xs text-train-gold mb-2">Blend & Topping</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Nước dứa/cam • Cốt dừa • Kem muối dừa</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="1881 spackling 1881 sparkling vitajus atiso soda" onclick="showDetail('1881 Sparkling', 'Mocktail', 'Build', ['50ml Nước ép Vitajus', '50ml Trà Atiso', '15ml Nước đường', '15ml Nước cốt chanh', 'Top up Soda'], 'Rót lần lượt Vitajus, atiso, nước đường và chanh vào ly có sẵn đá. Top up soda lên trên cùng. Không shake, không khuấy.', 'Lát chanh hoặc thảo mộc')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="1881 spackling 1881 sparkling vitajus atiso soda" onclick="showDetail('1881 Sparkling', 'Mocktail', 'Build', ['50ml Nước ép Vitajus', '50ml Trà Atiso', '15ml Nước đường', '15ml Nước cốt chanh', 'Top up Soda'], 'Rót lần lượt Vitajus, atiso, nước đường và chanh vào ly có sẵn đá. Top up soda lên trên cùng. Không shake, không khuấy.', 'Lát chanh hoặc thảo mộc')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">1881 Sparkling</h3>
         <p class="text-xs text-train-gold mb-2">Build (Không khuấy)</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vitajus • Atiso • Chanh • Đường • Soda</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="rose bloodsome tao luu chanh syrup rose hoa hong" onclick="showDetail('Rose Bloodsome', 'Mocktail', 'Shake', ['80ml Nước ép táo lựu', '15ml Nước cốt chanh', '20ml Syrup hoa hồng (Rose)'], 'Cho toàn bộ nguyên liệu vào shaker cùng đá viên. Lắc đều và kỹ (shake đều), sau đó rót ra ly có sẵn đá.', 'Cánh hoa hồng hoặc lát chanh khô')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="rose bloodsome tao luu chanh syrup rose hoa hong" onclick="showDetail('Rose Bloodsome', 'Mocktail', 'Shake', ['80ml Nước ép táo lựu', '15ml Nước cốt chanh', '20ml Syrup hoa hồng (Rose)'], 'Cho toàn bộ nguyên liệu vào shaker cùng đá viên. Lắc đều và kỹ (shake đều), sau đó rót ra ly có sẵn đá.', 'Cánh hoa hồng hoặc lát chanh khô')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Rose Bloodsome</h3>
         <p class="text-xs text-train-gold mb-2">Shake</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Táo lựu • Chanh • Syrup Rose</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Mocktail" data-search="sweet glow cam tao syrup monin phan tang" onclick="showDetail('Sweet Glow', 'Mocktail', 'Layering (Phân tầng)', ['80ml Nước cam hộp', '80ml Nước táo hộp', '10ml Syrup Monin'], 'Rót 10ml syrup Monin xuống đáy cốc trước. Cho đá viên đầy ly rồi nhẹ nhàng rót nước cam và nước táo lên trên để tạo tầng màu đẹp mắt.', 'Lát cam hoặc lát táo tươi')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Mocktail" data-search="sweet glow cam tao syrup monin phan tang" onclick="showDetail('Sweet Glow', 'Mocktail', 'Layering (Phân tầng)', ['80ml Nước cam hộp', '80ml Nước táo hộp', '10ml Syrup Monin'], 'Rót 10ml syrup Monin xuống đáy cốc trước. Cho đá viên đầy ly rồi nhẹ nhàng rót nước cam và nước táo lên trên để tạo tầng màu đẹp mắt.', 'Lát cam hoặc lát táo tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-train-gold/20 text-train-gold border border-train-gold/30">Mocktail</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Sweet Glow</h3>
         <p class="text-xs text-train-gold mb-2">Layering (Phân tầng)</p>
@@ -579,42 +564,42 @@
       </div>
 
       <!-- SHOTS & BEER -->
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="monkey brain chanh vodka baileys dau" onclick="showDetail('Monkey Brain', 'Shots & Beer', 'Layer', ['5ml Nước chanh', '35ml Smirnoff Vodka', '10ml Baileys', 'Siro dâu', 'Siro vỏ cam'], 'Rót chanh và Vodka vào ly shot. Rót từ từ Baileys vào để kết tủa thành hình não. Nhỏ thêm siro dâu.', 'Tạo hình vệt máu')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="monkey brain chanh vodka baileys dau" onclick="showDetail('Monkey Brain', 'Shots & Beer', 'Layer', ['5ml Nước chanh', '35ml Smirnoff Vodka', '10ml Baileys', 'Siro dâu', 'Siro vỏ cam'], 'Rót chanh và Vodka vào ly shot. Rót từ từ Baileys vào để kết tủa thành hình não. Nhỏ thêm siro dâu.', 'Tạo hình vệt máu')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Monkey Brain</h3>
         <p class="text-xs text-train-gold mb-2">Layer</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vodka • Baileys • Chanh • Siro dâu</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="b52 kahlua baileys cointreau" onclick="showDetail('B52', 'Shots & Beer', 'Layer', ['1/3 ly Kahlua', '1/3 ly Baileys', '1/3 ly Cointreau'], 'Rót lần lượt Kahlua ở đáy, Baileys tầng giữa và Cointreau tầng trên cùng.', 'Đốt lửa tầng trên')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="b52 kahlua baileys cointreau" onclick="showDetail('B52', 'Shots & Beer', 'Layer', ['1/3 ly Kahlua', '1/3 ly Baileys', '1/3 ly Cointreau'], 'Rót lần lượt Kahlua ở đáy, Baileys tầng giữa và Cointreau tầng trên cùng.', 'Đốt lửa tầng trên')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">B52</h3>
         <p class="text-xs text-train-gold mb-2">Layer</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Kahlua • Baileys • Cointreau</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="beer local hanoi quat chanh mat ong bia ha noi" onclick="showDetail('Beer Local Hanoi', 'Shots & Beer', 'Build', ['3-4 quả Quất', '1/2 Chanh', '40ml Mật ong', 'Bia Hà Nội '], 'Lăn cốc qua muối ớt. Dầm quất, chanh với mật ong. Cho đá, nhét thêm lát chanh và úp ngược lon bia.', 'Viền muối ớt')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="beer local hanoi quat chanh mat ong bia ha noi" onclick="showDetail('Beer Local Hanoi', 'Shots & Beer', 'Build', ['3-4 quả Quất', '1/2 Chanh', '40ml Mật ong', 'Bia Hà Nội'], 'Lăn cốc qua muối ớt. Dầm quất, chanh với mật ong. Cho đá, nhét thêm lát chanh và úp ngược lon bia.', 'Viền muối ớt')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots & Beer</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Beer Local Hanoi</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Quất • Chanh • Mật ong • Bia Hà Nội</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="beer green mountain siro tao chanh bia truc bach" onclick="showDetail('Beer Green Mountain', 'Shots & Beer', 'Build', ['35ml Siro táo xanh', '1/2 quả Chanh', 'Bia Trúc Bạch'], 'Cho siro táo xanh và nước cốt chanh vào cốc đá. Thả vài lát táo mỏng và lá bạc hà, úp lon bia.', 'Lát táo mỏng')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="beer green mountain siro tao chanh bia truc bach" onclick="showDetail('Beer Green Mountain', 'Shots & Beer', 'Build', ['35ml Siro táo xanh', '1/2 quả Chanh', 'Bia Trúc Bạch'], 'Cho siro táo xanh và nước cốt chanh vào cốc đá. Thả vài lát táo mỏng và lá bạc hà, úp lon bia.', 'Lát táo mỏng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots & Beer</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Beer Green Mountain</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Siro táo xanh • Chanh • Bia Trúc Bạch</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="beer yellowred sinh to dau siro dau bia corona" onclick="showDetail('Beer YellowRed', 'Shots & Beer', 'Build', ['30ml Sinh tố dâu', '25ml Siro dâu', 'Bia Corona'], 'Cho sinh tố dâu và siro dâu vào cốc. Thêm đá, lát chanh vàng và úp chai Corona.', 'Lát cam vàng')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="beer yellowred sinh to dau siro dau bia corona" onclick="showDetail('Beer YellowRed', 'Shots & Beer', 'Build', ['30ml Sinh tố dâu', '25ml Siro dâu', 'Bia Corona'], 'Cho sinh tố dâu và siro dâu vào cốc. Thêm đá, lát chanh vàng và úp chai Corona.', 'Lát cam vàng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots & Beer</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Beer YellowRed</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Sinh tố dâu • Siro dâu • Bia Corona</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Shots" data-search="beer oceania siro vo cam chanh tequila bia strongbow" onclick="showDetail('Beer Oceania', 'Shots & Beer', 'Build', ['35ml Siro vỏ cam', '1 quả Chanh', '40ml Tequila', 'Bia Strongbow'], 'Lăn cốc qua muối trắng. Cho siro vỏ cam, chanh và Tequila vào cốc đầy đá. Úp ngược lon Strongbow.', 'Viền muối trắng')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="beer oceania siro vo cam chanh tequila bia strongbow" onclick="showDetail('Beer Oceania', 'Shots & Beer', 'Build', ['35ml Siro vỏ cam', '1 quả Chanh', '40ml Tequila', 'Bia Strongbow'], 'Lăn cốc qua muối trắng. Cho siro vỏ cam, chanh và Tequila vào cốc đầy đá. Úp ngược lon Strongbow.', 'Viền muối trắng')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots & Beer</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Beer Oceania</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
@@ -622,138 +607,160 @@
       </div>
 
       <!-- ALCOHOLIC -->
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="whiskey coke cola alcoholic" onclick="showDetail('Whiskey Coke', 'Alcoholic', 'Build', ['50ml Jimbean', 'Top up Coca-Cola'], 'Cho đá đầy ly Highball, rót 50ml Whiskey, top up Coca-Cola. Khuấy nhẹ 2-3 vòng bằng thìa bar.', 'Lát chanh vàng hoặc chanh xanh')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Alcoholic" data-search="whiskey coke cola alcoholic" onclick="showDetail('Whiskey Coke', 'Alcoholic', 'Build', ['50ml Jimbean', 'Top up Coca-Cola'], 'Cho đá đầy ly Highball, rót 50ml Whiskey, top up Coca-Cola. Khuấy nhẹ 2-3 vòng bằng thìa bar.', 'Lát chanh vàng hoặc chanh xanh')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Whiskey Coke</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Jimbean • Coca-Cola </p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Jimbean • Coca-Cola</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="rum coke cuba libre alcoholic" onclick="showDetail('Rum Coke', 'Alcoholic', 'Build', ['50ml Bacadi', 'Top up Coca-Cola', '15ml Nước chanh'], 'Cho đá đầy ly, vắt 15ml chanh tươi thả vỏ vào, rót 50ml Rum, top up Coca-Cola và khuấy nhẹ.', 'Lát chanh tươi')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Alcoholic" data-search="rum coke cuba libre alcoholic" onclick="showDetail('Rum Coke', 'Alcoholic', 'Build', ['50ml Bacardi', 'Top up Coca-Cola', '15ml Nước chanh'], 'Cho đá đầy ly, vắt 15ml chanh tươi thả vỏ vào, rót 50ml Rum, top up Coca-Cola và khuấy nhẹ.', 'Lát chanh tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Rum Coke</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Bacardi • Coca-Cola • Chanh</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="jager bomb redbull alcoholic" onclick="showDetail('Jäger Bomb', 'Alcoholic', 'Drop Shot', ['40ml Jagermeister (ướp lạnh)', '1/2 lon Red Bull'], 'Rót Red Bull vào nửa ly cao. Rót 40ml Jäger vào ly shot riêng. Thả ly shot vào ly Red Bull để uống ngay.', 'Không')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Alcoholic" data-search="jager bomb redbull alcoholic" onclick="showDetail('Jäger Bomb', 'Alcoholic', 'Drop Shot', ['40ml Jagermeister (ướp lạnh)', '1/2 lon Red Bull'], 'Rót Red Bull vào nửa ly cao. Rót 40ml Jäger vào ly shot riêng. Thả ly shot vào ly Red Bull để uống ngay.', 'Không')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Jäger Bomb</h3>
         <p class="text-xs text-train-gold mb-2">Drop Shot</p>
         <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">40ml Jägermeister • 1/2 lon Red Bull</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="gin tonic alcoholic" onclick="showDetail('Gin & Tonic', 'Alcoholic', 'Build', ['50ml Bombay (Gin)', 'Top up Nước Tonic'], 'Cho đá đầy ly, rót 50ml Gin, vắt nhẹ chanh. Rót Tonic nghiêng thành ly để giữ sủi bọt, khuấy nhẹ.', 'Lát chanh tươi / Hương thảo')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Alcoholic" data-search="gin tonic alcoholic" onclick="showDetail('Gin & Tonic', 'Alcoholic', 'Build', ['50ml Bombay (Gin)', 'Top up Nước Tonic'], 'Cho đá đầy ly, rót 50ml Gin, vắt nhẹ chanh. Rót Tonic nghiêng thành ly để giữ sủi bọt, khuấy nhẹ.', 'Lát chanh tươi / Hương thảo')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Gin & Tonic</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Bombay (Gin) • Nước Tonic </p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Bombay (Gin) • Nước Tonic</p>
       </div>
 
-      <div class="drink-card glass-card rounded-2xl p-4 cursor-pointer" data-cat="Alcoholic" data-search="vodka redbull alcoholic" onclick="showDetail('Vodka Redbull', 'Alcoholic', 'Build', ['50ml Vodka', 'Top up Red Bull'], 'Cho đá đầy ly Highball, rót 50ml Vodka, top up Red Bull đến gần miệng ly. Khuấy nhẹ.', 'Lát chanh tươi')">
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Alcoholic" data-search="vodka redbull alcoholic" onclick="showDetail('Vodka Redbull', 'Alcoholic', 'Build', ['50ml Vodka', 'Top up Red Bull'], 'Cho đá đầy ly Highball, rót 50ml Vodka, top up Red Bull đến gần miệng ly. Khuấy nhẹ.', 'Lát chanh tươi')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-amber-600/30 text-amber-300 border border-amber-500/40">Alcoholic</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Vodka Redbull</h3>
         <p class="text-xs text-train-gold mb-2">Build</p>
-        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Vodka • Red Bull </p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">50ml Vodka • Red Bull</p>
       </div>
 
     </div>
   </main>
 
   <!-- =======================================================
-       MODAL CHI TIẾT KIỂU CUỐNG VÉ TÀU & MÃ VẠCH (GIỮ MỚI)
+       MODAL CHI TIẾT MODERN DARK GLASS + MULTIPLIER + TIMER
        ======================================================= -->
-  <div id="sheet-overlay" class="fixed inset-0 bg-black/80 z-40 hidden" onclick="closeSheet()"></div>
-  <div id="recipe-sheet" class="ticket-sheet fixed inset-x-0 bottom-0 z-50 p-5 sheet-closed transition-transform duration-300 max-h-[88vh] overflow-y-auto no-scrollbar">
-    <!-- Thanh gạt đầu cuống vé -->
-    <div class="w-12 h-1.5 bg-[#6E1217]/25 rounded-full mx-auto mb-3.5"></div>
+  <div id="sheet-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 hidden transition-opacity" onclick="closeSheet()"></div>
+  <div id="recipe-sheet" class="modern-sheet fixed inset-x-0 bottom-0 z-50 max-w-2xl mx-auto sheet-closed transition-transform duration-300 max-h-[92vh] overflow-y-auto no-scrollbar">
+    
+    <!-- Ảnh Cover mờ trên cùng + Thanh gạt + Nút đóng -->
+    <div class="relative w-full h-48 overflow-hidden rounded-t-[28px] bg-[#140709]">
+      <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" class="w-full h-full object-cover object-center opacity-85 transition-opacity duration-300">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1C0D10] via-[#1C0D10]/45 to-black/40"></div>
 
-    <!-- Khung tiêu đề vé tàu kèm con tem đoàn tàu ở góc -->
-    <div class="ticket-header-box flex items-start justify-between gap-3 mb-3.5">
+      <!-- Handle bar -->
+      <div class="absolute top-3 inset-x-0 flex justify-center">
+        <div class="w-12 h-1.5 bg-white/40 rounded-full"></div>
+      </div>
+
+      <!-- Nút đóng góc phải -->
+      <button onclick="closeSheet()" class="absolute top-3.5 right-4 w-8 h-8 rounded-full bg-black/55 border border-white/20 text-white/90 flex items-center justify-center backdrop-blur-md hover:bg-train-red transition-colors">
+        ✕
+      </button>
+
+      <!-- Badge & Tên món đè lên chân ảnh -->
+      <div class="absolute bottom-3 left-5 right-5 flex items-end justify-between gap-2">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span id="sheet-category" class="inline-block text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-train-red text-white shadow">Cocktail</span>
+            <span class="text-[11px] font-semibold text-[#F3CB69] bg-black/50 px-2.5 py-0.5 rounded-full border border-[#F3CB69]/30 backdrop-blur-sm">
+              ⚡ <span id="sheet-method">Shake</span>
+            </span>
+          </div>
+          <h2 id="sheet-title">--</h2>
+        </div>
+
+        <!-- Con dấu 1881 hiện đại -->
+        <div class="shrink-0 px-2.5 py-1.5 rounded-xl bg-black/55 border border-[#F3CB69]/40 backdrop-blur-md text-center">
+          <span class="block text-xs leading-none">🚂</span>
+          <span class="font-display text-[10px] text-[#F3CB69] tracking-widest">1881</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nội dung chính trong Sheet -->
+    <div class="p-5 pt-3 space-y-5">
+
+      <!-- Thanh công cụ nhanh: Nhân định lượng (x1 x2 x3) + Đồng hồ đếm ngược Bar Timer -->
+      <div class="flex flex-wrap items-center justify-between gap-2.5 p-2.5 rounded-2xl bg-white/[0.04] border border-white/10">
+        <!-- Multiplier -->
+        <div class="flex items-center gap-1.5">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-white/50 mr-1">Số ly:</span>
+          <button onclick="setMultiplier(1)" data-mult="1" class="mult-btn active px-3 py-1 rounded-lg text-xs font-bold">x1</button>
+          <button onclick="setMultiplier(2)" data-mult="2" class="mult-btn px-3 py-1 rounded-lg text-xs font-bold">x2</button>
+          <button onclick="setMultiplier(3)" data-mult="3" class="mult-btn px-3 py-1 rounded-lg text-xs font-bold">x3</button>
+        </div>
+
+        <!-- Quick Bar Timer -->
+        <div class="flex items-center gap-1.5">
+          <button onclick="startBarTimer(15)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-[11px] font-semibold text-[#F3CB69] transition-all">⏱ 15s</button>
+          <button onclick="startBarTimer(20)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-[11px] font-semibold text-[#F3CB69] transition-all">⏱ 20s</button>
+          <span id="timer-display" class="hidden px-2.5 py-1 rounded-lg bg-train-red/25 border border-train-red text-xs font-mono font-bold text-white animate-pulse">00:15</span>
+        </div>
+      </div>
+
+      <!-- Thành phần & Định lượng -->
       <div>
-        <span id="sheet-category" class="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-[#6E1217] text-[#F7F0E0]">Cocktail</span>
-        <h2 id="sheet-title" class="font-display text-[26px] uppercase tracking-wide text-[#5B0C11] leading-tight mt-1">--</h2>
-        <p class="text-xs text-[#6E1217] font-semibold mt-0.5">Phương pháp: <span id="sheet-method" class="font-bold text-[#B82B26]">Shake</span></p>
-      </div>
-
-      <div class="train-stamp flex flex-col items-center justify-center text-center">
-        <span class="text-[15px] leading-none">🚂</span>
-        <span class="font-display text-[9px] text-[#5B0C11] tracking-tighter leading-none mt-0.5">1881</span>
-      </div>
-    </div>
-
-    <!-- Thành phần & Định lượng -->
-    <div class="mb-4">
-      <div class="flex items-center justify-between mb-2">
-        <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#5B0C11]">Thành phần & Định lượng</h3>
-        <span class="text-[11px] text-[#B82B26] font-bold italic">Chạm vào chai rượu để xem ảnh 🔍</span>
-      </div>
-      <div id="sheet-ingredients" class="space-y-1.5"></div>
-    </div>
-
-    <!-- Hướng dẫn thao tác -->
-    <div class="mb-3.5">
-      <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#5B0C11] mb-1.5">Hướng dẫn thao tác</h3>
-      <div id="sheet-instructions" class="text-[13.5px] text-[#381A0E] bg-white/75 p-3 rounded-lg border border-dashed border-[#6E1217]/40 leading-relaxed font-medium"></div>
-    </div>
-
-    <!-- Trang trí (Garnish) -->
-    <div id="sheet-garnish-box" class="mb-2">
-      <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#5B0C11] mb-0.5">Trang trí (Garnish)</h3>
-      <p id="sheet-garnish" class="text-[13.5px] text-[#B82B26] font-bold italic"></p>
-    </div>
-
-    <!-- Đường đục lỗ xé cuống vé -->
-    <div class="ticket-perforation"></div>
-
-    <!-- Khung ảnh ly thành phẩm + Mã vạch Barcode -->
-    <div id="sheet-cocktail-image-box" class="mb-4">
-      <div class="w-full max-w-[260px] mx-auto bg-white p-2.5 pb-3 rounded border border-[#6E1217]/25 shadow-md text-center">
-        <div class="aspect-[4/5] w-full bg-[#FAF6EE] rounded overflow-hidden flex items-center justify-center mb-2.5">
-          <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" loading="lazy" decoding="async" class="w-full h-full object-contain">
+        <div class="flex items-center justify-between mb-2.5">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#F3CB69]">Định lượng nguyên liệu</h3>
+          <span class="text-[11px] text-white/50">Chạm ô để tick • Bấm <span class="text-[#F3CB69] font-semibold">Xem chai</span></span>
         </div>
-        <div class="pt-1 border-t border-dotted border-[#5B0C11]/30">
-          <svg class="w-44 h-8 mx-auto" viewBox="0 0 180 32">
-            <g fill="#2A0406">
-              <rect x="6" y="0" width="3" height="24"/><rect x="11" y="0" width="1.5" height="24"/>
-              <rect x="16" y="0" width="4" height="24"/><rect x="23" y="0" width="2" height="24"/>
-              <rect x="28" y="0" width="1.5" height="24"/><rect x="33" y="0" width="3.5" height="24"/>
-              <rect x="40" y="0" width="2" height="24"/><rect x="45" y="0" width="4" height="24"/>
-              <rect x="52" y="0" width="1.5" height="24"/><rect x="57" y="0" width="3" height="24"/>
-              <rect x="63" y="0" width="2" height="24"/><rect x="68" y="0" width="4.5" height="24"/>
-              <rect x="76" y="0" width="1.5" height="24"/><rect x="81" y="0" width="3" height="24"/>
-              <rect x="87" y="0" width="2.5" height="24"/><rect x="93" y="0" width="1.5" height="24"/>
-              <rect x="98" y="0" width="4" height="24"/><rect x="105" y="0" width="2" height="24"/>
-              <rect x="111" y="0" width="3" height="24"/><rect x="117" y="0" width="1.5" height="24"/>
-              <rect x="122" y="0" width="4" height="24"/><rect x="129" y="0" width="2" height="24"/>
-              <rect x="135" y="0" width="3" height="24"/><rect x="141" y="0" width="1.5" height="24"/>
-              <rect x="146" y="0" width="4" height="24"/><rect x="153" y="0" width="2" height="24"/>
-              <rect x="158" y="0" width="3.5" height="24"/><rect x="165" y="0" width="2" height="24"/>
-              <rect x="170" y="0" width="3" height="24"/>
-            </g>
-            <text x="90" y="31" font-family="monospace" font-size="7.5" fill="#2A0406" text-anchor="middle" letter-spacing="2.5">0 123456 789111</text>
-          </svg>
+        <div id="sheet-ingredients" class="grid grid-cols-1 gap-2"></div>
+      </div>
+
+      <!-- Các bước thực hiện (Checklist tương tác) -->
+      <div>
+        <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#F3CB69] mb-2.5">Các bước pha chế</h3>
+        <div id="sheet-steps" class="space-y-2"></div>
+      </div>
+
+      <!-- Trang trí (Garnish) -->
+      <div id="sheet-garnish-box" class="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-[#8B1115]/30 to-transparent border border-[#E52932]/30">
+        <div>
+          <span class="block text-[10px] font-bold uppercase tracking-wider text-white/50">Trang trí (Garnish)</span>
+          <p id="sheet-garnish" class="text-sm text-[#F3CB69] font-bold mt-0.5"></p>
         </div>
+        <span class="text-xl">✨</span>
+      </div>
+
+      <!-- Nút hành động dưới cùng -->
+      <div class="grid grid-cols-3 gap-2.5 pt-1 pb-2">
+        <button onclick="closeSheet()" class="col-span-1 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-sm font-bold text-white/85 transition-all">
+          Quay lại
+        </button>
+        <button onclick="completeDrink()" class="col-span-2 py-3 rounded-xl bg-gradient-to-r from-[#E52932] to-[#9E1419] text-sm font-extrabold uppercase tracking-wider text-white shadow-lg shadow-train-red/30 active:scale-[0.98] transition-all">
+          ✓ Hoàn thành món
+        </button>
       </div>
     </div>
-
-    <button onclick="closeSheet()" class="w-full py-3 bg-[#5B0C11] text-[#F7F0E0] font-display uppercase tracking-wider text-base rounded-lg shadow-md">Đóng vé</button>
   </div>
 
   <!-- POPUP XEM ẢNH CHAI RƯỢU/NGUYÊN LIỆU KHI CLICK -->
-  <div id="ingredient-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm hidden" onclick="closeIngredientModal()">
-    <div class="bg-[#F7F0E0] border-2 border-[#6E1217] rounded-xl p-4 w-full max-w-xs shadow-2xl relative text-center" onclick="event.stopPropagation()">
-      <button onclick="closeIngredientModal()" class="absolute top-2 right-3 text-[#5B0C11] text-2xl font-bold leading-none">&times;</button>
-      <h4 id="ing-modal-title" class="font-display text-base uppercase text-[#5B0C11] mb-3 pr-4 truncate">Tên nguyên liệu</h4>
-      <div class="w-full h-80 bg-white rounded-lg overflow-hidden flex items-center justify-center border border-[#6E1217]/20 p-2">
+  <div id="ingredient-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden" onclick="closeIngredientModal()">
+    <div class="bg-[#1C0D10] border border-[#F3CB69]/40 rounded-2xl p-4 w-full max-w-xs shadow-2xl relative text-center" onclick="event.stopPropagation()">
+      <button onclick="closeIngredientModal()" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/10 text-white/80 hover:bg-train-red text-sm font-bold flex items-center justify-center">&times;</button>
+      <span class="text-[10px] font-bold uppercase tracking-widest text-[#F3CB69]">Nhận diện chai rượu</span>
+      <h4 id="ing-modal-title" class="font-bold text-base text-[#F7EFE1] mt-0.5 mb-3 pr-4 truncate">Tên nguyên liệu</h4>
+      <div class="w-full h-72 bg-white rounded-xl overflow-hidden flex items-center justify-center p-2 shadow-inner">
         <img id="ing-modal-img" src="" alt="Ảnh chai rượu" loading="lazy" decoding="async" class="w-full h-full object-contain">
       </div>
-      <p class="text-[11px] text-[#6E1217]/70 font-semibold mt-2">Chạm ra ngoài để đóng</p>
+      <p class="text-[11px] text-white/50 mt-2.5">Chạm ra ngoài để quay lại công thức</p>
     </div>
   </div>
 
   <script>
     let activeCategory = 'All';
+    let currentMultiplier = 1;
+    let currentRecipeData = null;
+    let timerInterval = null;
 
     const ingredientImages = {
       'vang nổ': 'vangno1881.jpg',
@@ -785,9 +792,9 @@
     };
 
     const fruitBlacklist = [
-      'chanh', 'nước cam', 'lát cam', 'dứa', 'dua', 'xoài', 'xoai', 'dưa hấu', 'dua hau', 
-      'dưa chuột', 'dua chuot', 'gừng', 'gung', 'thanh long', 'táo', 'tao', 
-      'quất', 'quat', 'dâu', 'dau', 'bạc hà', 'bac ha', 'cà phê', 'espresso', 
+      'chanh', 'nước cam', 'lát cam', 'dứa', 'dua', 'xoài', 'xoai', 'dưa hấu', 'dua hau',
+      'dưa chuột', 'dua chuot', 'gừng', 'gung', 'thanh long', 'táo', 'tao',
+      'quất', 'quat', 'dâu', 'dau', 'bạc hà', 'bac ha', 'cà phê', 'espresso',
       'trứng', 'kem', 'sữa', 'đường', 'muối', 'olive'
     ];
 
@@ -849,24 +856,98 @@
       'Vodka Redbull': 'vodka redbull.jpg'
     };
 
+    /* Tự động nâng cấp giao diện từng thẻ món ngoài danh sách sang Modern Dark Glass + Thumbnail */
+    function upgradeCardsUI() {
+      const cards = document.querySelectorAll('.drink-card');
+      cards.forEach(card => {
+        const titleEl = card.querySelector('h3');
+        const methodEl = card.querySelector('p.text-xs');
+        const descEl = card.querySelector('p.text-\\[11px\\]');
+        const badgeEl = card.querySelector('span.uppercase');
+        if (!titleEl) return;
+
+        const name = titleEl.innerText.trim();
+        const method = methodEl ? methodEl.innerText.trim() : '';
+        const desc = descEl ? descEl.innerText.trim() : '';
+        const badgeText = badgeEl ? badgeEl.innerText.trim() : 'Drink';
+        const imgSrc = drinkImages[name] || 'bird.jpg';
+
+        let badgeClass = 'bg-train-red/20 text-[#ff6b72] border-train-red/35';
+        if (badgeText.toLowerCase().includes('mocktail')) {
+          badgeClass = 'bg-[#F3CB69]/15 text-[#F3CB69] border-[#F3CB69]/35';
+        } else if (badgeText.toLowerCase().includes('shot') || badgeText.toLowerCase().includes('beer')) {
+          badgeClass = 'bg-purple-500/20 text-purple-300 border-purple-400/35';
+        } else if (badgeText.toLowerCase().includes('alcoholic')) {
+          badgeClass = 'bg-amber-500/20 text-amber-300 border-amber-400/35';
+        }
+
+        card.innerHTML = `
+          <div class="flex items-center gap-3.5">
+            <div class="w-16 h-20 rounded-xl overflow-hidden bg-black/50 border border-white/10 shrink-0 relative">
+              <img src="${imgSrc}" alt="${name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='bird.jpg';" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${badgeClass}">${badgeText}</span>
+                <span class="text-[11px] font-semibold text-[#F3CB69]/90 truncate">${method}</span>
+              </div>
+              <h3 class="font-serif font-bold text-[17px] text-[#F7EFE1] leading-snug truncate">${name}</h3>
+              <p class="text-[11px] text-[#F7EFE1]/55 border-t border-white/10 pt-1.5 mt-1.5 truncate">${desc}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    /* Nhân định lượng thông minh (x1, x2, x3) */
+    function scaleIngredientText(text, mult) {
+      if (mult === 1) return text;
+      return text.replace(/^(\d+(?:\.\d+)?)(?:-(\d+(?:\.\d+)?))?(\s*(?:ml|g|dash|quả|thìa|miếng|ấn|nhánh|lát)\b)/i, (match, n1, n2, unit) => {
+        const v1 = Math.round(parseFloat(n1) * mult * 10) / 10;
+        if (n2) {
+          const v2 = Math.round(parseFloat(n2) * mult * 10) / 10;
+          return `${v1}-${v2}${unit}`;
+        }
+        return `${v1}${unit}`;
+      });
+    }
+
+    function setMultiplier(mult) {
+      currentMultiplier = mult;
+      document.querySelectorAll('.mult-btn').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.getAttribute('data-mult')) === mult);
+      });
+      if (currentRecipeData) {
+        renderIngredients(currentRecipeData.ingredients);
+      }
+    }
+
     function setTab(cat, btn) {
       activeCategory = cat;
-      document.querySelectorAll('.cat-pill').forEach(b => {
-        b.classList.remove('active-tab');
-      });
-      if(btn) btn.classList.add('active-tab');
+      document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active-tab'));
+      if (btn) btn.classList.add('active-tab');
       filterItems();
     }
 
+    function clearSearch() {
+      const input = document.getElementById('search-input');
+      input.value = '';
+      filterItems();
+      input.focus();
+    }
+
     function filterItems() {
-      const q = document.getElementById('search-input').value.toLowerCase().trim();
+      const input = document.getElementById('search-input');
+      const q = input.value.toLowerCase().trim();
+      document.getElementById('clear-search').classList.toggle('hidden', q.length === 0);
+
       const cards = document.querySelectorAll('.drink-card');
       let visible = 0;
 
       cards.forEach(card => {
         const cat = card.getAttribute('data-cat');
-        const search = card.getAttribute('data-search');
-        
+        const search = card.getAttribute('data-search') + ' ' + card.innerText.toLowerCase();
+
         const matchCat = (activeCategory === 'All') || cat.includes(activeCategory);
         const matchSearch = search.includes(q);
 
@@ -896,42 +977,99 @@
       return null;
     }
 
+    function renderIngredients(ingredients) {
+      const box = document.getElementById('sheet-ingredients');
+      box.innerHTML = '';
+
+      ingredients.forEach((rawItem) => {
+        const scaledText = scaleIngredientText(rawItem, currentMultiplier);
+        const imgUrl = getIngredientImage(rawItem);
+
+        const row = document.createElement('div');
+        row.className = 'ing-row flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl cursor-pointer select-none';
+
+        const left = document.createElement('div');
+        left.className = 'flex items-center gap-3 min-w-0 flex-1';
+        left.innerHTML = `
+          <span class="check-box w-5 h-5 rounded-md border border-white/25 bg-black/30 flex items-center justify-center text-xs text-transparent transition-all shrink-0">✓</span>
+          <span class="ing-label text-[13.5px] font-semibold text-[#F7EFE1] leading-snug">${scaledText}</span>
+        `;
+
+        row.onclick = () => {
+          row.classList.toggle('checked');
+          const cb = row.querySelector('.check-box');
+          if (row.classList.contains('checked')) {
+            cb.classList.add('bg-emerald-500', 'border-emerald-400', 'text-black');
+            cb.classList.remove('text-transparent');
+          } else {
+            cb.classList.remove('bg-emerald-500', 'border-emerald-400', 'text-black');
+            cb.classList.add('text-transparent');
+          }
+        };
+
+        row.appendChild(left);
+
+        if (imgUrl) {
+          const bottleBtn = document.createElement('button');
+          bottleBtn.type = 'button';
+          bottleBtn.className = 'shrink-0 px-2.5 py-1 rounded-lg bg-[#F3CB69]/15 hover:bg-[#F3CB69]/25 border border-[#F3CB69]/35 text-[#F3CB69] text-[11px] font-bold transition-all';
+          bottleBtn.innerHTML = '📷 Xem chai';
+          bottleBtn.onclick = (e) => {
+            e.stopPropagation();
+            openIngredientModal(rawItem, imgUrl);
+          };
+          row.appendChild(bottleBtn);
+        }
+
+        box.appendChild(row);
+      });
+    }
+
+    function renderSteps(instructions) {
+      const stepsContainer = document.getElementById('sheet-steps');
+      stepsContainer.innerHTML = '';
+
+      const rawSteps = instructions
+        .split('.')
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+
+      rawSteps.forEach((stepText, idx) => {
+        const stepEl = document.createElement('div');
+        stepEl.className = 'step-row flex items-start gap-3 p-3 rounded-xl cursor-pointer select-none';
+        stepEl.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-train-red/25 border border-train-red/50 text-[#F3CB69] text-xs font-extrabold flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span>
+          <p class="text-[13.5px] text-[#F7EFE1]/90 leading-relaxed flex-1">${stepText}.</p>
+        `;
+        stepEl.onclick = () => stepEl.classList.toggle('done');
+        stepsContainer.appendChild(stepEl);
+      });
+    }
+
     function showDetail(name, cat, method, ingredients, instructions, garnish) {
+      currentRecipeData = { name, cat, method, ingredients, instructions, garnish };
+      currentMultiplier = 1;
+      document.querySelectorAll('.mult-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-mult') === '1');
+      });
+
       document.getElementById('sheet-title').innerText = name;
       document.getElementById('sheet-category').innerText = cat;
       document.getElementById('sheet-method').innerText = method;
-      
-      const box = document.getElementById('sheet-ingredients');
-      box.innerHTML = '';
-      
-      ingredients.forEach(i => {
-        const d = document.createElement('div');
-        const imgUrl = getIngredientImage(i);
 
-        if (imgUrl) {
-          d.className = 'clickable-ingredient flex items-center justify-between text-[13.5px] font-semibold text-[#381A0E] bg-white/85 px-3 py-2 rounded-lg border border-[#6E1217]/30 shadow-sm';
-          d.innerHTML = `<span>${i}</span><span class="text-[#B82B26] font-bold text-xs">📷 Xem chai</span>`;
-          d.onclick = () => openIngredientModal(i, imgUrl);
-        } else {
-          d.className = 'flex items-center justify-between text-[13.5px] font-medium text-[#381A0E]/90 bg-white/60 px-3 py-2 rounded-lg border border-[#6E1217]/15';
-          d.innerHTML = `<span>${i}</span>`;
-        }
-        
-        box.appendChild(d);
-      });
-
-      document.getElementById('sheet-instructions').innerText = instructions;
+      renderIngredients(ingredients);
+      renderSteps(instructions);
       document.getElementById('sheet-garnish').innerText = garnish;
 
       const drinkImgTag = document.getElementById('sheet-cocktail-img');
       const targetPhoto = drinkImages[name] || 'bird.jpg';
 
-      drinkImgTag.style.opacity = '0.4';
-      drinkImgTag.onload = function() { this.style.opacity = '1'; };
+      drinkImgTag.style.opacity = '0.35';
+      drinkImgTag.onload = function() { this.style.opacity = '0.9'; };
       drinkImgTag.onerror = function() {
         this.onerror = null;
         this.src = 'bird.jpg';
-        this.style.opacity = '1';
+        this.style.opacity = '0.9';
       };
       drinkImgTag.src = targetPhoto;
 
@@ -942,12 +1080,44 @@
       }, 10);
     }
 
+    function completeDrink() {
+      document.querySelectorAll('.ing-row').forEach(r => r.classList.add('checked'));
+      document.querySelectorAll('.step-row').forEach(s => s.classList.add('done'));
+      setTimeout(() => closeSheet(), 260);
+    }
+
     function closeSheet() {
+      stopBarTimer();
       document.getElementById('recipe-sheet').classList.remove('sheet-open');
       document.getElementById('recipe-sheet').classList.add('sheet-closed');
       setTimeout(() => {
         document.getElementById('sheet-overlay').classList.add('hidden');
       }, 300);
+    }
+
+    function startBarTimer(seconds) {
+      stopBarTimer();
+      const display = document.getElementById('timer-display');
+      let remaining = seconds;
+      display.classList.remove('hidden');
+      display.innerText = `00:${remaining < 10 ? '0' + remaining : remaining}`;
+
+      timerInterval = setInterval(() => {
+        remaining--;
+        if (remaining <= 0) {
+          display.innerText = 'XONG!';
+          setTimeout(() => stopBarTimer(), 1500);
+        } else {
+          display.innerText = `00:${remaining < 10 ? '0' + remaining : remaining}`;
+        }
+      }, 1000);
+    }
+
+    function stopBarTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = null;
+      const display = document.getElementById('timer-display');
+      if (display) display.classList.add('hidden');
     }
 
     function openIngredientModal(name, imgSrc) {
@@ -962,10 +1132,11 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      upgradeCardsUI();
       filterItems();
     });
   </script>
-  
+
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
