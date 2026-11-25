@@ -697,9 +697,9 @@
         <!-- Multiplier -->
         <div class="flex items-center gap-1.5">
           <span class="text-[11px] font-bold uppercase tracking-wider text-white/50 mr-0.5">Ly:</span>
-          <button onclick="setMultiplier(1)" data-mult="1" class="mult-btn active px-2.5 py-1 rounded-lg text-xs font-bold">x1</button>
-          <button onclick="setMultiplier(2)" data-mult="2" class="mult-btn px-2.5 py-1 rounded-lg text-xs font-bold">x2</button>
-          <button onclick="setMultiplier(3)" data-mult="3" class="mult-btn px-2.5 py-1 rounded-lg text-xs font-bold">x3</button>
+          <button onclick="requestMultiplier(1)" data-mult="1" class="mult-btn active px-2.5 py-1 rounded-lg text-xs font-bold">x1</button>
+          <button onclick="requestMultiplier(2)" data-mult="2" class="mult-btn px-2.5 py-1 rounded-lg text-xs font-bold">x2</button>
+          <button onclick="requestMultiplier(3)" data-mult="3" class="mult-btn px-2.5 py-1 rounded-lg text-xs font-bold">x3</button>
         </div>
 
         <!-- Nút Xem ảnh cốc rượu + Quick Bar Timer -->
@@ -714,7 +714,10 @@
       <!-- Thành phần & Định lượng -->
       <div>
         <div class="flex items-center justify-between mb-2.5">
-          <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#F3CB69]">Định lượng nguyên liệu</h3>
+          <div class="flex items-center gap-2">
+            <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#F3CB69]">Định lượng nguyên liệu</h3>
+            <span id="active-mult-badge" class="hidden text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#F3CB69] text-[#1A0709]">Đang nhân x2</span>
+          </div>
           <span class="text-[11px] text-white/50">Chạm ô để tick • Bấm <span class="text-[#F3CB69] font-semibold">Xem chai</span></span>
         </div>
         <div id="sheet-ingredients" class="grid grid-cols-1 gap-2"></div>
@@ -742,6 +745,27 @@
         </button>
         <button onclick="completeDrink()" class="col-span-2 py-3 rounded-xl bg-gradient-to-r from-[#E52932] to-[#9E1419] text-sm font-extrabold uppercase tracking-wider text-white shadow-lg shadow-train-red/30 active:scale-[0.98] transition-all">
           ✓ Hoàn thành món
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP XÁC NHẬN NHÂN ĐỊNH LƯỢNG (x2 / x3) -->
+  <div id="mult-confirm-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden" onclick="closeMultConfirm()">
+    <div class="bg-[#1C0D10] border border-[#F3CB69]/50 rounded-2xl p-5 w-full max-w-xs shadow-2xl text-center" onclick="event.stopPropagation()">
+      <div class="w-12 h-12 rounded-full bg-[#F3CB69]/15 border border-[#F3CB69]/40 text-[#F3CB69] text-xl font-extrabold flex items-center justify-center mx-auto mb-3">
+        ⚠️
+      </div>
+      <h4 class="font-bold text-base text-[#F7EFE1]">Xác nhận nhân định lượng?</h4>
+      <p id="mult-confirm-text" class="text-xs text-[#F7EFE1]/75 leading-relaxed mt-2">
+        Toàn bộ định lượng nguyên liệu sẽ được nhân lên <strong class="text-[#F3CB69]">x2 lần</strong> để pha cùng lúc 2 ly.
+      </p>
+      <div class="grid grid-cols-2 gap-2.5 mt-5">
+        <button type="button" onclick="closeMultConfirm()" class="py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-xs font-bold text-white/85 transition-all">
+          Hủy bỏ
+        </button>
+        <button type="button" onclick="confirmMultiplier()" class="py-2.5 rounded-xl bg-gradient-to-r from-[#F3CB69] to-[#D49B2A] text-xs font-extrabold text-[#1A0709] shadow-lg shadow-[#F3CB69]/25 active:scale-95 transition-all">
+          Xác nhận nhân
         </button>
       </div>
     </div>
@@ -776,6 +800,7 @@
   <script>
     let activeCategory = 'All';
     let currentMultiplier = 1;
+    let pendingMultiplier = 1;
     let currentRecipeData = null;
     let timerInterval = null;
 
@@ -927,11 +952,44 @@
       });
     }
 
-    function setMultiplier(mult) {
+    /* Yêu cầu xác nhận khi bấm x2 hoặc x3 */
+    function requestMultiplier(mult) {
+      if (mult === currentMultiplier) return;
+      if (mult === 1) {
+        applyMultiplier(1);
+        return;
+      }
+      pendingMultiplier = mult;
+      const drinkName = currentRecipeData ? currentRecipeData.name : 'món này';
+      document.getElementById('mult-confirm-text').innerHTML = `
+        Toàn bộ định lượng nguyên liệu của <strong class="text-[#F7EFE1]">${drinkName}</strong> sẽ được nhân lên <strong class="text-[#F3CB69]">x${mult} lần</strong> để pha cùng lúc ${mult} ly.
+      `;
+      document.getElementById('mult-confirm-modal').classList.remove('hidden');
+    }
+
+    function closeMultConfirm() {
+      document.getElementById('mult-confirm-modal').classList.add('hidden');
+    }
+
+    function confirmMultiplier() {
+      applyMultiplier(pendingMultiplier);
+      closeMultConfirm();
+    }
+
+    function applyMultiplier(mult) {
       currentMultiplier = mult;
       document.querySelectorAll('.mult-btn').forEach(btn => {
         btn.classList.toggle('active', parseInt(btn.getAttribute('data-mult')) === mult);
       });
+
+      const badge = document.getElementById('active-mult-badge');
+      if (mult > 1) {
+        badge.innerText = `Đang nhân x${mult}`;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+
       if (currentRecipeData) {
         renderIngredients(currentRecipeData.ingredients);
       }
@@ -1007,7 +1065,7 @@
         left.className = 'flex items-center gap-3 min-w-0 flex-1';
         left.innerHTML = `
           <span class="check-box w-5 h-5 rounded-md border border-white/25 bg-black/30 flex items-center justify-center text-xs text-transparent transition-all shrink-0">✓</span>
-          <span class="ing-label text-[13.5px] font-semibold text-[#F7EFE1] leading-snug">${scaledText}</span>
+          <span class="ing-label text-[13.5px] font-semibold ${currentMultiplier > 1 ? 'text-[#F3CB69]' : 'text-[#F7EFE1]'} leading-snug">${scaledText}</span>
         `;
 
         row.onclick = () => {
@@ -1063,10 +1121,7 @@
 
     function showDetail(name, cat, method, ingredients, instructions, garnish) {
       currentRecipeData = { name, cat, method, ingredients, instructions, garnish };
-      currentMultiplier = 1;
-      document.querySelectorAll('.mult-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-mult') === '1');
-      });
+      applyMultiplier(1);
 
       document.getElementById('sheet-title').innerText = name;
       document.getElementById('sheet-category').innerText = cat;
@@ -1103,6 +1158,7 @@
 
     function closeSheet() {
       stopBarTimer();
+      closeMultConfirm();
       document.getElementById('recipe-sheet').classList.remove('sheet-open');
       document.getElementById('recipe-sheet').classList.add('sheet-closed');
       setTimeout(() => {
