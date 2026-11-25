@@ -44,9 +44,7 @@
       background-color: #0D0708;
       background-image:
         radial-gradient(circle at 50% 0%, rgba(139, 17, 21, 0.42) 0%, rgba(28, 7, 10, 0.25) 45%, rgba(13, 7, 8, 0.96) 100%),
-        /* Minh họa Phố Đường Tàu Hà Nội chìm tinh tế ở đáy màn hình */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260' preserveAspectRatio='xMidYMax slice'%3E%3Cg fill='none' stroke='%23E52932' stroke-linecap='round' stroke-linejoin='round' opacity='0.22'%3E%3Cpath d='M-10,35 Q180,85 430,25' stroke-width='1.5'/%3E%3Cpath d='M-10,55 Q210,115 430,45' stroke-width='1.2'/%3E%3Cpath d='M120,0 L110,120 M310,0 L325,95' stroke-width='1.5'/%3E%3Cpath d='M0,65 L95,88 L95,210 L0,235 Z' fill='%231F0609' stroke-width='2'/%3E%3Cpath d='M95,95 L155,112 L155,195 L95,205 Z' fill='%231F0609' stroke-width='1.8'/%3E%3Cpath d='M155,118 L205,132 L205,188 L155,194 Z' fill='%231F0609' stroke-width='1.5'/%3E%3Crect x='18' y='92' width='18' height='28' fill='%23F3CB69' opacity='0.35'/%3E%3Crect x='52' y='100' width='18' height='28' fill='%23F3CB69' opacity='0.35'/%3E%3Crect x='18' y='142' width='18' height='32' fill='%23F3CB69' opacity='0.25'/%3E%3Crect x='52' y='148' width='18' height='32' fill='%23F3CB69' opacity='0.25'/%3E%3Cg transform='translate(245, 128)'%3E%3Crect x='4' y='6' width='42' height='54' rx='6' fill='%232B080C' stroke-width='2.2'/%3E%3Ccircle cx='25' cy='42' r='5' fill='%23F3CB69' stroke='none' opacity='0.8'/%3E%3C/g%3E%3Cpath d='M255,188 Q180,210 15,265' stroke-width='3'/%3E%3Cpath d='M288,188 Q245,215 165,265' stroke-width='3'/%3E%3Cpath d='M242,194 L296,194 M222,203 L286,203 M196,214 L272,214 M162,226 L252,226 M120,240 L226,240 M68,255 L194,255' stroke-width='2.5'/%3E%3C/g%3E%3C/svg%3E"),
-        /* Dải đường ray chạy dọc lề phải */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='24' viewBox='0 0 22 24'%3E%3Cline x1='4' y1='0' x2='4' y2='24' stroke='%23F7EFE1' stroke-width='1.2' opacity='0.06'/%3E%3Cline x1='18' y1='0' x2='18' y2='24' stroke='%23F7EFE1' stroke-width='1.2' opacity='0.06'/%3E%3Crect x='1' y='9' width='20' height='2.5' fill='%23F7EFE1' opacity='0.06'/%3E%3C/svg%3E");
       background-repeat: no-repeat, no-repeat, repeat-y;
       background-position: top center, bottom center, right 6px top 0;
@@ -129,7 +127,7 @@
     }
 
     /* =======================================================
-       4. MODAL CHI TIẾT KIỂU DARK GLASS COCKTAIL SHEET
+       4. MODAL CHI TIẾT MODERN DARK GLASS
        ======================================================= */
     .sheet-open {
       transform: translateY(0%) !important;
@@ -211,7 +209,7 @@
     <div class="flex items-center justify-between mb-3.5">
       <div class="flex items-center gap-3.5">
         <div class="relative">
-          <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="w-13 h-13 w-[52px] h-[52px] rounded-full object-cover ring-2 ring-white/80 shadow-lg">
+          <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="w-[52px] h-[52px] rounded-full object-cover ring-2 ring-white/80 shadow-lg">
           <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 ring-2 ring-[#22090D]" title="Bar Online"></span>
         </div>
         <div class="flex flex-col justify-center">
@@ -245,7 +243,7 @@
       <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍸 Cocktail</button>
       <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍹 Mocktail</button>
       <button onclick="setTab('Alcoholic', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🥃 Alcoholic</button>
-      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍺 Beer UpSide Down</button>
+      <button onclick="setTab('Shots', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍷 Shots & 🍺 Beer</button>
     </div>
   </header>
 
@@ -564,6 +562,20 @@
       </div>
 
       <!-- SHOTS & BEER -->
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="monkey brain chanh vodka baileys dau" onclick="showDetail('Monkey Brain', 'Shots & Beer', 'Layer', ['5ml Nước chanh', '35ml Smirnoff Vodka', '10ml Baileys', 'Siro dâu', 'Siro vỏ cam'], 'Rót chanh và Vodka vào ly shot. Rót từ từ Baileys vào để kết tủa thành hình não. Nhỏ thêm siro dâu.', 'Tạo hình vệt máu')">
+        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots</span></div>
+        <h3 class="font-serif font-bold text-lg text-train-cream">Monkey Brain</h3>
+        <p class="text-xs text-train-gold mb-2">Layer</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Vodka • Baileys • Chanh • Siro dâu</p>
+      </div>
+
+      <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="b52 kahlua baileys cointreau" onclick="showDetail('B52', 'Shots & Beer', 'Layer', ['1/3 ly Kahlua', '1/3 ly Baileys', '1/3 ly Cointreau'], 'Rót lần lượt Kahlua ở đáy, Baileys tầng giữa và Cointreau tầng trên cùng.', 'Đốt lửa tầng trên')">
+        <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots</span></div>
+        <h3 class="font-serif font-bold text-lg text-train-cream">B52</h3>
+        <p class="text-xs text-train-gold mb-2">Layer</p>
+        <p class="text-[11px] text-train-cream/60 border-t border-train-border/40 pt-2">Kahlua • Baileys • Cointreau</p>
+      </div>
+
       <div class="drink-card glass-card p-3.5 cursor-pointer" data-cat="Shots" data-search="beer local hanoi quat chanh mat ong bia ha noi" onclick="showDetail('Beer Local Hanoi', 'Shots & Beer', 'Build', ['3-4 quả Quất', '1/2 Chanh', '40ml Mật ong', 'Bia Hà Nội'], 'Lăn cốc qua muối ớt. Dầm quất, chanh với mật ong. Cho đá, nhét thêm lát chanh và úp ngược lon bia.', 'Viền muối ớt')">
         <div class="flex justify-between mb-1"><span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Shots & Beer</span></div>
         <h3 class="font-serif font-bold text-lg text-train-cream">Beer Local Hanoi</h3>
@@ -637,9 +649,9 @@
   <div id="sheet-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 hidden transition-opacity" onclick="closeSheet()"></div>
   <div id="recipe-sheet" class="modern-sheet fixed inset-x-0 bottom-0 z-50 max-w-2xl mx-auto sheet-closed transition-transform duration-300 max-h-[92vh] overflow-y-auto no-scrollbar">
     
-    <!-- Ảnh Cover mờ trên cùng + Thanh gạt + Nút đóng -->
-    <div class="relative w-full h-48 overflow-hidden rounded-t-[28px] bg-[#140709]">
-      <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" class="w-full h-full object-cover object-center opacity-85 transition-opacity duration-300">
+    <!-- Ảnh Cover mờ trên cùng (Ấn vào để phóng to trọn vẹn ảnh ly) -->
+    <div onclick="openDrinkPhotoModal()" class="relative w-full h-48 overflow-hidden rounded-t-[28px] bg-[#140709] cursor-pointer group">
+      <img id="sheet-cocktail-img" src="" alt="Hình ảnh thành phẩm" class="w-full h-full object-cover object-center opacity-85 group-hover:scale-105 transition-all duration-300">
       <div class="absolute inset-0 bg-gradient-to-t from-[#1C0D10] via-[#1C0D10]/45 to-black/40"></div>
 
       <!-- Handle bar -->
@@ -647,8 +659,13 @@
         <div class="w-12 h-1.5 bg-white/40 rounded-full"></div>
       </div>
 
+      <!-- Nút phóng to ảnh góc trái -->
+      <button type="button" onclick="event.stopPropagation(); openDrinkPhotoModal()" class="absolute top-3.5 left-4 px-2.5 py-1 rounded-full bg-black/60 border border-white/20 text-[11px] font-bold text-[#F7EFE1] flex items-center gap-1.5 backdrop-blur-md hover:border-[#F3CB69] transition-colors">
+        <span>🔍</span><span>Phóng to ảnh ly</span>
+      </button>
+
       <!-- Nút đóng góc phải -->
-      <button onclick="closeSheet()" class="absolute top-3.5 right-4 w-8 h-8 rounded-full bg-black/55 border border-white/20 text-white/90 flex items-center justify-center backdrop-blur-md hover:bg-train-red transition-colors">
+      <button type="button" onclick="event.stopPropagation(); closeSheet()" class="absolute top-3.5 right-4 w-8 h-8 rounded-full bg-black/55 border border-white/20 text-white/90 flex items-center justify-center backdrop-blur-md hover:bg-train-red transition-colors">
         ✕
       </button>
 
@@ -675,21 +692,22 @@
     <!-- Nội dung chính trong Sheet -->
     <div class="p-5 pt-3 space-y-5">
 
-      <!-- Thanh công cụ nhanh: Nhân định lượng (x1 x2 x3) + Đồng hồ đếm ngược Bar Timer -->
-      <div class="flex flex-wrap items-center justify-between gap-2.5 p-2.5 rounded-2xl bg-white/[0.04] border border-white/10">
+      <!-- Thanh công cụ nhanh: Nhân định lượng (x1 x2 x3) + Xem ảnh ly + Bar Timer -->
+      <div class="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-2xl bg-white/[0.04] border border-white/10">
         <!-- Multiplier -->
         <div class="flex items-center gap-1.5">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-white/50 mr-1">Số ly:</span>
-          <button onclick="setMultiplier(1)" data-mult="1" class="mult-btn active px-3 py-1 rounded-lg text-xs font-bold">x1</button>
-          <button onclick="setMultiplier(2)" data-mult="2" class="mult-btn px-3 py-1 rounded-lg text-xs font-bold">x2</button>
-          <button onclick="setMultiplier(3)" data-mult="3" class="mult-btn px-3 py-1 rounded-lg text-xs font-bold">x3</button>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-white/50 mr-0.5">Ly:</span>
+          <button onclick="setMultiplier(1)" data-mult="1" class="mult-btn active px-2.5 py-1 rounded-lg text-xs font-bold">x1</button>
+          <button onclick="setMultiplier(2)" data-mult="2" class="mult-btn px-2.5 py-1 rounded-lg text-xs font-bold">x2</button>
+          <button onclick="setMultiplier(3)" data-mult="3" class="mult-btn px-2.5 py-1 rounded-lg text-xs font-bold">x3</button>
         </div>
 
-        <!-- Quick Bar Timer -->
+        <!-- Nút Xem ảnh cốc rượu + Quick Bar Timer -->
         <div class="flex items-center gap-1.5">
-          <button onclick="startBarTimer(15)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-[11px] font-semibold text-[#F3CB69] transition-all">⏱ 15s</button>
-          <button onclick="startBarTimer(20)" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-[11px] font-semibold text-[#F3CB69] transition-all">⏱ 20s</button>
-          <span id="timer-display" class="hidden px-2.5 py-1 rounded-lg bg-train-red/25 border border-train-red text-xs font-mono font-bold text-white animate-pulse">00:15</span>
+          <button onclick="openDrinkPhotoModal()" class="px-2.5 py-1 rounded-lg bg-[#F3CB69]/15 hover:bg-[#F3CB69]/25 border border-[#F3CB69]/40 text-[11px] font-bold text-[#F3CB69] transition-all">🖼️ Xem ảnh ly</button>
+          <button onclick="startBarTimer(15)" class="px-2 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-[11px] font-semibold text-white/80 transition-all">⏱ 15s</button>
+          <button onclick="startBarTimer(20)" class="px-2 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-[11px] font-semibold text-white/80 transition-all">⏱ 20s</button>
+          <span id="timer-display" class="hidden px-2 py-1 rounded-lg bg-train-red/25 border border-train-red text-xs font-mono font-bold text-white animate-pulse">00:15</span>
         </div>
       </div>
 
@@ -737,6 +755,19 @@
       <h4 id="ing-modal-title" class="font-bold text-base text-[#F7EFE1] mt-0.5 mb-3 pr-4 truncate">Tên nguyên liệu</h4>
       <div class="w-full h-72 bg-white rounded-xl overflow-hidden flex items-center justify-center p-2 shadow-inner">
         <img id="ing-modal-img" src="" alt="Ảnh chai rượu" loading="lazy" decoding="async" class="w-full h-full object-contain">
+      </div>
+      <p class="text-[11px] text-white/50 mt-2.5">Chạm ra ngoài để quay lại công thức</p>
+    </div>
+  </div>
+
+  <!-- POPUP XEM TRỌN VẸN ẢNH CỐC RƯỢU THÀNH PHẨM -->
+  <div id="drink-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden" onclick="closeDrinkPhotoModal()">
+    <div class="bg-[#1C0D10] border border-[#F3CB69]/40 rounded-2xl p-4 w-full max-w-sm shadow-2xl relative text-center" onclick="event.stopPropagation()">
+      <button onclick="closeDrinkPhotoModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 text-white/80 hover:bg-train-red text-sm font-bold flex items-center justify-center">&times;</button>
+      <span class="text-[10px] font-bold uppercase tracking-widest text-[#F3CB69]">Ly thành phẩm chuẩn</span>
+      <h4 id="drink-modal-title" class="font-script text-2xl text-[#F7EFE1] mt-0.5 mb-3 pr-4 truncate">Tên món</h4>
+      <div class="w-full aspect-[4/5] bg-black/40 rounded-xl overflow-hidden flex items-center justify-center border border-white/10 p-1.5">
+        <img id="drink-modal-img" src="" alt="Ảnh cốc rượu thành phẩm" class="w-full h-full object-contain rounded-lg">
       </div>
       <p class="text-[11px] text-white/50 mt-2.5">Chạm ra ngoài để quay lại công thức</p>
     </div>
@@ -829,6 +860,8 @@
       '1881 Sparkling': 'bird.jpg',
       'Rose Bloodsome': 'rose2.PNG',
       'Sweet Glow': 'tropicaldusk.jpg',
+      'Monkey Brain': 'monkeybrain.jpg',
+      'B52': 'b52.jpg',
       'Beer Local Hanoi': 'localhanoi.jpg',
       'Beer Green Mountain': 'greenmountain.jpg',
       'Beer YellowRed': 'yellowred.jpg',
@@ -840,7 +873,6 @@
       'Vodka Redbull': 'vodka redbull.jpg'
     };
 
-    /* Tự động nâng cấp giao diện từng thẻ món ngoài danh sách sang Modern Dark Glass + Thumbnail */
     function upgradeCardsUI() {
       const cards = document.querySelectorAll('.drink-card');
       cards.forEach(card => {
@@ -883,7 +915,6 @@
       });
     }
 
-    /* Nhân định lượng thông minh (x1, x2, x3) */
     function scaleIngredientText(text, mult) {
       if (mult === 1) return text;
       return text.replace(/^(\d+(?:\.\d+)?)(?:-(\d+(?:\.\d+)?))?(\s*(?:ml|g|dash|quả|thìa|miếng|ấn|nhánh|lát)\b)/i, (match, n1, n2, unit) => {
@@ -1113,6 +1144,25 @@
     function closeIngredientModal() {
       document.getElementById('ingredient-modal').classList.add('hidden');
       document.getElementById('ing-modal-img').src = '';
+    }
+
+    function openDrinkPhotoModal() {
+      if (!currentRecipeData) return;
+      const name = currentRecipeData.name;
+      const imgSrc = drinkImages[name] || 'bird.jpg';
+      document.getElementById('drink-modal-title').innerText = name;
+      const imgEl = document.getElementById('drink-modal-img');
+      imgEl.onerror = function() {
+        this.onerror = null;
+        this.src = 'bird.jpg';
+      };
+      imgEl.src = imgSrc;
+      document.getElementById('drink-modal').classList.remove('hidden');
+    }
+
+    function closeDrinkPhotoModal() {
+      document.getElementById('drink-modal').classList.add('hidden');
+      document.getElementById('drink-modal-img').src = '';
     }
 
     window.addEventListener('DOMContentLoaded', () => {
