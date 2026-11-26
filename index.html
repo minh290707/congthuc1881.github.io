@@ -56,13 +56,30 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
     /* =======================================================
-       2. HEADER GLASSMORPHISM + VIỀN LED TRẮNG + CHỮ LED ĐỎ NEON
+       HIỆU ỨNG CHỮ MẠ VÀNG PHÁT SÁNG CHO TÊN CỐC RƯỢU
+       ======================================================= */
+    .gold-foil-title {
+      background: linear-gradient(180deg, #FFF7DC 0%, #F6D365 48%, #D49B2A 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #F6D365;
+      filter: drop-shadow(0 0 6px rgba(243, 203, 105, 0.55)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.85));
+    }
+
+    /* =======================================================
+       2. HEADER GLASSMORPHISM + HOA VĂN MÂY XOÁY + VIỀN LED TRẮNG
        ======================================================= */
     .header-led-wrap {
       position: sticky;
       top: 10px;
       z-index: 30;
-      background: rgba(34, 9, 13, 0.78);
+      background-color: rgba(34, 9, 13, 0.84);
+      background-image:
+        radial-gradient(circle at 85% 15%, rgba(243, 203, 105, 0.1) 0%, transparent 45%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60'%3E%3Cg fill='none' stroke='%23F3CB69' stroke-width='1.1' opacity='0.08'%3E%3Cpath d='M15,38 C10,24 28,16 38,26 C48,16 66,24 61,38 C70,40 70,54 58,56 C46,58 24,58 15,54 C6,51 6,40 15,38 Z'/%3E%3Cpath d='M30,40 C30,34 39,34 39,40 C39,44 33,44 33,40'/%3E%3Cpath d='M85,18 C82,10 94,6 100,12 C106,6 116,10 113,18'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat, repeat;
+      background-size: cover, 120px 60px;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1.5px solid rgba(255, 255, 255, 0.92);
@@ -72,6 +89,24 @@
         0 8px 32px rgba(0, 0, 0, 0.65),
         0 0 12px rgba(255, 255, 255, 0.45),
         inset 0 0 14px rgba(255, 255, 255, 0.14);
+      overflow: hidden;
+    }
+
+    .header-led-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 15px;
+      border: 1px solid rgba(243, 203, 105, 0.22);
+      pointer-events: none;
+    }
+
+    .header-corner-ornament {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      pointer-events: none;
+      opacity: 0.38;
     }
 
     .neon-led-red {
@@ -103,13 +138,19 @@
     }
 
     /* =======================================================
-       3. THẺ MÓN DANH SÁCH: MODERN DARK GLASS CARD
+       3. THẺ MÓN DANH SÁCH: MODERN DARK GLASS + HOA VĂN ĐƯỜNG TÀU
        ======================================================= */
     .glass-card {
-      background: linear-gradient(145deg, rgba(34, 19, 22, 0.78) 0%, rgba(20, 11, 13, 0.88) 100%);
+      background-color: rgba(24, 12, 14, 0.85);
+      background-image:
+        linear-gradient(145deg, rgba(42, 18, 22, 0.72) 0%, rgba(18, 9, 11, 0.92) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='96' viewBox='0 0 160 96'%3E%3Cg fill='none' stroke='%23F3CB69'%3E%3Cg opacity='0.06' stroke-width='1'%3E%3Cpath d='M95,28 C91,18 104,12 112,20 C120,12 133,18 129,28 C136,30 136,41 126,43 C116,44 100,44 95,41'/%3E%3Cpath d='M106,30 C106,25 113,25 113,30 C113,33 108,33 108,30'/%3E%3C/g%3E%3Cg opacity='0.07' stroke-width='1.1'%3E%3Cline x1='144' y1='0' x2='144' y2='96'/%3E%3Cline x1='152' y1='0' x2='152' y2='96'/%3E%3Cline x1='141' y1='12' x2='155' y2='12'/%3E%3Cline x1='141' y1='32' x2='155' y2='32'/%3E%3Cline x1='141' y1='52' x2='155' y2='52'/%3E%3Cline x1='141' y1='72' x2='155' y2='72'/%3E%3Cline x1='141' y1='90' x2='155' y2='90'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat, no-repeat;
+      background-position: center, right center;
+      background-size: cover, 160px 96px;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(247, 239, 225, 0.11);
+      border: 1px solid rgba(243, 203, 105, 0.16);
       border-radius: 18px;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       position: relative;
@@ -117,9 +158,22 @@
       transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
+    .glass-card::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 14px;
+      height: 14px;
+      border-top: 1.5px solid rgba(243, 203, 105, 0.32);
+      border-right: 1.5px solid rgba(243, 203, 105, 0.32);
+      border-top-right-radius: 8px;
+      pointer-events: none;
+    }
+
     .glass-card:hover {
-      border-color: rgba(243, 203, 105, 0.35);
-      box-shadow: 0 12px 32px rgba(139, 17, 21, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      border-color: rgba(243, 203, 105, 0.48);
+      box-shadow: 0 12px 32px rgba(139, 17, 21, 0.35), 0 0 18px rgba(243, 203, 105, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.14);
     }
 
     .glass-card:active {
@@ -154,8 +208,11 @@
       font-size: 2.35rem;
       font-weight: 700;
       line-height: 1.15;
-      color: #F7EFE1;
-      text-shadow: 0 2px 12px rgba(229, 41, 50, 0.35);
+      background: linear-gradient(180deg, #FFF9E2 0%, #F5CE62 50%, #C88E20 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 10px rgba(243, 203, 105, 0.65)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
     }
 
     .mult-btn {
@@ -204,41 +261,54 @@
 </head>
 <body class="font-sans antialiased pb-28 min-h-screen selection:bg-train-red selection:text-white">
 
-  <!-- HEADER: VIỀN LED TRẮNG + LOGO & CHỮ LED ĐỎ -->
+  <!-- HEADER: VIỀN LED TRẮNG + HOA VĂN Á ĐÔNG + LOGO & CHỮ LED ĐỎ -->
   <header class="header-led-wrap p-4">
-    <div class="flex items-center justify-between mb-3.5">
+    <svg class="header-corner-ornament top-1.5 right-1.5" viewBox="0 0 32 32" fill="none" stroke="#F3CB69" stroke-width="1.4">
+      <path d="M6,2 H24 A6,6 0 0 1 30,8 V26"/>
+      <path d="M12,7 H21 A4,4 0 0 1 25,11 V20" opacity="0.65"/>
+      <circle cx="21" cy="11" r="1.5" fill="#F3CB69"/>
+    </svg>
+    <svg class="header-corner-ornament bottom-1.5 left-1.5 rotate-180" viewBox="0 0 32 32" fill="none" stroke="#F3CB69" stroke-width="1.4">
+      <path d="M6,2 H24 A6,6 0 0 1 30,8 V26"/>
+      <path d="M12,7 H21 A4,4 0 0 1 25,11 V20" opacity="0.65"/>
+    </svg>
+
+    <div class="relative z-10 flex items-center justify-between mb-3.5">
       <div class="flex items-center gap-3.5">
         <div class="relative">
-          <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="w-[52px] h-[52px] rounded-full object-cover ring-2 ring-white/80 shadow-lg">
+          <img src="logo.png" alt="The Train 1881" loading="lazy" decoding="async" class="w-[52px] h-[52px] rounded-full object-cover ring-2 ring-[#F3CB69]/80 shadow-lg">
           <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 ring-2 ring-[#22090D]" title="Bar Online"></span>
         </div>
         <div class="flex flex-col justify-center">
           <h1 class="neon-led-red text-[21px] leading-none">
             THE TRAIN 1881
           </h1>
-          <p class="text-[11px] text-[#F3CB69] font-semibold uppercase tracking-[0.26em] mt-1.5" style="text-shadow: 0 0 8px rgba(243, 203, 105, 0.4);">
-            COCKTAILS • BAR HANDBOOK
-          </p>
+          <div class="flex items-center gap-1.5 mt-1.5">
+            <span class="text-[10px] text-[#F3CB69]/75">❖</span>
+            <p class="text-[11px] text-[#F3CB69] font-semibold uppercase tracking-[0.24em]" style="text-shadow: 0 0 8px rgba(243, 203, 105, 0.4);">
+              COCKTAILS • BAR HANDBOOK
+            </p>
+          </div>
         </div>
       </div>
 
-      <span id="recipe-count" class="shrink-0 z-10 text-xs font-bold bg-white/10 text-[#F7EFE1] px-3 py-1.5 rounded-full border border-white/20 backdrop-blur-md">
+      <span id="recipe-count" class="shrink-0 z-10 text-xs font-bold bg-black/45 text-[#F3CB69] px-3 py-1.5 rounded-full border border-[#F3CB69]/35 backdrop-blur-md shadow">
         -- món
       </span>
     </div>
 
     <!-- Thanh tìm kiếm Glass -->
-    <div class="relative w-full">
+    <div class="relative z-10 w-full">
       <input type="text" id="search-input" onkeyup="filterItems()" placeholder="Tìm tên món, rượu nền, nguyên liệu..."
-        class="w-full pl-10 pr-9 py-2.5 rounded-xl bg-black/45 border border-white/15 text-[#F7EFE1] placeholder-[#F7EFE1]/45 text-sm focus:outline-none focus:border-[#F3CB69]/70 focus:bg-black/60 transition-all">
-      <svg class="w-4 h-4 text-[#F3CB69]/75 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        class="w-full pl-10 pr-9 py-2.5 rounded-xl bg-black/50 border border-[#F3CB69]/20 text-[#F7EFE1] placeholder-[#F7EFE1]/45 text-sm focus:outline-none focus:border-[#F3CB69]/75 focus:bg-black/65 transition-all">
+      <svg class="w-4 h-4 text-[#F3CB69]/80 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
       </svg>
       <button id="clear-search" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-xs text-white/50 hover:text-white px-1.5 py-0.5 rounded bg-white/10">✕</button>
     </div>
 
     <!-- Bộ lọc danh mục -->
-    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 text-xs">
+    <div class="relative z-10 flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 text-xs">
       <button onclick="setTab('All', this)" class="cat-pill active-tab px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">Tất cả</button>
       <button onclick="setTab('Cocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍸 Cocktail</button>
       <button onclick="setTab('Mocktail', this)" class="cat-pill px-3.5 py-1.5 rounded-full whitespace-nowrap transition-all">🍹 Mocktail</button>
@@ -648,7 +718,7 @@
         ✕
       </button>
 
-      <!-- Badge & Tên món đè lên chân ảnh -->
+      <!-- Badge & Tên món mạ vàng phát sáng đè lên chân ảnh -->
       <div class="absolute bottom-3 left-5 right-5 flex items-end justify-between gap-2">
         <div>
           <div class="flex items-center gap-2 mb-1">
@@ -768,7 +838,7 @@
     <div class="bg-[#1C0D10] border border-[#F3CB69]/40 rounded-2xl p-4 w-full max-w-sm shadow-2xl relative text-center" onclick="event.stopPropagation()">
       <button onclick="closeDrinkPhotoModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 text-white/80 hover:bg-train-red text-sm font-bold flex items-center justify-center">&times;</button>
       <span class="text-[10px] font-bold uppercase tracking-widest text-[#F3CB69]">Ly thành phẩm chuẩn</span>
-      <h4 id="drink-modal-title" class="font-script text-2xl text-[#F7EFE1] mt-0.5 mb-3 pr-4 truncate">Tên món</h4>
+      <h4 id="drink-modal-title" class="font-script text-2xl gold-foil-title mt-0.5 mb-3 pr-4 truncate">Tên món</h4>
       <div class="w-full aspect-[4/5] bg-black/40 rounded-xl overflow-hidden flex items-center justify-center border border-white/10 p-1.5">
         <img id="drink-modal-img" src="" alt="Ảnh cốc rượu thành phẩm" class="w-full h-full object-contain rounded-lg">
       </div>
@@ -901,17 +971,20 @@
         }
 
         card.innerHTML = `
-          <div class="flex items-center gap-3.5">
-            <div class="w-16 h-20 rounded-xl overflow-hidden bg-black/50 border border-white/10 shrink-0 relative">
+          <div class="flex items-center gap-3.5 relative z-10">
+            <div class="w-16 h-20 rounded-xl overflow-hidden bg-black/55 border border-[#F3CB69]/25 shadow-md shrink-0 relative">
               <img src="${imgSrc}" alt="${name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='bird.jpg';" class="w-full h-full object-cover">
             </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center justify-between gap-2 mb-1">
+              <div class="flex items-center justify-between gap-2 mb-1 pr-2">
                 <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${badgeClass}">${badgeText}</span>
                 <span class="text-[11px] font-semibold text-[#F3CB69]/90 truncate">${method}</span>
               </div>
-              <h3 class="font-serif font-bold text-[17px] text-[#F7EFE1] leading-snug truncate">${name}</h3>
-              <p class="text-[11px] text-[#F7EFE1]/55 border-t border-white/10 pt-1.5 mt-1.5 truncate">${desc}</p>
+              <h3 class="font-serif font-bold text-[17.5px] gold-foil-title leading-snug truncate">${name}</h3>
+              <div class="flex items-center justify-between gap-2 border-t border-[#F3CB69]/15 pt-1.5 mt-1.5">
+                <p class="text-[11px] text-[#F7EFE1]/55 truncate">${desc}</p>
+                <span class="shrink-0 text-[10px] font-bold text-[#F3CB69]/80">Công thức ›</span>
+              </div>
             </div>
           </div>
         `;
@@ -930,7 +1003,6 @@
       });
     }
 
-    /* Yêu cầu xác nhận khi bấm x2 hoặc x3 */
     function requestMultiplier(mult) {
       if (mult === currentMultiplier) return;
       if (mult === 1) {
