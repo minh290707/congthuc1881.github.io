@@ -1292,7 +1292,59 @@
     });
   </script>
 
-  <script>
+    <script>
+    // Kiểm tra cập nhật mỗi 12 tiếng 1 lần (12 * 60 * 60 * 1000 ms)
+    const CHECK_INTERVAL = 12 * 60 * 60 * 1000;
+
+    async function checkAndReloadIfUpdated() {
+      // Nếu nhân viên đang mở bảng công thức pha dở thì bỏ qua, không làm gián đoạn
+      const recipeSheet = document.getElementById('recipe-sheet');
+      if (recipeSheet && recipeSheet.classList.contains('sheet-open')) {
+        return;
+      }
+
+      // Kiểm tra xem đã đủ 12 tiếng kể từ lần kiểm tra trước chưa
+      const lastCheck = parseInt(localStorage.getItem('train1881_last_check') || '0', 10);
+      const now = Date.now();
+      if (now - lastCheck < CHECK_INTERVAL) {
+        return;
+      }
+
+      localStorage.setItem('train1881_last_check', String(now));
+
+      try {
+        const response = await fetch(window.location.pathname + '?t=' + now, {
+          cache: 'no-store'
+        });
+        if (!response.ok) return;
+
+        const latestHtml = await response.text();
+        const savedHash = localStorage.getItem('train1881_page_version');
+        const currentHash = String(latestHtml.length) + '_' + latestHtml.slice(-300);
+
+        // Chỉ tải lại khi file trên server thực sự có thay đổi
+        if (savedHash && savedHash !== currentHash) {
+          localStorage.setItem('train1881_page_version', currentHash);
+          window.location.reload();
+          return;
+        }
+        localStorage.setItem('train1881_page_version', currentHash);
+      } catch (e) {
+        // Bỏ qua nếu quầy đang mất mạng
+      }
+    }
+
+    // Kiểm tra khi mở lại tab/màn hình (chỉ chạy nếu đã qua 12 tiếng)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        checkAndReloadIfUpdated();
+      }
+    });
+
+    // Kiểm tra định kỳ mỗi 12 tiếng nếu treo màn hình liên tục
+    setInterval(checkAndReloadIfUpdated, CHECK_INTERVAL);
+
+    // Đăng ký Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').catch(() => {});
